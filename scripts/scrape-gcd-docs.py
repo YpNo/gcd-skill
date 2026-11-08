@@ -67,6 +67,12 @@ NETWORK_IDLE_TIMEOUT = 10_000
 HTTP_TIMEOUT_SECONDS = 20
 DEFAULT_WORKERS = 10
 
+# HTTP statuses that prove a page no longer exists. Any other failure (403, 5xx,
+# timeouts, connection errors) is a failed fetch, and the previous copy is kept.
+GONE_HTTP_STATUSES = frozenset({404, 410})
+# Failures not worth retrying. They are still failures, not proof of removal.
+NO_RETRY_HTTP_STATUSES = frozenset({400, 403})
+
 # -- Product lists -------------------------------------------------------------
 
 # Core products available in both regions (baseline seeds; new products are
@@ -597,7 +603,12 @@ def path_to_filename(path: str) -> str:
 # -- Fetchers (HTTP SSR + Optional Playwright) ---------------------------------
 
 def fetch_http(base_url: str, path: str, extra_headers: dict[str, str]) -> dict | None:
-    """Fetch a DevSite page via standard HTTP (SSR)."""
+    """Fetch a DevSite page via standard HTTP (SSR).
+
+    Returns {"html", "final_url"} on success, {"redirect_to"} for a fallback
+    redirect, {"gone": status} for a 404/410, and None when the fetch failed
+    (403, 5xx, timeout). Callers must not treat None as proof of removal.
+    """
     url = base_url + path
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; GCD-Docs-Scraper/3.0)",
@@ -608,8 +619,8 @@ def fetch_http(base_url: str, path: str, extra_headers: dict[str, str]) -> dict 
         req = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT_SECONDS) as resp:
-                if resp.status == 404:
-                    return None
+                if resp.status in GONE_HTTP_STATUSES:
+                    return {"gone": resp.status}
                 final_url = resp.geturl()
                 raw_bytes = resp.read()
                 page_html = raw_bytes.decode("utf-8", errors="replace")
@@ -618,7 +629,10 @@ def fetch_http(base_url: str, path: str, extra_headers: dict[str, str]) -> dict 
                     return {"redirect_to": final_path}
                 return {"html": page_html, "final_url": final_url}
         except urllib.error.HTTPError as e:
-            if e.code in (400, 403, 404, 410):
+            if e.code in GONE_HTTP_STATUSES:
+                return {"gone": e.code}
+            if e.code in NO_RETRY_HTTP_STATUSES:
+                print(f"  [HTTP {e.code}] {path} - not retried", file=sys.stderr)
                 return None
             wait = 2 ** (attempt + 1)
             print(f"  [HTTP {e.code}] {path} - retry {attempt + 1}", file=sys.stderr)
@@ -795,6 +809,39 @@ def discover_products_from_secnumcloud(secnum_payload: dict | None) -> tuple[set
 
 # -- Main crawl ----------------------------------------------------------------
 
+def load_previous_manifest(output_dir: Path) -> dict:
+    """Return the manifest saved by the previous run, or {} if absent or unreadable."""
+    manifest_path = output_dir / "_manifest.json"
+    if not manifest_path.exists():
+        return {}
+    try:
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        print(f"  [Warning] Could not read {manifest_path}: {e}", file=sys.stderr)
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def carry_over_failed_pages(previous_manifest: dict, failed_paths: set[str], output_dir: Path) -> dict:
+    """Return the previous manifest entries of pages whose fetch failed this run.
+
+    A failed fetch (403, 5xx, timeout) does not prove a page was removed, so its
+    previous copy is kept. Only a 404/410 or a fallback redirect removes a page.
+    Entries whose file is missing or whose filename is not a bare name are skipped.
+    """
+    carried: dict[str, dict] = {}
+    for path in sorted(failed_paths):
+        entry = previous_manifest.get(path)
+        if not isinstance(entry, dict):
+            continue
+        filename = entry.get("filename")
+        if not isinstance(filename, str) or Path(filename).name != filename:
+            continue
+        if (output_dir / filename).is_file():
+            carried[path] = entry
+    return carried
+
+
 def crawl_and_scrape(
     output_dir: Path,
     region: str,
@@ -811,6 +858,7 @@ def crawl_and_scrape(
     product_pages = get_product_pages(region)
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    previous_manifest = load_previous_manifest(output_dir)
 
     # Refresh or load S3NS PREMI3NS SecNumCloud status first so any newly added
     # or newly launched PREMI3NS services seed the documentation crawler.
@@ -832,13 +880,17 @@ def crawl_and_scrape(
     to_visit: deque[str] = deque()
     visited: set[str] = set()
     results: dict[str, dict] = {}
+    failed_paths: set[str] = set()
 
     # Seed paths: top-level hubs + product seeds + curated sub-pages + PREMI3NS probes
+    # + every previously saved page, so a page is re-checked directly even when the
+    # hub that links to it fails this run.
     seeds = ["/docs", "/products", "/release-notes"]
     for product in sorted(products):
         seeds.extend(product_seed_paths(product))
     seeds.extend(product_pages)
     seeds.extend(secnum_probes)
+    seeds.extend(sorted(previous_manifest))
 
     for p in seeds:
         p_norm = p.rstrip("/")
@@ -874,9 +926,9 @@ def crawl_and_scrape(
                     try:
                         resp = page.goto(url, timeout=PAGE_TIMEOUT,
                                          wait_until="domcontentloaded")
-                        if resp and resp.status == 404:
+                        if resp and resp.status in GONE_HTTP_STATUSES:
                             page.close()
-                            return None
+                            return {"gone": resp.status}
                         try:
                             page.wait_for_selector(
                                 "article, .devsite-article-body",
@@ -905,7 +957,11 @@ def crawl_and_scrape(
                 visited.add(path)
                 result = fetch_pw(path)
                 if result is None:
-                    print(f"  SKIP (404) {path}")
+                    failed_paths.add(path)
+                    print(f"  FAILED (previous copy kept) {path}")
+                    continue
+                if "gone" in result:
+                    print(f"  SKIP (HTTP {result['gone']}) {path}")
                     continue
                 if "redirect_to" in result:
                     target = result["redirect_to"]
@@ -953,7 +1009,11 @@ def crawl_and_scrape(
                     path = future_to_path[future]
                     result = future.result()
                     if result is None:
-                        print(f"  SKIP (404) {path}")
+                        failed_paths.add(path)
+                        print(f"  FAILED (previous copy kept) {path}")
+                        continue
+                    if "gone" in result:
+                        print(f"  SKIP (HTTP {result['gone']}) {path}")
                         continue
                     if "redirect_to" in result:
                         target = result["redirect_to"]
@@ -1034,6 +1094,13 @@ def crawl_and_scrape(
         }
         date_tag = f" [{last_updated}]" if last_updated else ""
         print(f"  SAVED {filename} ({len(full_content)} chars){date_tag}")
+
+    # Keep the previous copy of every page whose fetch failed this run
+    for path, entry in carry_over_failed_pages(previous_manifest, failed_paths, output_dir).items():
+        manifest.setdefault(path, entry)
+        valid_filenames.add(entry["filename"])
+        print(f"  KEPT {entry['filename']} (fetch failed, previous copy retained)")
+    manifest = dict(sorted(manifest.items()))
 
     # Clean up stale/redirect-duplicate .md files no longer in manifest
     removed_files = 0
