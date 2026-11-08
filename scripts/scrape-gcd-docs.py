@@ -1068,15 +1068,45 @@ def crawl_and_scrape(
 S3NS_PREMI3NS_URL = "https://www.s3ns.io/offres/premi3ns-cloud-de-confiance"
 
 
+# Badge labels the PREMI3NS page shows on services that are not yet qualified.
+NON_QUALIFIED_BADGE_LABELS = ("qualification en cours", "à venir")
+NEGATION_RE = re.compile(r"\b(?:non|pas|not)\b")
+
+
 def _classify_secnumcloud_badge(badge_raw: str) -> tuple[str, str]:
-    badge_lower = badge_raw.lower()
+    """Classify one PREMI3NS service card badge into (status, label).
+
+    Qualified services carry no badge on the page; only services in
+    qualification or upcoming carry one. An empty badge therefore means
+    qualified. A badge that is not recognised, or that negates qualification
+    ("Non qualifié"), returns "other" with its raw text, never "qualified".
+    """
+    badge = badge_raw.strip()
+    badge_lower = badge.lower()
+    if not badge:
+        return "qualified", "Qualifié SecNumCloud 3.2"
+    if NEGATION_RE.search(badge_lower):
+        return "other", badge
     if "en cours" in badge_lower or "qualification" in badge_lower:
         return "in_progress", "Qualification en cours"
     if "venir" in badge_lower:
         return "upcoming", "À venir"
-    if not badge_raw or "qualifié" in badge_lower or "secnumcloud" in badge_lower:
+    if "qualifié" in badge_lower or "secnumcloud" in badge_lower:
         return "qualified", "Qualifié SecNumCloud 3.2"
-    return "other", badge_raw
+    return "other", badge
+
+
+def badge_markup_drifted(services: list[dict], page_html: str) -> bool:
+    """Return True when the page shows non-qualified badges but none were parsed.
+
+    Because qualified cards have no badge, a change to the badge markup would
+    make every card parse as qualified. Seeing the badge labels in the page
+    text while parsing none of them is the signature of that drift.
+    """
+    if any(s.get("status") in ("in_progress", "upcoming") for s in services):
+        return False
+    text = html.unescape(re.sub(r"<[^>]+>", " ", page_html)).lower()
+    return any(label in text for label in NON_QUALIFIED_BADGE_LABELS)
 
 
 def scrape_s3ns_secnumcloud_status(output_dir: Path) -> dict | None:
@@ -1200,6 +1230,20 @@ def scrape_s3ns_secnumcloud_status(output_dir: Path) -> dict | None:
         if status_path.exists():
             return json.loads(status_path.read_text(encoding="utf-8"))
         return None
+
+    if badge_markup_drifted(services, snippet):
+        print(
+            "  [Warning] PREMI3NS page shows non-qualified badges but none were parsed; "
+            f"the badge markup likely changed. Preserving existing {status_path.name}.",
+            file=sys.stderr,
+        )
+        if status_path.exists():
+            return json.loads(status_path.read_text(encoding="utf-8"))
+        return None
+
+    unknown = sorted({s["status_label"] for s in services if s["status"] == "other"})
+    if unknown:
+        print(f"  [Warning] Unrecognised PREMI3NS badges kept as 'other': {unknown}", file=sys.stderr)
 
     counts = {
         "qualified": sum(1 for s in services if s["status"] == "qualified"),
