@@ -107,6 +107,7 @@ gcd-skill/
     organization-setup.md               # Org setup, IdP, Fabric FAST toolkit
     quotas.md                           # Quota management, monitoring, CLI
     gotchas.md                          # Critical pitfalls and common mistakes
+    empirical-observations.md           # Dated facts from probing the live S3NS API surface
   scripts/
     scrape-gcd-docs.py                  # Documentation scraper (HTTP SSR + optional Playwright)
     sync-skill.py                       # Synchronizes SKILL.md, references/, and README.md from scraped docs
@@ -138,6 +139,7 @@ The skill's reference files are synthesized and automatically synchronized from 
 | `organization-setup.md` | Org setup paths (minimal/basic/enterprise), IdP, Fabric FAST |
 | `key-differences.md` | Comprehensive top-level sovereign cloud vs GCP differences |
 | `gotchas.md` | Synthesized from all sources |
+| `empirical-observations.md` | Dated, evidence-backed facts from probing the live S3NS API surface (discovery documents, DNS, status codes, offered services) |
 
 ### Technology Areas covered
 

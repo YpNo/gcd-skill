@@ -160,6 +160,7 @@ Service account email addresses use universe-specific domains:
 | Compute Engine default | `developer.gserviceaccount.com` | `developer.eu0-system.iam.gserviceaccount.com` | `developer.s3ns-system.iam.gserviceaccount.com` |
 | User-managed | `iam.gserviceaccount.com` | `eu0.iam.gserviceaccount.com` | `s3ns.iam.gserviceaccount.com` |
 | Service agents | `system.gserviceaccount.com` | `eu0-system.system.gserviceaccount.com` | `s3ns-system.system.gserviceaccount.com` |
+| Service agents (per-agent form) | (various) | `<agent>.eu0-system.iam.gserviceaccount.com` | `<agent>.s3ns-system.iam.gserviceaccount.com` |
 
 Example user-created service accounts:
 - Berlin: `my-sa@my-project.eu0.iam.gserviceaccount.com`
@@ -212,6 +213,11 @@ Each Discovery document includes:
 - Methods: available API methods and their parameters
 - OAuth scopes: list of OAuth scopes for the API
 - Inline documentation: descriptions of schemas, methods, and parameters
+
+> **Caveat (S3NS):** many S3NS discovery documents are verbatim copies of the public
+> Google Cloud document. A method listed there is not proof that it is served: the `compute`
+> document lists global load balancing methods that S3NS does not offer. Check the
+> `tpc-differences` page, or see [empirical-observations.md](empirical-observations.md).
 
 ## Required Domains
 

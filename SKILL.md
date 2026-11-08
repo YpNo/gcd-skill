@@ -145,6 +145,10 @@ Load these files based on what the user needs help with:
 - **Common mistakes or troubleshooting** -
   Read [references/gotchas.md](references/gotchas.md)
 
+- **What the live S3NS API surface actually serves** (discovery documents, DNS,
+  probe status codes, the offered-services list) -
+  Read [references/empirical-observations.md](references/empirical-observations.md)
+
 ## Available services (quick list)
 
 <!-- AUTO-SYNC:AVAILABLE-SERVICES:START -->
