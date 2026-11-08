@@ -341,18 +341,63 @@ BASELINE_CORE_SERVICES = [
 ]
 
 
+# -- Scraped-text sanitisation ---------------------------------------------------
+# Everything scraped from the web reaches SKILL.md and references/, which agents
+# load as instructions. These rules keep scraped text inert as markup.
+MAX_SCRAPED_FIELD_CHARS = 2000
+# C0/C1 controls (except tab and newline), zero-width and bidi-override characters:
+# they hide text from a human reviewing the diff, but not from a model.
+_INVISIBLE_CHARS_RE = re.compile(
+    "[\x00-\x08\x0b-\x1f\x7f-\x9f\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]"
+)
+_COMMENT_MARKER_RE = re.compile(r"<!--|--!?>")
+_CODE_FENCE_RE = re.compile(r"`{3,}|~{3,}")
+
+
+def sanitize_scraped_text(value, max_len: int = MAX_SCRAPED_FIELD_CHARS) -> str:
+    """Return scraped text made inert for insertion into a skill markdown file.
+
+    Removes invisible and control characters, removes HTML comment markers (so
+    scraped text can never open, close or forge an AUTO-SYNC block), shortens
+    code fences, collapses all whitespace to single spaces (so a field cannot
+    start a heading or list item), and truncates to max_len. It cannot detect
+    natural-language prompt injection: reviewing the generated diff stays the
+    control for that. Non-string values return "".
+    """
+    if not isinstance(value, str):
+        return ""
+    text = _INVISIBLE_CHARS_RE.sub("", value)
+    text = _COMMENT_MARKER_RE.sub("", text)
+    text = _CODE_FENCE_RE.sub(lambda m: m.group(0)[:2], text)
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) > max_len:
+        text = text[: max_len - 1].rstrip() + "…"
+    return text
+
+
 def load_manifest(region_dir: Path) -> dict:
     manifest_path = region_dir / "_manifest.json"
     if not manifest_path.exists():
         return {}
-    return json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    for info in manifest.values():
+        if isinstance(info, dict) and "title" in info:
+            info["title"] = sanitize_scraped_text(info["title"])
+    return manifest
 
 
 def load_secnumcloud_status() -> dict:
     status_path = S3NS_DIR / "_secnumcloud_status.json"
     if not status_path.exists():
         return {"source_url": "https://www.s3ns.io/offres/premi3ns-cloud-de-confiance", "summary": {}, "services": []}
-    return json.loads(status_path.read_text(encoding="utf-8"))
+    data = json.loads(status_path.read_text(encoding="utf-8"))
+    for item in data.get("services", []):
+        for key in ("name", "status_label", "description"):
+            if key in item:
+                item[key] = sanitize_scraped_text(item[key])
+        if not str(item.get("url", "")).startswith("https://"):
+            item["url"] = ""
+    return data
 
 
 def slug_from_secnumcloud_item(item: dict, available_products: dict | None = None) -> str | None:
@@ -490,9 +535,15 @@ def parse_tpc_markdown(md_path: Path) -> dict:
     digest = hashlib.sha256(digest_payload.encode("utf-8")).hexdigest()[:10]
 
     return {
-        "title": raw_title,
-        "bullets": bullets,
-        "sections": sections,
+        "title": sanitize_scraped_text(raw_title),
+        "bullets": [sanitize_scraped_text(b) for b in bullets],
+        "sections": [
+            (
+                sanitize_scraped_text(name),
+                [(sanitize_scraped_text(f), sanitize_scraped_text(d)) for f, d in rows],
+            )
+            for name, rows in sections
+        ],
         "digest": digest,
     }
 
@@ -716,9 +767,9 @@ def parse_recent_release_notes(max_entries: int = 12) -> list[dict]:
                 entries.append(
                     {
                         "date": current_date,
-                        "product": current_product,
+                        "product": sanitize_scraped_text(current_product),
                         "type": note_type,
-                        "summary": full_summary.replace("|", "\\|"),
+                        "summary": sanitize_scraped_text(full_summary).replace("|", "\\|"),
                     }
                 )
             continue
