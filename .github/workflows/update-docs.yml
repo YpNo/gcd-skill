@@ -4,15 +4,6 @@ on:
   schedule:
     - cron: "23 3 * * *"  # 03:23 UTC daily
   workflow_dispatch: {}
-  pull_request:
-    paths:
-      - "scripts/**"
-      - "references/**"
-      - "docs-raw/**"
-      - "docs-raw-s3ns/**"
-      - "SKILL.md"
-      - "README.md"
-      - ".github/workflows/update-docs.yml"
 
 permissions:
   contents: read
@@ -43,7 +34,6 @@ jobs:
         run: python3 -u scripts/sync-skill.py --check
 
   scrape:
-    if: github.event_name != 'pull_request'
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -52,6 +42,8 @@ jobs:
     steps:
       # Credentials stay persisted here: the last step pushes the refreshed docs.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: true  # zizmor: ignore[artipacked]
 
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
         with:
@@ -86,6 +78,11 @@ jobs:
         run: |
           python3 -u scripts/sync-skill.py
           python3 -u scripts/sync-skill.py --check
+
+      # Pushes made with GITHUB_TOKEN do not trigger the CI workflow, so the scraped
+      # content is checked here, before it is committed.
+      - name: Check skill integrity before committing
+        run: python3 scripts/check-skill.py
 
       - name: Detect documentation and skill changes
         id: diff
