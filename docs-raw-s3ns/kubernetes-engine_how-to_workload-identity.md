@@ -704,9 +704,9 @@ apiVersion : v1
 kind : Pod 
 metadata : 
 name : test-pod 
-** namespace : NAMESPACE **
+namespace : NAMESPACE
 spec : 
-** serviceAccountName : KSA_NAME **
+serviceAccountName : KSA_NAME
 containers : 
 - name : test-pod 
 image : google/cloud-sdk:slim 

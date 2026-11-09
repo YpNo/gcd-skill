@@ -75,7 +75,7 @@ KNOWN_PRODUCT_META = {
         "display": "Artifact Registry",
         "section": "Artifact Registry",
         "category": "general",
-        "includes": "Landing, differences, Docker/Apt/Yum, access control, quickstarts",
+        "includes": "Landing, differences, Docker/Apt/NPM/Yum, access control, quickstarts",
     },
     "bigquery": {
         "display": "BigQuery",

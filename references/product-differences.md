@@ -89,7 +89,7 @@ All products share these platform-wide constraints:
 
 ## Artifact Registry
 
-- **Supported formats:** Docker, Apt, Yum only. All other formats (Maven, npm, Python, Go, Generic, Helm, etc.) are unavailable.
+- **Supported formats:** Docker, Apt, NPM, and Yum only. All other formats (Maven, Python, Go, Generic, Helm, etc.) are unavailable.
 - **Repository modes:** Only standard mode. Remote and virtual repositories are unavailable.
 - **Domain:** Use `pkg-berlin-build0.goog` (Berlin) or `s3nsregistry.fr` (S3NS) instead of `pkg.dev`.
 - **GPG Keys** for Apt and Yum repositories are unavailable.
@@ -304,7 +304,7 @@ All products share these platform-wide constraints:
 - Only Enterprise Plus edition. Enterprise edition is unavailable.
 
 **Machine types:** C3 series only:
-- `db-perf-optimized-C-4`, `db-perf-optimized-C-8`, `db-perf-optimized-C-22`, `db-perf-optimized-C-44`, `db-perf-optimized-C-88`, `db-perf-optimized-C-176`
+- `db-perf-optimized-N-4`, `db-perf-optimized-N-8`, `db-perf-optimized-N-22`, `db-perf-optimized-N-44`, `db-perf-optimized-N-88`, `db-perf-optimized-N-176`
 
 **Storage:** Hyperdisk Balanced and Hyperdisk Balanced High Availability only. Data cache is unavailable.
 

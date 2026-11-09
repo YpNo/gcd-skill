@@ -67,9 +67,27 @@ mkdir -p ~/.claude/skills
 ln -s /path/to/gcd-skill ~/.claude/skills/gcd
 ```
 
-### Other agents (Cursor, Gemini CLI, VS Code Copilot, etc.)
+### Gemini CLI / Antigravity
 
-Clone the repo and place (or symlink) the `SKILL.md` and `references/` directory where your agent discovers skills. The skill follows the open [agentskills.io](https://agentskills.io) standard and requires no agent-specific configuration.
+Clone the repo and symlink it into your personal Gemini skills directory (`~/.gemini/skills/`):
+
+```bash
+git clone https://github.com/romain-bailleul/gcd-skill.git
+mkdir -p ~/.gemini/skills
+ln -s /path/to/gcd-skill ~/.gemini/skills/gcd
+```
+
+### Cursor / VS Code Copilot / Other agents
+
+The skill follows the open [agentskills.io](https://agentskills.io) standard and requires no agent-specific configuration:
+
+```bash
+# Project-level skill (Cursor, Copilot, Windsurf, etc.)
+mkdir -p .claude/skills
+ln -s /path/to/gcd-skill .claude/skills/gcd
+```
+
+Or copy/symlink `SKILL.md` and the `references/` directory into your agent's custom instructions or skills directory.
 
 ## Structure
 
@@ -152,7 +170,7 @@ Total scraped pages: **434** in `docs-raw/` (Berlin GCD) and **433** in `docs-ra
 | Access Transparency | 7 | 7 | Qualification en cours | Landing, overview, logs, access approvals |
 | Agent Platform (Gemini Enterprise Agent Platform) | 7 | 7 | Qualification en cours | Landing, differences, Model Garden, online inference, open-weight models |
 | API Keys | 4 | 4 | — | Landing, API key restrictions, quotas, REST reference |
-| Artifact Registry | 6 | 6 | Qualifié SecNumCloud 3.2 | Landing, differences, Docker/Apt/Yum, access control, quickstarts |
+| Artifact Registry | 6 | 6 | Qualifié SecNumCloud 3.2 | Landing, differences, Docker/Apt/NPM/Yum, access control, quickstarts |
 | BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | Landing, differences, bq CLI, quotas, quickstarts, data loading, reservations |
 | Bigtable | 14 | 14 | Qualification en cours | Landing, differences, instances, replication, backups, CMEK, change streams |
 | Cloud Armor | 3 | 3 | Qualifié SecNumCloud 3.2 | Landing, differences, security policies, WAF rules, rate limiting |

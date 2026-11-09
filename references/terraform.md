@@ -235,7 +235,7 @@ GCD and S3NS support the standard `google` and `google-beta` providers from the 
 - **Storage & File:** `google_storage_bucket`, `google_storage_bucket_object`, `google_filestore_instance` (`tier = "REGIONAL"`), `google_storage_transfer_job`.
 - **Databases:** `google_sql_database_instance` (MySQL / PostgreSQL `ENTERPRISE_PLUS` on `db-perf-optimized-N-*`), `google_sql_database`. *(Note: **Bigtable** does **not** support Terraform in sovereign cloud.)*
 - **Data & Analytics:** `google_bigquery_dataset`, `google_bigquery_table`, `google_bigquery_capacity_commitment`, `google_bigquery_reservation`, `google_dataproc_cluster` (Compute Engine clusters on image `2.3+`), `google_composer_environment` (Composer 3, Highly Resilient, Large/Custom), `google_pubsub_topic`, `google_pubsub_subscription`.
-- **Containers & Packages:** `google_artifact_registry_repository` (`DOCKER`, `APT`, `YUM`).
+- **Containers & Packages:** `google_artifact_registry_repository` (`DOCKER`, `APT`, `NPM`, `YUM`).
 - **Security & Identity:** `google_project_iam_*`, `google_service_account`, `google_kms_key_ring`, `google_kms_crypto_key`, `google_secret_manager_secret`, `google_secret_manager_regional_secret`, `google_access_context_manager_*`, `google_org_policy_policy`.
 - **Networking:** `google_compute_network`, `google_compute_subnetwork`, `google_compute_firewall`, `google_compute_network_firewall_policy`, `google_dns_managed_zone` (`visibility = "private"`), `google_compute_router`, `google_compute_router_nat`, `google_compute_ha_vpn_gateway`, `google_compute_region_security_policy` (Cloud Armor).
 - **Observability:** `google_logging_project_bucket_config`, `google_logging_project_sink`.

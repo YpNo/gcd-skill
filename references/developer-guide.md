@@ -267,7 +267,7 @@ Since Cloud Shell, Cloud Workstations, and Cloud Code are not available, set up 
 
 1. Install the `gcloud` CLI from the sovereign cloud storage release bucket (see installation section above).
 2. Install language runtimes as needed (Go, Python, Node.js, Java, etc.) and Terraform (`>= 1.12`).
-3. Install Docker if working with containers (and configure `gcloud auth configure-docker <region>-docker.pkg.dev` targeting Artifact Registry).
+3. Install Docker if working with containers (and configure `gcloud auth configure-docker u-france-east1-docker.s3nsregistry.fr` on S3NS or `gcloud auth configure-docker u-germany-northeast1-docker.pkg-berlin-build0.goog` on Berlin targeting Artifact Registry).
 4. Set the universe domain environment variable:
 
 ```bash

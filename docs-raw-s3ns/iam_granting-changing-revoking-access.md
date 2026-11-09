@@ -3606,7 +3606,7 @@ existing role binding:
 "role" : "roles/iam.securityReviewer" , 
 "members" : [ 
 "principal://iam.googleapis.com/locations/global/workforcePools/example-pool/subject/kai@example.com" , 
-** "principal://iam.googleapis.com/locations/global/workforcePools/example-pool/subject/raha@example.com" **
+"principal://iam.googleapis.com/locations/global/workforcePools/example-pool/subject/raha@example.com"
 ] 
 } 
 ```
@@ -4135,7 +4135,7 @@ existing role binding:
 "role" : "roles/iam.securityReviewer" , 
 "members" : [ 
 "principal://iam.googleapis.com/locations/global/workforcePools/example-pool/subject/kai@example.com" , 
-** "principal://iam.googleapis.com/locations/global/workforcePools/example-pool/subject/raha@example.com" **
+"principal://iam.googleapis.com/locations/global/workforcePools/example-pool/subject/raha@example.com"
 ] 
 } 
 ```

@@ -12,7 +12,7 @@ description: >
   code review, or diff targeting these sovereign clouds.
 license: Apache-2.0
 metadata:
-  author: rochacbruno
+  author: romain-bailleul
   version: "2.0.0"
 ---
 
@@ -285,7 +285,7 @@ When uncertain whether a feature is available, query the docs directly
 - [ ] Cluster mode is Autopilot (not Standard).
 - [ ] VPC-native clusters only (no route-based).
 - [ ] Max 32 Pods per node.
-- [ ] Workload identity uses the region's domain (`eu0.svc.id.goog` for Berlin).
+- [ ] Workload identity uses the region's domain (`eu0.svc.id.goog` for Berlin, `s3ns.svc.id.goog` for S3NS).
 - [ ] No Binary Authorization, Config Sync, or fleet management.
 - [ ] Cloud Storage FUSE CSI requires `custom-endpoint` mount option.
 

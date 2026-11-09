@@ -218,7 +218,7 @@ On **Cloud de Confiance by S3NS** (`u-france-east1`, PREMI3NS offering), service
 
 | Service | Status | S3NS SecNumCloud 3.2 | Description |
 |---------|--------|----------------------|-------------|
-| Artifact Registry | Available | Qualifié SecNumCloud 3.2 | Container (`Docker`) and OS package (`Apt`, `Yum`) repositories |
+| Artifact Registry | Available | Qualifié SecNumCloud 3.2 | Container (`Docker`), language (`NPM`), and OS package (`Apt`, `Yum`) repositories |
 | Resource Manager | Available | Qualifié SecNumCloud 3.2 | Organization, folder, project, and tag management |
 | Cloud Billing | Available | — | Operator-managed billing accounts and BigQuery billing export |
 | Cloud Quotas | Available | Qualification en cours | Quota inspection and support-assisted quota adjustments |
