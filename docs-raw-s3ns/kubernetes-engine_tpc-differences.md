@@ -1,7 +1,7 @@
 # GKE in Cloud de Confiance versus Google Cloud
 
 Source: https://documentation.s3ns.fr/kubernetes-engine/docs/tpc-differences
-Last updated: 2026-10-26
+Last updated: 2026-11-02
 
 - 
 
@@ -391,12 +391,6 @@ The following security features are unavailable:
 
 | 
 |
-
-| 
-**Sensitive data encryption**
-| 
-Encrypting Secrets at the application layer is not supported.
-| 
 
 | 
 **Authentication** | 

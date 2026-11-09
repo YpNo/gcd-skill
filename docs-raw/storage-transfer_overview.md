@@ -1,7 +1,7 @@
 # Storage Transfer Service
 
 Source: https://berlin.devsitetest.how/storage-transfer/docs/overview
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/storage-transfer/docs/overview/tpc-differences) for more details.
 
@@ -125,7 +125,7 @@ Storage Transfer Service
 Storage Transfer Service enables seamless data movement across object and file
 storage systems, including:
 
-- Amazon S3 to Cloud Storage (requires agents), or Cloud Storage to Cloud Storage
+- Cloud Storage to Cloud Storage
 
 - On-premises storage to Cloud Storage, or Cloud Storage to on-premises
 

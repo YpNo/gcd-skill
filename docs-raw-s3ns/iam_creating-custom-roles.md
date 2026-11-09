@@ -1,7 +1,7 @@
 # Create and manage custom roles
 
 Source: https://documentation.s3ns.fr/iam/docs/creating-custom-roles
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -7967,7 +7967,7 @@ You should receive a JSON response similar to the following:
 ```
 {
 "name": "projects/test-project-1000092/roles/myCompanyAdmin",
-**"stage": "DISABLED",**
+"stage": "DISABLED",
 "etag": "BwWoyDpAxBc="
 }
 ```
@@ -10276,7 +10276,7 @@ The response contains the definition of the role that was deleted.
 "iam.roles.list"
 ],
 "etag": "BwWiPg2fmDE=",
-**"deleted": true**
+"deleted": true
 }
 ```
 

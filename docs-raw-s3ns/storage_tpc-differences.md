@@ -1,7 +1,7 @@
 # Cloud Storage in Cloud de Confiance versus Google Cloud
 
 Source: https://documentation.s3ns.fr/storage/docs/tpc-differences
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 - 
 
@@ -212,13 +212,6 @@ buckets in a default location.
 ### Integrations
 
 
-
-| 
-**Storage Transfer Service**
-| 
-The Storage Transfer Service is not available in Cloud de Confiance.
-| 
-|
 
 | 
 **Storage Insights**

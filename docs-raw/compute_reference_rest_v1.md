@@ -1,7 +1,7 @@
 # Compute Engine API
 
 Source: https://berlin.devsitetest.how/compute/docs/reference/rest/v1
-Last updated: 2026-10-15
+Last updated: 2026-10-28
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/compute/docs/tpc-differences) for more details.
 
@@ -741,7 +741,7 @@ A [service endpoint](https://berlin.devsitetest.how/apis/design/glossary#api_ser
 
 
 
-A regional service endpoint is a base URL that specifies the network address of an API service in a single region. A service that is available in multiple regions might have multiple regional endpoints. Select a location to see its regional service endpoint for this service. **global 
+A regional service endpoint is a base URL that specifies the network address of an API service in a single region. A service that is available in multiple regions might have multiple regional endpoints. Select a location to see its regional service endpoint for this service. global 
 
 - `https://compute.apis-berlin-build0.goog` 
 
@@ -6122,7 +6122,7 @@ Lists all shared VPC host projects visible to the user in an organization. |
 | 
 
 `[moveDisk](/compute/docs/reference/rest/v1/projects/moveDisk) 
-(deprecated)**` | 
+**(deprecated)**` | 
 
 `POST /compute/v1/projects/{project}/moveDisk` 
 

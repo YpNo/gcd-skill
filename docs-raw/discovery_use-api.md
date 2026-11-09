@@ -128,7 +128,7 @@ for the Service Usage API by executing this `GET` request:
 
 
 ```
-GET https://**serviceusage**.apis-berlin-build0.goog/$discovery/rest?version=**v1**
+GET https://serviceusage.apis-berlin-build0.goog/$discovery/rest?version=v1
 ```
 
 
@@ -228,9 +228,9 @@ details about the scope:
 
 
 ```
-"**auth**" : { 
-"**oauth2**" : { 
-"**scopes**" : { 
+"auth" : { 
+"oauth2" : { 
+"scopes" : { 
 "https://www.googleapis.com/auth/cloud-platform" : { 
 "description" : "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account." 
 }, 
@@ -265,7 +265,7 @@ example, the Service Usage API has a `services` resource and an
 
 
 ```
-"**resources**" : { 
+"resources" : { 
 "services" : { 
 // Methods associated with the services resource 
 } 
@@ -294,7 +294,7 @@ schemas in the Service Usage API Discovery document:
 
 
 ```
-"**schemas**" : { 
+"schemas" : { 
 "Method" : { 
 // JSON schema of the Method resource 
 }, 
@@ -336,7 +336,7 @@ portion of an actual response for a request to enable the Pub/Sub API
 "id" : "EnableServiceResponse" , 
 "description" : "Response message for the `EnableService` method. This response message is assigned to the `response` field of the returned Operation when that operation is done." , 
 "properties" : { 
-"**service**" : { 
+"service" : { 
 "description" : "The new state of the service after enabling." , 
 "$ref" : "GoogleApiServiceusageV1Service" 
 } 
@@ -346,11 +346,11 @@ portion of an actual response for a request to enable the Pub/Sub API
 "GoogleApiServiceusageV1Service" : { 
 "description" : "A service that is available for use by the consumer." , 
 "properties" : { 
-"**config**" : { 
+"config" : { 
 "$ref" : "GoogleApiServiceusageV1ServiceConfig" , 
 "description" : "The service configuration of the available service. Some fields may be filtered out of the configuration in responses to the `ListServices` method. These fields are present only in responses to the `GetService` method." 
 }, 
-"**name**" : { 
+"name" : { 
 "type" : "string" , 
 "description" : "The resource name of the consumer and service. A valid name would be: - projects/123/services/serviceusage.googleapis.com" 
 }, 
@@ -384,9 +384,9 @@ portion of an actual response for a request to enable the Pub/Sub API
 ```
 "response" : { 
 "@type" : "type.googleapis.com/google.api.serviceusage.v1.EnableServiceResponse" , 
-"**service**" : { 
-"**name " : "projects/232342569935/services/pubsub.googleapis.com" , 
-" config**" : { 
+"service" : { 
+"name" : "projects/232342569935/services/pubsub.googleapis.com" , 
+"config" : { 
 "name" : "pubsub.googleapis.com" , 
 "title" : "Cloud Pub/Sub API" , 
 "documentation" : { 
@@ -447,15 +447,15 @@ the `resources` level.
 
 
 ```
-"**methods**" : { 
+"methods" : { 
 // API-level methods 
 } 
-"**resources**" : { 
+"resources" : { 
 " resource1 " : { 
 " methods " : { 
 // resource-level methods 
 } 
-"**resources**" : { 
+"resources" : { 
 " nestedResource " : { 
 " methods " : { 
 // methods can even be found in nested-resources 
@@ -620,20 +620,20 @@ The `enable` method doesn't contain a `mediaUpload` section. However, a
 typical `mediaUpload` section might look like the following:
 
 ```
-"**supportsMediaUpload**" : true , 
-"**mediaUpload**" : { 
-"**accept**" : [ 
+"supportsMediaUpload" : true , 
+"mediaUpload" : { 
+"accept" : [ 
 "image/*" 
 ], 
-"**maxSize**" : "10MB" , 
-"**protocols**" : { 
-"**simple**" : { 
-"**multipart**" : true , 
-"**path**" : "/upload/storage/v1beta1/b/{bucket}/o" 
+"maxSize" : "10MB" , 
+"protocols" : { 
+"simple" : { 
+"multipart" : true , 
+"path" : "/upload/storage/v1beta1/b/{bucket}/o" 
 }, 
-"**resumable**" : { 
-"**multipart**" : true , 
-"**path**" : "/resumable/upload/storage/v1beta1/b/{bucket}/o" 
+"resumable" : { 
+"multipart" : true , 
+"path" : "/resumable/upload/storage/v1beta1/b/{bucket}/o" 
 } 
 } 
 } 

@@ -1,7 +1,7 @@
 # View cluster diagnostic data
 
 Source: https://berlin.devsitetest.how/managed-spark/docs/support/diagnose-command
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/managed-spark/docs/tpc-differences) for more details.
 
@@ -611,36 +611,36 @@ Location in archive |
 
 
 | 
-`jstack -l "${DATAPROC_AGENT*PID}"`
+`jstack -l "${DATAPROC_AGENT*PID}"`*
 | 
-`jstack/agent*${DATAPROC_AGENT_PID}.jstack` | 
+`jstack/agent ${DATAPROC_AGENT_PID}.jstack` | 
 |
 
 | 
-`jstack -l "${PRESTO*PID}"` | 
-`jstack/agent*${PRESTO_PID}.jstack` | 
+`jstack -l "${PRESTO*PID}"`* | 
+`jstack/agent ${PRESTO_PID}.jstack` | 
 |
 
 | 
-`jstack -l "${JOB_DRIVER*PID}"`
+`jstack -l "${JOB_DRIVER*PID}"`*
 | 
-`jstack/driver*${JOB_DRIVER_PID}.jstack` | 
+`jstack/driver ${JOB_DRIVER_PID}.jstack` | 
 |
 
 | 
-`jinfo "${DATAPROC_AGENT*PID}"`
+`jinfo "${DATAPROC_AGENT*PID}"`*
 | 
-`jinfo/agent*${DATAPROC_AGENT_PID}.jstack` | 
+`jinfo/agent ${DATAPROC_AGENT_PID}.jstack` | 
 |
 
 | 
-`jinfo "${PRESTO*PID}"` | 
-`jinfo/agent*${PRESTO_PID}.jstack` | 
+`jinfo "${PRESTO*PID}"`* | 
+`jinfo/agent ${PRESTO_PID}.jstack` | 
 |
 
 | 
-`jinfo "${JOB_DRIVER*PID}"` | 
-`jinfo/agent*${JOB_DRIVER_PID}.jstack` | 
+`jinfo "${JOB_DRIVER*PID}"`* | 
+`jinfo/agent ${JOB_DRIVER_PID}.jstack` | 
 |
 
 

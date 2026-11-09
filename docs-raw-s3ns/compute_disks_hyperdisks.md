@@ -1,7 +1,7 @@
 # Google Cloud Hyperdisk overview
 
 Source: https://documentation.s3ns.fr/compute/docs/disks/hyperdisks
-Last updated: 2026-10-26
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/compute/docs/tpc-differences) for more details.
 
@@ -634,6 +634,7 @@ A3 (H200)
 A4 
 A4X 
 A4X Max 
+A5X 
 C2 
 C2D 
 C3 
@@ -678,7 +679,7 @@ Z4M
 
 
 
-**Clear all 
+Clear all 
 
 
 
@@ -803,6 +804,24 @@ A4X Max |
 | 
 
 **—** 
+| 
+
+
+| 
+
+
+| 
+
+
+| 
+|
+| 
+A5X | 
+
+
+| 
+
+
 | 
 
 
@@ -1578,7 +1597,7 @@ supported
 
 
 - You can't use Hyperdisk Throughput on bare metal instances, with the exception of
-C4D and A4X Max bare metal instances.
+A5X, A4X Max, and C4D bare metal instances.
 
 - Additional limitations apply to attaching Hyperdisk Throughput volumes to certain machine series,
 including C4, C4A, and N4. For more information, see
@@ -1754,7 +1773,7 @@ Hyperdisk pools:
 
 - 
 
-Example workloads for Hyperdisk Exapools**:
+Example workloads for **Hyperdisk Exapools**:
 
 
 - AI/ML workloads spanning 4,000 TPU VMs and using 2 PiB of Hyperdisk Balanced with provisioned
@@ -1916,7 +1935,7 @@ SCSI interface, depending on the machine type of the instance.
 ## Pricing
 
 You are billed for the total provisioned capacity of your
-Hyperdisk volumes until you delete them. Charges incur even if
+Hyperdisk volumes until you delete them. You incur charges even if
 the volume isn't attached to any instances or if the instance is suspended or
 stopped. You are charged per GiB per month. Additionally, you are billed for the
 following:

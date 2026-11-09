@@ -1,7 +1,7 @@
 # Bigtable overview
 
 Source: https://documentation.s3ns.fr/bigtable/docs/overview
-Last updated: 2026-10-28
+Last updated: 2026-11-06
 
 - 
 

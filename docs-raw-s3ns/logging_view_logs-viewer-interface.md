@@ -1,7 +1,7 @@
 # View and analyze log entries
 
 Source: https://documentation.s3ns.fr/logging/docs/view/logs-viewer-interface
-Last updated: 2026-10-26
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/logging/docs/tpc-differences) for more details.
 
@@ -385,13 +385,13 @@ sections, which are detailed on this page:
 
 - [**Query results** pane](#query-results)
 
-* 
+
 
 ## Primary toolbar in the Logs Explorer
 
 Using the primary toolbar, you can do the following:
 
-- menu_book* **Query library**: View saved, recent, and suggested
+- *menu_book* **Query library**: View saved, recent, and suggested
 queries. For more information,
 see [Save and share queries](/logging/docs/view/building-queries#saved-queries).
 
@@ -633,7 +633,7 @@ log entries:
 
 - 
 
-* **Project logs** and **_Default**:
+**Project logs** and **_Default**:
 Log entries that originate in the selected project, folder, or organization
 are returned. For projects, these log entries include those that are routed
 to the project by a sink in another project.
@@ -696,7 +696,7 @@ by the selected project.
 
 To modify the log-view menu to include log views on log buckets
 stored in a specific project,
-click  add_circle* **Import project**, and then select
+click *add_circle* **Import project**, and then select
 the project.
 
 ## **Fields** pane
@@ -767,7 +767,7 @@ of your query, then the service menu includes the service named `myservice`:
 ...
 labels: {
 compute.googleapis.com/resource_name: "mycluster1"
-**k8s-pod/app: "myservice"**
+k8s-pod/app: "myservice"
 k8s-pod/pod-template-hash: "5ffcd94fdd"
 }
 logName: "projects/my-project/logs/stdout"
@@ -795,7 +795,7 @@ application: {3}
 workload: {
 criticalityType: "MEDIUM"
 environmentType: "STAGING"
-**id: "my-workload-id"**
+id: "my-workload-id"
 }
 }
 ```
@@ -825,7 +825,7 @@ this label is shown in the `apphub` entry:
 apphub: {
 application: {
 container: "projects/my-project"
-**id: "my-app"**
+id: "my-app"
 location: "my-app-location"
 }
 workload: {3}

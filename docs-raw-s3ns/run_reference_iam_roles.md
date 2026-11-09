@@ -1,7 +1,7 @@
 # Cloud Run IAM roles
 
 Source: https://documentation.s3ns.fr/run/docs/reference/iam/roles
-Last updated: 2026-10-26
+Last updated: 2026-10-30
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/run/docs/tpc-differences) for more details.
 
@@ -3924,6 +3924,10 @@ Gives Cloud Run service account access to managed resources.
 
 
 
+`artifactregistry. packages. delete`
+
+
+
 `artifactregistry.packages.get`
 
 
@@ -3955,6 +3959,10 @@ Gives Cloud Run service account access to managed resources.
 
 
 
+`artifactregistry. repositories. create`
+
+
+
 `artifactregistry. repositories. downloadArtifacts`
 
 
@@ -3983,6 +3991,10 @@ Gives Cloud Run service account access to managed resources.
 
 
 
+`artifactregistry. repositories. update`
+
+
+
 `artifactregistry. repositories. uploadArtifacts`
 
 
@@ -3995,11 +4007,19 @@ Gives Cloud Run service account access to managed resources.
 
 
 
+`artifactregistry.tags.delete`
+
+
+
 `artifactregistry.tags.get`
 
 
 
 `artifactregistry.tags.list`
+
+
+
+`artifactregistry. versions. delete`
 
 
 
@@ -4028,6 +4048,10 @@ Gives Cloud Run service account access to managed resources.
 
 
 `cloudbuild.builds.get`
+
+
+
+`cloudbuild.workerpools.use`
 
 
 

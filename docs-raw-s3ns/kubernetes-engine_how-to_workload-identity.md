@@ -1,7 +1,7 @@
 # Authenticate to Cloud de Confiance APIs from GKE workloads
 
 Source: https://documentation.s3ns.fr/kubernetes-engine/docs/how-to/workload-identity
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/kubernetes-engine/docs/tpc-differences) for more details.
 
@@ -640,7 +640,7 @@ annotation to the `metadata.annotations` field in your Pod specification:
 ```
 metadata:
 annotations:
-**proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'**
+proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
 ```
 
 
@@ -704,9 +704,9 @@ apiVersion : v1
 kind : Pod 
 metadata : 
 name : test-pod 
-namespace : NAMESPACE
+namespace : NAMESPACE 
 spec : 
-serviceAccountName : KSA_NAME
+serviceAccountName : KSA_NAME 
 containers : 
 - name : test-pod 
 image : google/cloud-sdk:slim 
@@ -730,8 +730,8 @@ because every node uses Workload Identity Federation for GKE.
 
 ```
 spec : 
-** nodeSelector : 
-iam.gke.io/gke-metadata-server-enabled : "true" **
+nodeSelector : 
+iam.gke.io/gke-metadata-server-enabled : "true" 
 ```
 
 

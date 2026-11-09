@@ -1,7 +1,7 @@
 # Quickstart: Create an instance and write data with the cbt CLI
 
 Source: https://berlin.devsitetest.how/bigtable/docs/create-instance-write-data-cbt-cli
-Last updated: 2026-10-28
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/bigtable/docs/tpc-differences) for more details.
 

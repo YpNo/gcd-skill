@@ -1,7 +1,7 @@
 # Cloud Storage release notes
 
 Source: https://documentation.s3ns.fr/storage/docs/release-notes
-Last updated: 2026-10-26
+Last updated: 2026-10-30
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/storage/docs/tpc-differences) for more details.
 
@@ -179,6 +179,19 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## November 04, 2026
+
+
+Feature 
+
+
+You can pause hard deletions for a bucket when you need more time to restore
+soft-deleted objects before they're permanently deleted. For more information,
+see
+[Pause permanent (hard) deletions of soft-deleted objects](/storage/docs/pause-hard-deletions).
 
 
 

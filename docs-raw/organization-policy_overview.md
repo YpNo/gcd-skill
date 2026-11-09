@@ -1,7 +1,7 @@
 # Organization Policy overview
 
 Source: https://berlin.devsitetest.how/organization-policy/overview
-Last updated: 2026-10-22
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/organization-policy/tpc-differences) for more details.
 

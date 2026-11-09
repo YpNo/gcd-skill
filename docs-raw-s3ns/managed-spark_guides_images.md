@@ -1,7 +1,7 @@
 # Create a Managed Service for Apache Spark custom image
 
 Source: https://documentation.s3ns.fr/managed-spark/docs/guides/images
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/managed-spark/docs/tpc-differences) for more details.
 
@@ -868,7 +868,7 @@ the `selfLink`, which is the image URI.
 {
 ...
 "name": "my-custom-image",
-"selfLink": **"projects/ PROJECT_ID /global/images/ CUSTOM_IMAGE_NAME "**,
+"selfLink": "projects/ PROJECT_ID /global/images/ CUSTOM_IMAGE_NAME ",
 "sourceDisk": ...,
 ...
 }

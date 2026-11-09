@@ -1,7 +1,7 @@
 # Schedule and trigger Airflow DAGs
 
 Source: https://berlin.devsitetest.how/composer/docs/latest/schedule-and-trigger-dags
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/composer/docs/tpc-differences) for more details.
 

@@ -139,7 +139,7 @@ ongoing rollouts appear:
 
 
 ```
-Values for ** quotas ** are being updated. This may take 2-3 weeks to complete.
+Values for quotas are being updated. This may take 2-3 weeks to complete.
 ```
 
 
@@ -263,9 +263,9 @@ unchanged after the rollout completes.
 "dimensionsInfos" : [ 
 { 
 "dimensions" : { "region" : "us-central1" } , 
-"**details**" : { 
-"value" : ** 200 ** , 
-"**rolloutInfo**" : { 
+"details" : { 
+"value" : 200 , 
+"rolloutInfo" : { 
 "ongoingRollout" : true 
 } 
 }, 
@@ -273,15 +273,15 @@ unchanged after the rollout completes.
 }, 
 { 
 "dimensions" : { "region" : "us-central2" } , 
-"**details**" : { 
-"value" : ** 300 ** , 
+"details" : { 
+"value" : 300 , 
 }, 
 "applicableLocations" : [ "us-central2" ] 
 }, 
 { 
 "dimensions" : {}, 
-"**details**" : { 
-"value" : ** 100 ** , 
+"details" : { 
+"value" : 100 , 
 }, 
 "applicableLocations" : [ "us-west1" , "us-east1" ] 
 }] 

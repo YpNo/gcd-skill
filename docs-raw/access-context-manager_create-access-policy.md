@@ -1,7 +1,7 @@
 # Create an access policy
 
 Source: https://berlin.devsitetest.how/access-context-manager/docs/create-access-policy
-Last updated: 2026-10-26
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/access-context-manager/docs/tpc-differences) for more details.
 
@@ -242,7 +242,7 @@ If successful, the response body for the call contains an
 
 ## Create a scoped access policy and delegate the policy
 
-Only VPC Service Controls supports creating a scoped access policy.
+Only VPC Service Controls lets you create a scoped access policy.
 You must continue to use organization-level policies for Google Cloud Dedicated in Germany
 services, such as Identity-Aware Proxy (IAP).
 
@@ -321,7 +321,7 @@ In the **Scopes** pane, click **Add folder**.
 
 - 
 
-In the **Add folders** dialog, select that folders's checkbox.
+In the **Add folders** dialog, select that folder's checkbox.
 
 - 
 
@@ -342,8 +342,8 @@ In the **Principals** pane, click **Add principals**.
 
 - 
 
-In the **Add principals** dialog, select a principal, such as a user
-name or service account.
+In the **Add principals** dialog, select a principal, such as a username
+or service account.
 
 - 
 
@@ -515,7 +515,7 @@ calling [`accessPolicies.setIamPolicy`](/access-context-manager/docs/reference/r
 
 When the operation completes, the response body contains the
 [`accessPolicy`](/access-context-manager/docs/reference/rest/v1/accessPolicies).
-The `name` field contains the resource name: `accessPolicy`/ `POLICY_ID` 
+The `name` field contains the resource name: `accessPolicy/ POLICY_ID `
 
 - To set the IAM policy, use the following endpoint:
 
@@ -525,7 +525,7 @@ POST https://accesscontextmanager.googleapis.com/v1/accessPolicies/ POLICY_ID :s
 ```
 
 
-Replace ` POLICY_ID ` with the policy ID from that was
+Replace ` POLICY_ID ` with the policy ID that was
 returned from `accessPolicies.create`.
 
 The request body must contain the IAM policy to set.

@@ -1,7 +1,7 @@
 # Create transfers
 
 Source: https://documentation.s3ns.fr/storage-transfer/docs/create-transfers
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/storage-transfer/docs/overview/tpc-differences) for more details.
 
@@ -148,9 +148,9 @@ Before configuring your transfers, make sure you have configured access:
 
 - For users and service accounts:
 
-- [Agentless transfers](/storage-transfer/docs/iam-cloud)
+- [Required user permissions](/storage-transfer/docs/iam-user)
 
-- [Agent-based transfers](/storage-transfer/docs/file-system-permissions)
+- [Agent-based project-level permissions](/storage-transfer/docs/iam-agent-based)
 
 - [To your source data and to your destination](/storage-transfer/docs/sources-and-sinks).
 
@@ -560,7 +560,7 @@ for more details.
 - 
 
 If you're
-[delegating service agent permissions](/storage-transfer/docs/iam-cloud#umsa)
+[delegating service agent permissions](/storage-transfer/docs/delegate-service-agent-permissions)
 to a user-managed service account, select that option and enter
 the service account email address in the format
 ` SERVICE_ACCOUNT_NAME @ PROJECT_ID .s3ns.iam.gserviceaccount.com`.
@@ -670,7 +670,7 @@ for more details.
 - 
 
 If you're
-[delegating service agent permissions](/storage-transfer/docs/iam-cloud#umsa)
+[delegating service agent permissions](/storage-transfer/docs/delegate-service-agent-permissions)
 to a user-managed service account, select that option and enter
 the service account email address in the format
 ` SERVICE_ACCOUNT_NAME @ PROJECT_ID .s3ns.iam.gserviceaccount.com`.
@@ -785,8 +785,10 @@ reference.
 - 
 
 `--do-not-run` prevents Storage Transfer Service from running the job
-upon submission of the command. To run the job, [update](#update-job) it to
-add a schedule, or use `jobs run` to [start it manually](#run-job).
+upon submission of the command. To run the job,
+[update](/storage-transfer/docs/manage-transfers#update-job) it to
+add a schedule, or use `jobs run` to
+[start it manually](/storage-transfer/docs/manage-transfers#run-job).
 
 - 
 

@@ -1,7 +1,7 @@
 # Cloud Storage JSON API overview
 
 Source: https://documentation.s3ns.fr/storage/docs/json_api
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/storage/docs/tpc-differences) for more details.
 
@@ -122,6 +122,14 @@ Reference
 
 
 # Cloud Storage JSON API overview 
+
+
+
+
+
+
+
+
 
 
 
@@ -274,7 +282,7 @@ reduce the amount of data returned in the response:
 
 
 ```
-https://storage.s3nsapis.fr/storage/v1/b/my-bucketT/o/my-object?**fields=id,name,metadata/key1**
+https://storage.s3nsapis.fr/storage/v1/b/my-bucketT/o/my-object?fields=id,name,metadata/key1
 ```
 
 
@@ -285,7 +293,7 @@ each item, if present.
 
 
 ```
-**200 OK**
+200 OK
 ```
 
 
@@ -394,7 +402,7 @@ Response:
 
 
 ```
-**200 OK**
+200 OK
 ```
 
 

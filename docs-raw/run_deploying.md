@@ -1,7 +1,7 @@
 # Deploy container images to Cloud Run services
 
 Source: https://berlin.devsitetest.how/run/docs/deploying
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/run/docs/tpc-differences) for more details.
 
@@ -137,16 +137,15 @@ Guides
 
 
 
-This page describes how to deploy container images to a new Cloud Run
-service or to a new revision of an existing Cloud Run service.
+Cloud Run lets you run scalable containerized apps through container
+image deployments. When you deploy a container image to run a new service or a
+new revision of an existing service, Cloud Run imports the
+container image. Cloud Run keeps this copy while a serving
+revision uses it, so new Cloud Run instances start without
+pulling the image from your container repository.
 
-The container image is imported by Cloud Run when deployed.
-Cloud Run keeps this copy of the container image as long as it is used
-by a serving revision. Container images are not pulled from their container
-repository when a new Cloud Run instance is started.
-
-For an example walkthrough of deploying a new service, see
-[Deploy a sample container quickstart](/run/docs/quickstarts/deploy-container).
+For a guided walkthrough of deploying a new service, see the [Deploy a sample
+container quickstart](/run/docs/quickstarts/deploy-container).
 
 ## Before you start
 
@@ -554,7 +553,7 @@ gcloud run services replace service.yaml
 ```
 
 
-The `gcloud run services replace` command defaults to using `service.yaml` file if present.
+The `gcloud run services replace` command defaults to using the `service.yaml` file if present.
 
 - 
 
@@ -1068,12 +1067,12 @@ gcloud run services replace service.yaml
 ```
 
 
-The `gcloud run services replace` command defaults to using `service.yaml` file if present.
+The `gcloud run services replace` command defaults to using the `service.yaml` file if present.
 
 
 ### Terraform
 
-Make sure you have setup Terraform as described in the [Deploying a new service](#service) example.
+Make sure you have set up Terraform as described in the [Deploying a new service](#service) example.
 
 - 
 
@@ -1461,15 +1460,15 @@ JFrog Artifactory or Nexus.
 
 Alternatively, if using an Artifact Registry remote repository is not an option,
 you can temporarily pull and push container images to [Artifact Registry](/artifact-registry/docs/overview)
-using `docker push` in order to deploy them to Cloud Run.
+using `docker push` to deploy them to Cloud Run.
 The container image is imported by Cloud Run when
 deployed, so after the deployment, you can
 [delete the image from Artifact Registry](/artifact-registry/docs/docker/manage-images#deleting_images).
 
 ## Deploy multiple containers to a service (sidecars)
 
-In a Cloud Run deployment with sidecars, there is one *ingress* container that handles
-all incoming HTTPS requests at the container PORT you specify, and there are one
+In a Cloud Run deployment with sidecars, one *ingress* container handles
+all incoming HTTPS requests at the container PORT you specify, along with one
 or more *sidecar* containers. The sidecars cannot listen for the incoming HTTP
 requests at the ingress container port, but they can communicate with each other
 and with the ingress container using a localhost port. The localhost port used
@@ -1750,7 +1749,7 @@ gcloud run services replace service.yaml
 ```
 
 
-The `gcloud run services replace` command defaults to using `service.yaml` file if present.
+The `gcloud run services replace` command defaults to using the `service.yaml` file if present.
 
 
 ### Terraform
@@ -1859,7 +1858,7 @@ on `http://localhost:5000`.
 Because the containers are named, the containers can even communicate with
 each other using the name of the container. For example, if the container
 `sidecar` listens for requests on port `5000`, then the container `ingress` can
-communicate with `sidecar` using on `http://sidecar:5000`.
+communicate with `sidecar` on `http://sidecar:5000`.
 
 ## Adapt your containers for Cloud Run
 
@@ -1983,7 +1982,7 @@ After you deploy a new service, you can do the following:
 
 - [View service logs](/run/docs/logging)
 
-- [Monitor service performances](/run/docs/monitoring)
+- [Monitor service performance](/run/docs/monitoring)
 
 - [Set memory limits](/run/docs/configuring/services/memory-limits)
 

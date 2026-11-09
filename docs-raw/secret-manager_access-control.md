@@ -1,7 +1,7 @@
 # Access control with IAM
 
 Source: https://berlin.devsitetest.how/secret-manager/docs/access-control
-Last updated: 2026-10-26
+Last updated: 2026-11-03
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/secret-manager/docs/tpc-differences) for more details.
 
@@ -222,9 +222,29 @@ Secret
 
 
 
+- `secretmanager.backups.create`
+
+- `secretmanager.backups.delete`
+
+- `secretmanager.backups.get`
+
+- `secretmanager.backups.list`
+
+- `secretmanager.backups.restore`
+
+- `secretmanager.backups.update`
+
 - `secretmanager.locations.get`
 
 - `secretmanager.locations.list`
+
+- `secretmanager. operations. cancel`
+
+- `secretmanager.operations.get`
+
+- `secretmanager.operations.list`
+
+- `secretmanager.secrets.backup`
 
 - `secretmanager.secrets.create`
 
@@ -245,6 +265,8 @@ Secret
 - `secretmanager. secrets. listEffectiveTags`
 
 - `secretmanager. secrets. listTagBindings`
+
+- `secretmanager.secrets.restore`
 
 - `secretmanager.secrets.rotate`
 
@@ -294,6 +316,26 @@ Editor role for Secret Manager
 
 
 
+`secretmanager.backups.create`
+
+
+
+`secretmanager.backups.delete`
+
+
+
+`secretmanager.backups.get`
+
+
+
+`secretmanager.backups.list`
+
+
+
+`secretmanager.backups.update`
+
+
+
 
 `secretmanager.locations.*` 
 
@@ -304,6 +346,23 @@ Editor role for Secret Manager
 - `secretmanager.locations.get`
 
 - `secretmanager.locations.list`
+
+
+
+
+
+
+`secretmanager.operations.*` 
+
+
+
+
+
+- `secretmanager. operations. cancel`
+
+- `secretmanager.operations.get`
+
+- `secretmanager.operations.list`
 
 
 
@@ -437,6 +496,14 @@ Secret
 
 
 
+`secretmanager.backups.get`
+
+
+
+`secretmanager.backups.list`
+
+
+
 
 `secretmanager.locations.*` 
 
@@ -449,6 +516,14 @@ Secret
 - `secretmanager.locations.list`
 
 
+
+
+
+`secretmanager.operations.get`
+
+
+
+`secretmanager.operations.list`
 
 
 

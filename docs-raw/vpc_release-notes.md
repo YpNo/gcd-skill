@@ -181,6 +181,34 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+## November 09, 2026
+
+
+Feature 
+
+
+**General Availability**: You can create an internal range with the
+`INTERNAL_ADDRESS` purpose to allocate global internal IPv4 addresses for
+[Private Service Connect endpoints that access global Google
+APIs](/vpc/docs/about-accessing-google-apis-endpoints).
+
+For more information, see [Internal ranges for Private Service Connect
+endpoints](/vpc/docs/internal-ranges#reserve-for-endpoints).
+
+
+
+## November 03, 2026
+
+
+Feature 
+
+
+**General Availability**: VPC Flow Logs supports logging for IPv6 encapsulation
+flows. For more information, see
+[IpConnection field format](/vpc/docs/about-flow-logs-records#IpConnection).
+
+
+
 ## October 19, 2026
 
 

@@ -1,7 +1,7 @@
 # Attach service accounts to resources
 
 Source: https://berlin.devsitetest.how/iam/docs/attach-service-accounts
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -818,12 +818,12 @@ to the service agent.**
 "version" : 1 , 
 "etag" : "BwWl3KCTUMY=" , 
 "bindings" : [ 
-** { 
+{ 
 "role" : "roles/iam.serviceAccountTokenCreator" , 
 "members" : [ 
 "serviceAccount: SERVICE_AGENT_EMAIL " 
 ] 
-}, **
+}, 
 { 
 "role" : "roles/iam.serviceAccountUser" , 
 "members" : [ 

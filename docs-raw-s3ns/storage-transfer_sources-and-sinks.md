@@ -1,7 +1,7 @@
 # Sources and sinks
 
 Source: https://documentation.s3ns.fr/storage-transfer/docs/sources-and-sinks
-Last updated: 2026-10-26
+Last updated: 2026-11-05
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/storage-transfer/docs/overview/tpc-differences) for more details.
 
@@ -117,8 +117,9 @@ Storage Transfer Service
 
 
 
-Storage Transfer Service can transfer data from a number of sources to a number of
-destinations. The table below details the supported sources and destinations.
+Storage Transfer Service supports transfers across cloud object stores, URL lists,
+and on-premises or cloud file systems. The following table details the
+supported sources, destinations, and transfer types.
 
 
 
@@ -126,6 +127,7 @@ destinations. The table below details the supported sources and destinations.
 Storage system | 
 Source | 
 Destination | 
+Transfer type | 
 Notes | 
 |
 
@@ -136,19 +138,19 @@ Notes |
 Cloud Storage | 
 check_circle | 
 check_circle | 
+Agentless or agent-based | 
 
 
 Cloud Storage is a valid sink for transfers from all sources.
 
 
 
-Transfers from Cloud Storage, Amazon S3, and Azure to
-Cloud Storage do not require agents or agent
-pools; they are managed entirely by Storage Transfer Service.
+Transfers between cloud systems are agentless. Transfers paired with
+file systems are agent-based.
 
 
 
-To configure Cloud Storage as a source and/or sink, refer to the
+To configure Cloud Storage as a source or sink, refer to the
 following pages:
 
 
@@ -168,10 +170,10 @@ access to a sink: Cloud Storage](/storage-transfer/docs/sink-cloud-storage)
 Amazon Simple Storage Service (Amazon S3) | 
 check_circle | 
 | 
+Agentless | 
 
 
-Transfers to Cloud Storage only. Does not require agents or
-agent pools.
+Transfers to Cloud Storage only.
 
 
 
@@ -186,10 +188,10 @@ a source: Amazon S3](/storage-transfer/docs/source-amazon-s3).
 S3-compatible storage | 
 check_circle | 
 | 
+Agent-based | 
 
 
-Transfers to Cloud Storage only. Requires agents and
-agent pools.
+Transfers to Cloud Storage only.
 
 
 
@@ -204,10 +206,10 @@ a source: S3-compatible storage](/storage-transfer/docs/source-s3-compatible).
 Azure Blob Storage, including Azure Data Lake Storage Gen2 | 
 check_circle | 
 | 
+Agentless | 
 
 
-Transfers to Cloud Storage only. Does not require agents or
-agent pools.
+Transfers to Cloud Storage only.
 
 
 
@@ -218,9 +220,10 @@ to a source: Microsoft Azure Storage](/storage-transfer/docs/source-microsoft-az
 |
 
 | 
-Publicly accessible or signed HTTP and HTTPs URLs | 
+Publicly accessible or signed HTTP and HTTPS URLs | 
 check_circle | 
 | 
+Agentless | 
 
 
 Storage Transfer Service accepts a TSV file specifying a list of URLs to
@@ -228,13 +231,14 @@ transfer.
 
 
 
-Transfers to Cloud Storage only. Does not require agents or
-agent pools.
+Transfers to Cloud Storage only.
 
 
 
-See [Create a URL
-list](/storage-transfer/docs/create-url-list) for details.
+To configure access to a URL list, refer to
+[Configure access to a
+source: URL list](/storage-transfer/docs/source-url-list). For formatting details, see
+[Create a URL list](/storage-transfer/docs/create-url-list).
 
 | 
 |
@@ -243,6 +247,7 @@ list](/storage-transfer/docs/create-url-list) for details.
 File system | 
 check_circle | 
 check_circle | 
+Agent-based | 
 
 
 Storage Transfer Service supports transfers:
@@ -259,26 +264,41 @@ Storage Transfer Service supports transfers:
 
 
 
-Transfers involving file systems require agents and agent pools. See
-[Manage agent
-pools](/storage-transfer/docs/on-prem-agent-pools) to get started.
+See [Manage agent
+pools](/storage-transfer/docs/on-prem-agent-pools) to configure agents and agent pools.
+
+
+
+To configure a file system as a source or sink, refer to the following
+pages:
+
+
+
+
+- [Configure access
+to a source: file system](/storage-transfer/docs/source-filesystem)
+
+- [Configure access to
+a sink: file system](/storage-transfer/docs/sink-filesystem)
+
+
 | 
 |
 
 | 
-Hadoop distributed file system (HDFS) | 
+Hadoop Distributed File System, HDFS | 
 check_circle | 
 | 
+Agent-based | 
 
 
-Transfers to Cloud Storage only. Requires agents and agent pools.
-
+Transfers to Cloud Storage only.
 
 
 
 To configure a transfer from an HDFS source, refer to
 [Transfer from HDFS to
-Cloud Storage](/storage-transfer/docs/hdfs).
+Cloud Storage](/storage-transfer/docs/create-transfers/agent-based/hdfs).
 
 | 
 |

@@ -1,7 +1,7 @@
 # Bigtable in Google Cloud Dedicated versus Google Cloud
 
 Source: https://berlin.devsitetest.how/bigtable/docs/tpc-differences
-Last updated: 2026-10-28
+Last updated: 2026-11-06
 
 - 
 

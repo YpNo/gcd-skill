@@ -1,7 +1,7 @@
 # Configure temporary access
 
 Source: https://berlin.devsitetest.how/iam/docs/configuring-temporary-access
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -776,16 +776,16 @@ gcloud CLI updates the version automatically:
 "principalSet://iam.googleapis.com/locations/global/workforcePools/my-pool/group/my-group" 
 ], 
 "role" : "roles/iam.securityReviewer" , 
-** "condition" : { 
+"condition" : { 
 "title" : "Expires_July_1_2020" , 
 "description" : "Expires on July 1, 2020" , 
 "expression" : 
 "request.time 
-} **
+} 
 } 
 ], 
 "etag" : "BwWKmjvelug=" , 
-** "version" : 3 **
+"version" : 3 
 } 
 ```
 
@@ -1086,7 +1086,7 @@ You should receive a JSON response similar to the following:
 
 ```
 {
-**"version": 1**,
+"version": 1,
 "etag": "BwWKmjvelug=",
 "bindings": [
 {
@@ -1114,7 +1114,7 @@ time.** Make sure to change the `version` field to the value
 
 ```
 { 
-** "version" : 3 ** , 
+"version" : 3 , 
 "etag" : "BwWKmjvelug=" , 
 "bindings" : [ 
 { 
@@ -1128,12 +1128,12 @@ time.** Make sure to change the `version` field to the value
 "members" : [ 
 "principalSet://iam.googleapis.com/locations/global/workforcePools/my-pool/group/my-group" 
 ], 
-** "condition" : { 
+"condition" : { 
 "title" : "Expires_July_1_2020" , 
 "description" : "Expires on July 1, 2020" , 
 "expression" : 
 "request.time 
-} **
+} 
 } 
 ] 
 } 
@@ -1674,15 +1674,15 @@ gcloud CLI updates the version automatically:
 "principalSet://iam.googleapis.com/locations/global/workforcePools/my-pool/group/my-group" 
 ], 
 "role" : "roles/bigquery.dataViewer" , 
-** "condition" : { 
+"condition" : { 
 "title" : "Business_hours" , 
 "description" : "Business hours Monday-Friday" , 
 "expression" : "request.time.getHours('Europe/Berlin') >= 9 && request.time.getHours('Europe/Berlin') = 1 && request.time.getDayOfWeek('Europe/Berlin') 
-} **
+} 
 } 
 ], 
 "etag" : "BwWKmjvelug=" , 
-** "version" : 3 **
+"version" : 3 
 } 
 ```
 
@@ -1982,7 +1982,7 @@ You should receive a JSON response similar to the following:
 
 ```
 {
-**"version": 1**,
+"version": 1,
 "etag": "BwWKmjvelug=",
 "bindings": [
 {
@@ -2013,7 +2013,7 @@ your own). Ensure that you've updated the `version` value to
 ```
 { 
 "etag" : "BwWKmjvelug=" , 
-** "version" : 3 , **
+"version" : 3 , 
 "bindings" : [ 
 { 
 "role" : "roles/owner" , 
@@ -2026,7 +2026,7 @@ your own). Ensure that you've updated the `version` value to
 "members" : [ 
 "principalSet://iam.googleapis.com/locations/global/workforcePools/my-pool/group/my-group" 
 ], 
-** "condition" : { 
+"condition" : { 
 "title" : "Business_hours" , 
 "description" : "Business hours Monday-Friday" , 
 "expression" : 
@@ -2034,7 +2034,7 @@ your own). Ensure that you've updated the `version` value to
 request.time.getHours('Europe/Berlin') &&
 request.time.getDayOfWeek('Europe/Berlin') >= 1 &&
 request.time.getDayOfWeek('Europe/Berlin') 
-} **
+} 
 } 
 ] 
 } 

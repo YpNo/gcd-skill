@@ -1,7 +1,7 @@
 # Import a key version into Cloud KMS
 
 Source: https://documentation.s3ns.fr/kms/docs/importing-a-key
-Last updated: 2026-10-27
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/kms/docs/tpc-differences) for more details.
 
@@ -2560,7 +2560,7 @@ gcloud kms keys versions import \
 --keyring KEY_RING \
 --key KEY_NAME \
 --algorithm ALGORITHM \
-**--target-key-file PATH_TO_UNWRAPPED_KEY **
+--target-key-file PATH_TO_UNWRAPPED_KEY 
 ```
 
 
@@ -2692,7 +2692,7 @@ gcloud kms keys versions import \
 --keyring KEY_RING \
 --key KEY_NAME \
 --algorithm ALGORITHM \
-**--wrapped-key-file PATH_TO_WRAPPED_KEY **
+--wrapped-key-file PATH_TO_WRAPPED_KEY 
 ```
 
 

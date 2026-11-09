@@ -1,7 +1,7 @@
 # Secret Manager client libraries
 
 Source: https://berlin.devsitetest.how/secret-manager/docs/reference/libraries
-Last updated: 2026-10-22
+Last updated: 2026-10-29
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/secret-manager/docs/tpc-differences) for more details.
 
@@ -445,7 +445,7 @@ the following to your dependencies:
 
 
 ```
-libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "2.99.0" 
+libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "2.100.0" 
 ```
 
 
@@ -673,6 +673,8 @@ $ gem install google-cloud-secret_manager
 
 
 For more information, see [Setting Up a Ruby Development Environment](/ruby/docs/setup).
+
+
 
 
 
@@ -1736,6 +1738,8 @@ payload = response . payload . data
 puts "Plaintext: #{ payload } " 
 end 
 ```
+
+
 
 
 

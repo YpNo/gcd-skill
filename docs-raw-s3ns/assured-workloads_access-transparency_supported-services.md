@@ -1,7 +1,7 @@
 # Supported services
 
 Source: https://documentation.s3ns.fr/assured-workloads/access-transparency/docs/supported-services
-Last updated: 2026-10-26
+Last updated: 2026-10-30
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/assured-workloads/access-transparency/docs/tpc-differences) for more details.
 
@@ -187,6 +187,25 @@ None
 
 
 [Agent Identity](/iam/docs/agent-identity-overview)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
+[Agent Registry](/agent-registry/overview)
 | 
 
 
@@ -717,6 +736,25 @@ None
 | 
 
 
+[Audit Manager](/audit-manager/docs/overview)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
 [Cloud Billing](/billing/docs)
 | 
 
@@ -1005,6 +1043,25 @@ None
 | 
 
 
+[Cloud Next Generation Firewall](/firewall/docs)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
 [Cloud OS Login API](/compute/docs/oslogin)
 | 
 
@@ -1271,6 +1328,25 @@ None
 | 
 
 
+[Compliance Manager](/security-command-center/docs/compliance-manager-overview)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
 [Compute Engine](/compute-engine)
 | 
 
@@ -1348,6 +1424,25 @@ None
 
 
 [Database Center](/database-center)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
+[Database Insights API](/database-center/docs/reference/databaseinsights/rest)
 | 
 
 
@@ -1499,6 +1594,25 @@ None
 | 
 
 
+[Database Migration Service](/database-migration/docs)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
 [Dialogflow CX](/dialogflow/cx/docs)
 | 
 
@@ -1537,7 +1651,7 @@ None
 | 
 
 
-[DNS Armor](/assured-workloads/access-transparency/docs/dns/docs/threat-detection)
+[DNS Armor](/dns/docs/threat-detection)
 | 
 
 
@@ -1728,6 +1842,25 @@ None
 
 
 [Gemini Data Analytics](/gemini/data-agents)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
+[Gemini Enterprise](/gemini/enterprise/docs)
 | 
 
 
@@ -2706,6 +2839,25 @@ None
 
 
 [Serverless VPC Access](/vpc/docs/serverless-vpc-access)
+| 
+
+
+
+GA
+| 
+
+
+
+None
+
+| 
+|
+
+
+| 
+
+
+[Service connectivity automation](/vpc/docs/about-service-connectivity-automation)
 | 
 
 

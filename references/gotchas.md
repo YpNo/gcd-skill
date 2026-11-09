@@ -43,7 +43,7 @@ public GCP to Google Cloud Dedicated (Berlin) or Cloud de Confiance by S3NS (Fra
 <!-- AUTO-SYNC:SECNUMCLOUD-SUMMARY:START -->
 - **Not every service available on S3NS is already ANSSI SecNumCloud 3.2 qualified.**
   On S3NS PREMI3NS (`u-france-east1`), **29 services** are **`Qualifié SecNumCloud 3.2`**,
-  while **10 recently released services** (`Access Transparency`, `Bigtable`, `Cloud Quota`, `Cloud Run`, `Filestore`, `Gemini platform`, `Managed Service for Apache Airflow`, `Managed Service for Apache Spark`, `Secret Manager`, `Storage Transfer Service`) are in
+  while **13 recently released services** (`Access Transparency`, `Bigtable`, `Cloud Quota`, `Cloud Run`, `Filestore`, `Gemini platform`, `Managed Service for Apache Airflow`, `Managed Service for Apache Spark`, `model garden`, `model registry`, `online inference`, `Secret Manager`, `Storage Transfer Service`) are in
   **`Qualification en cours`** (available and documented today, ANSSI qualification in progress).
   **4 roadmap services** (`Cloud Asset Inventory`, `Cloud Build`, `Cloud Spanner`, `Network Connectivity Center`) are **`À venir`**. Always check [services.md](services.md)
   when designing workloads subject to strict SecNumCloud 3.2 compliance mandates.

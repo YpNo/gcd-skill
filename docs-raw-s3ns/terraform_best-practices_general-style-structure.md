@@ -186,7 +186,7 @@ Recommended:
 
 
 ```
-resource "google_compute_instance" **"web_server"** {
+resource "google_compute_instance" "web_server" {
 name = "web-server"
 }
 ```
@@ -196,7 +196,7 @@ Not recommended:
 
 
 ```
-resource "google_compute_instance" **"web-server"** {
+resource "google_compute_instance" "web-server" {
 name = "web-server"
 }
 ```

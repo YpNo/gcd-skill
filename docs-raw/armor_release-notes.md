@@ -180,6 +180,22 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+## October 27, 2026
+
+
+Feature 
+
+
+Cloud Armor supports advanced match conditions to include attributes for
+inspecting request body content and parameters. This lets you write
+custom CEL rules to filter traffic based on raw body content, structured data
+(JSON, Form Data, GraphQL), and query parameters. For more information, see
+[Attributes](/armor/docs/create-security-policy-rules#attributes) in "Create and view Cloud Armor security policy
+rules." This feature is
+[generally available (GA)](https://berlin.devsitetest.how/products#product-launch-stages).
+
+
+
 ## October 19, 2026
 
 
@@ -258,11 +274,11 @@ Feature
 
 
 Cloud Armor supports advanced match conditions to include attributes for
-inspecting request body content and parameters in Preview. This lets you write
+inspecting request body content and parameters in [Preview](https://berlin.devsitetest.how/products#product-launch-stages). This lets you write
 custom CEL rules to filter traffic based on raw body content, structured data
 (JSON, Form Data, GraphQL), and query parameters. For more information, see
-[Configure custom rules language
-attributes](/armor/docs/rules-language-reference).
+[Attributes](/armor/docs/create-security-policy-rules#attributes) in "Create and view Cloud Armor security policy
+rules."
 
 
 
@@ -279,8 +295,8 @@ networking products. Cloud Armor is included in the Global Front End Enterprise
 billing tier. Enabling Global Front End Enterprise in a project enables specific
 Cloud Armor Enterprise features for your global external Application Load
 Balancers. For more information, see [Global Front
-End](/armor/docs/armor-enterprise-overview#global-front-end).This feature is
-available in Preview.
+End](/armor/docs/armor-enterprise-overview#global-front-end) in "Cloud Armor Enterprise overview." This feature is
+available in [Preview](https://berlin.devsitetest.how/products#product-launch-stages).
 
 
 
@@ -316,9 +332,10 @@ rules](/armor/docs/rule-tuning). This feature is available in Preview.
 Feature 
 
 
-Cloud Armor supports a visual **Match Condition Builder** that allows you to
-create complex expressions in Common Expression Language (CEL) without writing raw
-code. For more information, see [Use the Match Condition Builder](/armor/docs/manage-security-policies#mcb).
+Cloud Armor supports a visual **match condition builder** that lets you
+create complex expressions in Common Expression Language (CEL) without writing
+raw code. For more information, see
+[Use the match condition builder](/armor/docs/create-security-policy-rules#mcb) in "Create and view Cloud Armor security policy rules."
 
 
 

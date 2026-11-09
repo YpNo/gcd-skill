@@ -1,7 +1,7 @@
 # Load CSV data from Cloud Storage
 
 Source: https://berlin.devsitetest.how/bigquery/docs/loading-data-cloud-storage-csv
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/bigquery/docs/tpc-differences) for more details.
 
@@ -465,7 +465,7 @@ overwrite.
 
 
 
-*
+
 
 
 - For **File format**, select
@@ -2033,7 +2033,7 @@ variable to `apis-berlin-build0.goog`.
 require "google/cloud/bigquery" 
 
 def load_table_gcs_csv dataset_id = "your_dataset_id" 
-bigquery = Google :: Cloud :: [ Bigquery ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigquery-data_exchange-v1beta1/latest/Google-Cloud-Bigquery.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigquery/latest/Google-Cloud-Bigquery.html)
+bigquery = Google :: Cloud :: [ Bigquery ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigquery/latest/Google-Cloud-Bigquery.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigquery/latest/Google-Cloud-Bigquery.html)
 dataset = bigquery . dataset dataset_id 
 gcs_uri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv" 
 table_id = "us_states" 
@@ -4281,10 +4281,10 @@ data, error message: Error detected while parsing row starting at position: 1405
 Error: Data between close quote character (") and field separator.
 File: gs://my-bucket/mytable.csv
 Failure details:
-**- gs://my-bucket/mytable.csv*: Error while reading data,
+- gs://my-bucket/mytable.csv: Error while reading data,
 error message: Error detected while parsing row starting at
-position: *1405*. Error: Data between close quote character (") and
-field separator. File: gs://my-bucket/mytable.csv**
+position: 1405. Error: Data between close quote character (") and
+field separator. File: gs://my-bucket/mytable.csv
 - Error while reading data, error message: CSV processing encountered
 too many errors, giving up. Rows: 22; errors: 1; max bad: 0; error
 percent: 0
@@ -4297,7 +4297,7 @@ To view the file's content, run the
 
 
 ```
-gcloud storage cat **1405**-1505 gs://my-bucket/mytable.csv --recursive
+gcloud storage cat 1405-1505 gs://my-bucket/mytable.csv --recursive
 ```
 
 
@@ -4305,7 +4305,7 @@ The output is similar to the following:
 
 
 ```
-16,Abraham Lincoln,"March 4, 1861",**"April 15, "1865**,Republican
+16,Abraham Lincoln,"March 4, 1861","April 15, "1865,Republican
 18,Ulysses S. Grant,"March 4, 1869",
 ...
 ```
@@ -4324,7 +4324,7 @@ the appropriate byte offset, and prints the line with the format error:
 
 
 ```
-gcloud storage cat gs://my-bucket/mytable.csv.gz | gunzip - | tail -c **+1406** | head -n 1
+gcloud storage cat gs://my-bucket/mytable.csv.gz | gunzip - | tail -c +1406 | head -n 1
 ```
 
 
@@ -4332,7 +4332,7 @@ The output is similar to the following:
 
 
 ```
-16,Abraham Lincoln,"March 4, 1861",**"April 15, "1865**,Republican
+16,Abraham Lincoln,"March 4, 1861","April 15, "1865,Republican
 ```
 
 

@@ -1,7 +1,7 @@
 # Organization Policy in Google Cloud Dedicated versus Google Cloud
 
 Source: https://berlin.devsitetest.how/organization-policy/tpc-differences
-Last updated: 2026-10-22
+Last updated: 2026-10-26
 
 - 
 

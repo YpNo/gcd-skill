@@ -1,7 +1,7 @@
 # GPU machine types
 
 Source: https://berlin.devsitetest.how/compute/docs/gpus
-Last updated: 2026-10-26
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/compute/docs/tpc-differences) for more details.
 
@@ -153,7 +153,7 @@ This document outlines the NVIDIA GPU models that you can use to
 accelerate machine learning (ML), data processing, and graphics-intensive
 workloads on your Compute Engine instances. This
 document also details which GPUs come pre-attached to accelerator-optimized
-machine series such as A4X Max, A4X, A4, A3, A2, G4, and G2, and which GPUs you
+machine series such as A5X, A4X Max, A4X, A4, A3, A2, G4, and G2, and which GPUs you
 can attach to N1 general-purpose instances.
 
 Use this document to compare the performance, memory, and features of different
@@ -246,12 +246,16 @@ Workstations (vWS).
 
 
 
+- [A5X](/compute/docs/accelerator-optimized-machines#a5x-instances)
+(NVIDIA Vera Rubin superchips) 
+(`nvidia-vr200`)
+
 - [A4X Max](/compute/docs/accelerator-optimized-machines#a4x-vms)
-(NVIDIA GB300 Ultra Superchips) 
+(NVIDIA GB300 Ultra superchips) 
 (`nvidia-gb300`)
 
 - [A4X](/compute/docs/accelerator-optimized-machines#a4x-vms)
-(NVIDIA GB200 Superchips) 
+(NVIDIA GB200 superchips) 
 (`nvidia-gb200`)
 
 - [A4](/compute/docs/accelerator-optimized-machines#a4-vms)
@@ -331,6 +335,69 @@ supercomputing system that is optimized to support your artificial intelligence
 (AI) and machine learning (ML) workloads. This option is recommended for creating a
 densely allocated, performance-optimized infrastructure that has integrations
 for Google Kubernetes Engine (GKE) and Slurm schedulers.
+
+## A5X machine series (NVIDIA Vera Rubin)
+
+
+[A5X accelerator-optimized](/compute/docs/accelerator-optimized-machines#a5x-instances)
+
+machine types use NVIDIA Vera Rubin superchips and
+are ideal for foundation model training, reasoning, and serving. A5X machine types are available
+as [bare metal instances](/compute/docs/instances/bare-metal-instances).
+
+A5X is an exascale platform based on
+[NVIDIA Vera Rubin
+NVL72](https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/). Each machine has two sockets with NVIDIA Vera CPUs. These CPUs connect to four NVIDIA Rubin GPUs with fast
+chip-to-chip ([NVLink-C2C](https://www.nvidia.com/en-us/data-center/nvlink-c2c/))
+communication. For information about machine type limitations, see
+[A5X limitations](/compute/docs/accelerator-optimized-machines#a5x-limitations).
+
+
+
+
+| 
+Machine type | 
+vCPU count | 
+Instance memory (GB) | 
+Attached Local SSD (GiB) | 
+Physical NIC count | 
+Maximum network bandwidth (Gbps) | 
+NVIDIA Rubin GPU count | 
+GPU memory (GB HBM4) | 
+|
+
+
+
+| 
+`a5x-highgpu-4g-metal` | 
+176 | 
+1,440 | 
+48,000 | 
+10 | 
+7,200 | 
+4 | 
+1,152 | 
+|
+
+
+
+### A5X machine type notes
+
+The following notes apply to the preceding table:
+
+
+- **vCPU count**: for A5X bare metal instances, the vCPU count of 176 represents the 176 physical
+CPU cores across two 88-core sockets on the NVIDIA Vera
+[CPU platform](/compute/docs/cpu-platforms).
+
+- **Maximum network bandwidth**: maximum egress bandwidth can't exceed the number given. Actual
+egress bandwidth depends on the destination IP address and other factors.
+For more information about network bandwidth,
+see [Network bandwidth](/compute/docs/network-bandwidth).
+
+- **GPU memory**: GPU memory is the memory on a GPU device that stores
+temporary data. It's separate from the instance's memory and handles the
+higher bandwidth demands of your graphics-intensive workloads.
 
 ## A4X Max and A4X machine series
 
@@ -1466,7 +1533,7 @@ machine types:
 Machine type | 
 Number of GPUs | 
 Typical scheduled maintenance event frequency | 
-Maintenance behavior | 
+[Maintenance behavior](/compute/docs/instances/setting-vm-host-options#available_host_maintenance_properties) | 
 Advanced notification for scheduled maintenance | 
 
 On-demand maintenance | 
@@ -1483,11 +1550,12 @@ Simulate maintenance |
 
 
 
+
 | 
 N1+T4 | 
 1 or 2 | 
 Minimum of 15 days | 
-Terminate and restart | 
+Stop and restart | 
 7 days | 
 No | 
 Yes | 
@@ -1497,7 +1565,7 @@ Yes |
 N1+T4 | 
 4 | 
 Minimum of 30 days | 
-Terminate and restart | 
+Stop and restart | 
 7 days | 
 Yes | 
 Yes | 
@@ -1507,7 +1575,7 @@ Yes |
 N1+P4 | 
 1 or 2 | 
 Minimum of 15 days | 
-Terminate and restart | 
+Stop and restart | 
 7 days | 
 No | 
 Yes | 
@@ -1517,7 +1585,7 @@ Yes |
 N1+P4 | 
 4 | 
 Minimum of 30 days | 
-Terminate and restart | 
+Stop and restart | 
 7 days | 
 Yes | 
 Yes | 
@@ -1527,7 +1595,7 @@ Yes |
 N1+V100 | 
 1, 2, or 4 | 
 Minimum of 15 days | 
-Terminate and restart | 
+Stop and restart | 
 7 days | 
 No | 
 Yes | 
@@ -1537,7 +1605,7 @@ Yes |
 N1+V100 | 
 8 | 
 Minimum of 30 days | 
-Terminate and restart | 
+Stop and restart | 
 7 days | 
 Yes | 
 Yes | 
@@ -1547,15 +1615,8 @@ Yes |
 
 
 
-The following notes apply to the preceding table:
-
-
-- **Typical scheduled maintenance event frequency**: 
-
 The maintenance frequencies shown in the previous table are approximations, not guarantees.
 Compute Engine might occasionally perform maintenance more frequently.
-
-
 
 ## General comparison chart
 
@@ -1576,6 +1637,14 @@ Best used for |
 |
 
 
+
+| 
+A5X (Vera Rubin) | 
+288 GB HBM4 (22 TBps) | 
+NVLink Full Mesh (3,600 GBps) | 
+No | 
+Large-scale distributed training and inference of MoE LLMs, Recommenders, HPC | 
+|
 
 | 
 A4X Max (GB300) | 
@@ -1710,6 +1779,91 @@ typically performing operations on individual data elements or vectors.
 
 This type of performance is best for general compute, graphics rendering,
 and workloads that don't involve dense matrix math.
+
+### Rubin architecture
+
+The A5X machine type runs on NVIDIA's
+[Vera Rubin NVL72 architecture](https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/).
+
+
+
+
+
+### Tensor Core
+
+NVIDIA's Rubin architecture, used by the A5X machine type, provides
+Tensor Core acceleration across FP64, FP32, TF32, FP16, INT8,
+FP8, and FP4 precision formats for high performance in large-scale foundation
+model training, reasoning, and inference.
+
+The following notes apply to the table in this section:
+
+
+- **TF32, Mixed FP16/32, INT8, FP8, and FP4**: the Rubin architecture
+supports [structural sparsity](https://developer.nvidia.com/blog/structured-sparsity-in-the-nvidia-ampere-architecture-and-applications-in-search-engines/),
+which can double computational throughput. The performance values in this
+table assume dense matrix multiplication. If you use structural sparsity,
+then computational throughput doubles.
+
+- **Mixed FP16/32**: for mixed-precision training, GPUs that run on the
+Rubin architecture also support the `bfloat16` data type.
+
+
+
+| 
+Machine type (GPU model) | 
+FP64 (TFLOPS) | 
+FP32 (TFLOPS) | 
+TF32 (TFLOPS) | 
+Mixed FP16/32 (TFLOPS) | 
+INT8 (TFLOPS) | 
+FP8 (TFLOPS) | 
+FP4 (TFLOPS) | 
+|
+
+
+
+| 
+A5X (Vera Rubin) | 
+200 | 
+800 | 
+2,000 | 
+4,000 | 
+250 | 
+17,000 | 
+34,000 | 
+|
+
+
+
+
+
+### Standard CUDA cores
+
+The A5X machine type uses the Rubin architecture to provide high-performance
+vector operations for FP64 and FP32 on standard CUDA cores for demanding HPC
+and AI workloads.
+
+
+
+| 
+Machine type (GPU model) | 
+FP64 (TFLOPS) | 
+FP32 (TFLOPS) | 
+|
+
+
+
+| 
+A5X (Vera Rubin) | 
+32 | 
+130 | 
+|
+
+
+
+
+
 
 ### Blackwell architecture
 

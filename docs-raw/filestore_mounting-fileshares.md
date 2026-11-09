@@ -513,7 +513,7 @@ routing policy:
 dhclient_script = /sbin/google-dhclient-script 
 dhcp_command = 
 ip_forwarding = true 
-setup = ** false **
+setup = false 
 ```
 
 
@@ -750,7 +750,7 @@ routing policy:
 dhclient_script = /sbin/google-dhclient-script 
 dhcp_command = 
 ip_forwarding = true 
-setup = ** false **
+setup = false 
 ```
 
 

@@ -1,7 +1,7 @@
 # Logging client libraries
 
 Source: https://documentation.s3ns.fr/logging/docs/reference/libraries
-Last updated: 2026-10-22
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/logging/docs/tpc-differences) for more details.
 
@@ -678,6 +678,8 @@ gem install google-cloud-logging
 
 
 For more information, see [Setting Up a Ruby Development Environment](/ruby/docs/setup).
+
+
 
 
 
@@ -1653,6 +1655,8 @@ puts "Logged #{ entry . [ payload ](https://documentation.s3ns.fr/ruby/docs/refe
 
 
 
+
+
 ## Code samples
 
 For all code samples, see [All logging samples](/logging/docs/samples).
@@ -2031,6 +2035,8 @@ client library for Ruby:
 - [`google-cloud-logging` on Stack Overflow](https://stackoverflow.com/search?q=%5Bgoogle-cloud-logging%5D+%5Bruby%5D) 
 
 - [Source code](https://github.com/googleapis/google-cloud-ruby) 
+
+
 
 
 

@@ -1,7 +1,7 @@
 # Roles overview
 
 Source: https://berlin.devsitetest.how/iam/docs/roles-overview
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -272,8 +272,6 @@ modify the roles.
 
 ## Basic roles
 
-
-
 Basic roles are highly permissive roles that give broad access to
 Google Cloud Dedicated resources.
 
@@ -283,6 +281,16 @@ legacy basic roles that existed prior to the introduction of IAM:
 Owner (`roles/owner`), Editor (`roles/editor`), and Viewer
 (`roles/viewer`). To learn more about these roles, see [Legacy basic
 roles](#legacy-basic) on this page.
+
+Basic roles include thousands of permissions across all Google Cloud Dedicated services. In production
+environments, do not grant basic roles unless there is no alternative. Instead, grant the most
+limited [predefined roles](/iam/docs/roles-permissions) or
+[custom roles](/iam/docs/understanding-custom-roles) that meet your needs.
+
+In staging or test environments, prefer the Admin, Writer, and Reader roles over
+the legacy basic roles. Although both sets of roles are actively maintained, the
+Admin, Writer, and Reader roles support additional features, such as the use of
+[IAM Conditions](/iam/docs/conditions-overview).
 
 The following table summarizes the permissions that the Admin, Writer, and
 Reader give principals across all Google Cloud Dedicated services:
@@ -406,12 +414,11 @@ role](https://console.cloud.berlin-build0.goog/iam-admin/roles/details/roles%3Ca
 
 
 
-You can't use the Google Cloud Dedicated console to grant the Reader, Writer, or Admin
-roles. Instead, use the API or the gcloud CLI. You can also create
-entitlements for these roles using [Privileged Access Manager](/iam/docs/pam-overview).
+You can use the Google Cloud Dedicated console, the API, or the gcloud CLI to
+grant the Reader, Writer, or Admin roles. For instructions, see [Granting,
+changing, and revoking access](/iam/docs/granting-changing-revoking-access).
 
-For instructions, see [Granting, changing, and revoking
-access](/iam/docs/granting-changing-revoking-access).
+You can also create entitlements for these roles using [Privileged Access Manager](/iam/docs/pam-overview).
 
 ### Legacy basic roles
 
@@ -422,6 +429,14 @@ basic roles.
 
 The legacy basic roles are Owner (`roles/owner`), Editor (`roles/editor`), and
 Viewer (`roles/viewer`).
+
+Legacy basic roles are still actively maintained and available for use. They're
+also used in certain automated workflows. For example, when a user creates a
+project, they're automatically granted the Owner role on that project. However,
+if you need to grant a basic role, we recommend granting the Admin, Writer, or
+Reader role instead of a legacy basic role. This is because the newer roles
+support additional features, such as the use of
+[IAM Conditions](/iam/docs/conditions-overview).
 
 When you grant a legacy basic role to a principal, the principal gets all of the
 permissions in the role. The principal also gets any permissions that

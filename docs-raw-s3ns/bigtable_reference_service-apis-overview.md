@@ -1,7 +1,7 @@
 # Service APIs overview
 
 Source: https://documentation.s3ns.fr/bigtable/docs/reference/service-apis-overview
-Last updated: 2026-10-28
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/bigtable/docs/tpc-differences) for more details.
 

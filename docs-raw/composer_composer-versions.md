@@ -1,7 +1,7 @@
 # Managed Service for Apache Airflow version list
 
 Source: https://berlin.devsitetest.how/composer/docs/composer-versions
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/composer/docs/tpc-differences) for more details.
 
@@ -273,8 +273,8 @@ using any version that is still within its full support date.
 In Google Cloud CLI, API, or Terraform, you can upgrade an existing
 environment to the latest supported versions, three previous
 versions of Managed Airflow (Gen 2), the last patch version of the
-previous minor version, and to versions with an extended upgrade timeline.
-It's not possible to upgrade to other versions of
+previous minor version of Managed Airflow (Gen 2), and to versions with an
+extended upgrade timeline. It's not possible to upgrade to other versions of
 Managed Airflow (Gen 2), even if they are still supported and can be used
 to create a new environment.
 
@@ -381,7 +381,7 @@ composer-3-airflow-3.3.1-build.3 |
 [See packages](/composer/docs/versions-packages#composer-3-airflow-3-3-1-build-3) | 
 September 25, 2026 | 
 September 25, 2027 | 
-| 
+Extended upgrade timeline version | 
 |
 
 | 
@@ -390,7 +390,7 @@ composer-3-airflow-3.2.2-build.7 |
 [See packages](/composer/docs/versions-packages#composer-3-airflow-3-2-2-build-7) | 
 September 25, 2026 | 
 September 25, 2027 | 
-| 
+Extended upgrade timeline version | 
 |
 
 | 
@@ -399,7 +399,7 @@ composer-3-airflow-2.11.1-build.20 |
 [See packages](/composer/docs/versions-packages#composer-3-airflow-2-11-1-build-20) | 
 September 25, 2026 | 
 September 25, 2027 | 
-| 
+Extended upgrade timeline version | 
 |
 
 | 
@@ -114501,7 +114501,7 @@ composer-2.17.14-airflow-2.11.1 |
 [See packages](/composer/docs/versions-packages#composer-2-17-14-airflow-2-11-1) | 
 September 25, 2026 | 
 September 25, 2027 | 
-| 
+Extended upgrade timeline version | 
 |
 
 | 

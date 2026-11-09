@@ -1,7 +1,7 @@
 # Set up the Google Cloud CLI for Cloud de Confiance
 
 Source: https://documentation.s3ns.fr/docs/get-started-tpc/setup-gcloud
-Last updated: 2026-10-27
+Last updated: 2026-11-07
 
 - 
 
@@ -130,7 +130,7 @@ Install the gcloud CLI, following the instructions for your OS.
 
 
 - Confirm that you have a supported version of Python. The Google Cloud CLI requires
-Python 3.10 to 3.15. The x86_64 Linux package includes
+Python 3.10 to 3.15. The x86_64 and Arm Linux packages include
 a bundled Python interpreter that will be preferred by default. For
 information on how to choose and configure your Python interpreter, see the 
 [`gcloud topic startup` documentation](/sdk/gcloud/reference/topic/startup).
@@ -156,8 +156,8 @@ Linux 64-bit
 (x86_64) 
 | 
 [google-cloud-cli-linux-x86_64.tar.gz](https://storage.s3nsapis.fr/cloud-sdk-release/google-cloud-cli-linux-x86_64.tar.gz) | 
-94.4 MB | 
-8b8c1be16284f7072359de05d31fe5ce52b6052fb295404a62a54b7d03ec4326 | 
+94.6 MB | 
+16fda6058d66e4ec29e8575e2b6e19b0d03cea7b091e6730f7e8361209e6955f | 
 |
 
 | 
@@ -166,8 +166,8 @@ Linux 64-bit
 (Arm) 
 | 
 [google-cloud-cli-linux-arm.tar.gz](https://storage.s3nsapis.fr/cloud-sdk-release/google-cloud-cli-linux-arm.tar.gz) | 
-90.4 MB | 
-c134c741f7232131e2556d77991bc8eaeb70054cfad426e06c533b3586ab69e6 | 
+90.6 MB | 
+cc584dabf7b1f7ba79354744027b6de654ff6876c03dffb2174c1b1e3c0c6956 | 
 |
 
 | 
@@ -176,8 +176,8 @@ Linux 32-bit
 (x86) 
 | 
 [google-cloud-cli-linux-x86.tar.gz](https://storage.s3nsapis.fr/cloud-sdk-release/google-cloud-cli-linux-x86.tar.gz) | 
-54.4 MB | 
-de8c17292832482c411cbfa0fe203b89cb4679325530e24aedfcc77898160efe | 
+54.6 MB | 
+b093baa9d87f894812aaefea8041289474de279c2c783cf7e9b7be8eb38bc675 | 
 |
 
 

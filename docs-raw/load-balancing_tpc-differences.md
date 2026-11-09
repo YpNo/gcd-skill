@@ -1,7 +1,7 @@
 # Cloud Load Balancing in Google Cloud Dedicated versus Google Cloud
 
 Source: https://berlin.devsitetest.how/load-balancing/docs/tpc-differences
-Last updated: 2026-10-26
+Last updated: 2026-11-02
 
 - 
 
@@ -405,6 +405,11 @@ Not available |
 
 | 
 **Cloud Service Mesh** | 
+Not available | 
+|
+
+| 
+**Cloud Trace** | 
 Not available | 
 |
 

@@ -1,7 +1,7 @@
 # Bigtable client libraries
 
 Source: https://berlin.devsitetest.how/bigtable/docs/reference/libraries
-Last updated: 2026-10-28
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/bigtable/docs/tpc-differences) for more details.
 
@@ -347,7 +347,7 @@ dependencies >
 dependency >
 groupId>com . google . cloud / groupId >
 artifactId>libraries - bom / artifactId >
-version>26 .69.0 / version >
+version>26 .90.0 / version >
 type>pom / type >
 scope>import / scope >
 / dependency >
@@ -359,6 +359,7 @@ dependency >
 groupId>com . google . cloud / groupId >
 artifactId>google - cloud - bigtable / artifactId >
 / dependency >
+/ dependencies >
 ```
 
 
@@ -390,7 +391,7 @@ add the following to your dependencies:
 
 
 ```
-implementation platform ( ' com . google . cloud : libraries - bom : 26.80.0 ' ) 
+implementation platform ( ' com . google . cloud : libraries - bom : 26.90.0 ' ) 
 
 implementation ' com . google . cloud : google - cloud - bigtable ' 
 ```
@@ -424,7 +425,7 @@ the following to your dependencies:
 
 
 ```
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.78.0" 
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.87.0" 
 ```
 
 
@@ -1938,7 +1939,7 @@ main ( args . project_id , args . instance_id , args . table )
 require "google/cloud/bigtable" 
 
 # Instantiates a client 
-bigtable = Google :: Cloud :: [ Bigtable ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigtable/latest/Google-Cloud-Bigtable.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigtable/latest/Google-Cloud-Bigtable.html)
+bigtable = Google :: Cloud :: [ Bigtable ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigtable-v2/latest/Google-Cloud-Bigtable.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-bigtable/latest/Google-Cloud-Bigtable.html)
 
 # Your Cloud Bigtable instance ID 
 # instance_id = "my-instance" 

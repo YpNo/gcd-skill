@@ -162,7 +162,7 @@ Every item in the sovereign cloud docs "Technology Areas" menu is covered:
 Each available service has its `tpc-differences` page plus region-specific sub-pages scraped and synchronized into `references/product-differences.md`:
 
 <!-- AUTO-SYNC:COVERAGE-TABLE:START -->
-Total scraped pages: **434** in `docs-raw/` (Berlin GCD) and **433** in `docs-raw-s3ns/` (S3NS Cloud de Confiance).
+Total scraped pages: **436** in `docs-raw/` (Berlin GCD) and **435** in `docs-raw-s3ns/` (S3NS Cloud de Confiance).
 
 | Product | Berlin Pages | S3NS Pages | S3NS SecNumCloud 3.2 | Includes |
 |---|---:|---:|---|---|
@@ -174,7 +174,7 @@ Total scraped pages: **434** in `docs-raw/` (Berlin GCD) and **433** in `docs-ra
 | BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | Landing, differences, bq CLI, quotas, quickstarts, data loading, reservations |
 | Bigtable | 14 | 14 | Qualification en cours | Landing, differences, instances, replication, backups, CMEK, change streams |
 | Cloud Armor | 3 | 3 | Qualifié SecNumCloud 3.2 | Landing, differences, security policies, WAF rules, rate limiting |
-| Cloud Billing | 8 | 8 | — | Landing, differences, BigQuery billing export, access control |
+| Cloud Billing | 7 | 7 | — | Landing, differences, BigQuery billing export, access control |
 | Cloud DNS | 8 | 8 | Qualifié SecNumCloud 3.2 | Landing, differences, private zones, records, forwarding, peering |
 | Cloud Interconnect | 2 | 2 | Qualifié SecNumCloud 3.2 | Landing, differences, Dedicated & Partner Interconnect, MACsec |
 | Cloud KMS | 8 | 8 | Qualifié SecNumCloud 3.2 | Landing, differences, software keys, EKM, CMEK, key import |
@@ -189,7 +189,7 @@ Total scraped pages: **434** in `docs-raw/` (Berlin GCD) and **433** in `docs-ra
 | Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | Landing, differences, MySQL & PostgreSQL Enterprise Plus, C3 series |
 | Cloud Storage | 10 | 10 | Qualifié SecNumCloud 3.2 | Landing, differences, single-region buckets, uploads, FUSE, HMAC |
 | Cloud VPN | 2 | 2 | Qualifié SecNumCloud 3.2 | Landing, differences, HA VPN topologies and tunnels |
-| Compute Engine | 9 | 9 | Qualifié SecNumCloud 3.2 | Landing, differences, C3/M3/A3 VMs, Hyperdisk, Shielded VM, OS images |
+| Compute Engine | 12 | 12 | Qualifié SecNumCloud 3.2 | Landing, differences, C3/M3/A3 VMs, Hyperdisk, Shielded VM, OS images |
 | Container-Optimized OS | 3 | 3 | Qualifié SecNumCloud 3.2 | Landing, differences, H100 GPU drivers, release notes |
 | Filestore | 16 | 16 | Qualification en cours | Landing, differences, Regional tier NFS, Direct Peering, GKE CSI |
 | Google Kubernetes Engine (GKE) | 9 | 9 | Qualifié SecNumCloud 3.2 | Landing, differences, Autopilot clusters, Workload Identity, Storage FUSE |

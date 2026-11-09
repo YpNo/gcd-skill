@@ -1,7 +1,7 @@
 # Create and manage tables
 
 Source: https://documentation.s3ns.fr/bigtable/docs/managing-tables
-Last updated: 2026-10-28
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/bigtable/docs/tpc-differences) for more details.
 
@@ -186,7 +186,7 @@ in the table. You can add or delete column families later.
 
 ### Console
 
-To create a new table in an instance:
+To create a table in an instance:
 
 - 
 
@@ -198,11 +198,11 @@ Open the instance list
 
 - 
 
-Click the instance whose tables you want to view.
+Click the instance where you want to create the table.
 
 - 
 
-Click **Tables** in the left pane.
+In the Bigtable navigation menu, click **Tables**.
 
 The **Tables** page displays a list of tables in the instance.
 
@@ -213,19 +213,23 @@ Click add_box
 
 - 
 
-Enter a table ID for the table.
+In the **Create a table** pane, in the **Table ID** field, enter a
+permanent ID for the table.
 
 - 
 
 Optional: [Add column families](#add-column-families).
 
-You can add columns now or later. A table must have at least one column
-family before you can write data to it or read a change stream from it.
+You can add column families when you create the table or later. A table
+must have at least one column family before you can write data to it or
+read a change stream from it.
 
 - 
 
-Optional, **Enterprise Plus edition**: To use [microsecond timestamp granularity](/bigtable/docs/data-types#timestamp_granularity),
-select **Use microsecond timestamps**.
+Optional: In the Enterprise Plus edition, to use
+[microsecond timestamp granularity](/bigtable/docs/data-types#timestamp_granularity), in the
+**Timestamp granularity** section, select **Use microsecond
+timestamps**.
 
 - 
 
@@ -240,41 +244,57 @@ Select **Enable change stream**.
 
 - 
 
-In the **Retention time** field, enter a number from 1 to 7 to
-specify the number of days that the change stream data should be
-retained.
+In the **Retention time** field, enter an integer from 1 to 7 to
+specify the number of days to retain the change stream data.
 
 - 
 
-Optional: If you don't want Bigtable to create a daily
-backup of the table, clear the **Enable automated
-backup** checkbox. For more information, see [Use automated
-backup](/bigtable/docs/managing-backups#use-automated-backup).
+Optional: In the **Configure automated backup** section, configure
+automated backups for the table. By default, **Enable automated
+backup** is selected, and Bigtable creates a daily
+standard backup on all clusters in the instance and retains each
+backup for seven days. For more information,
+see [Use automated backup](/bigtable/docs/managing-backups#use-automated-backup).
 
-- 
+- If you don't want Bigtable to create daily backups of
+the table, clear **Enable automated backup**.
 
-Optional: Enable infrequent access for the table as part
-of [tiered storage](/bigtable/docs/tiered-storage)
-([Preview](https://documentation.s3ns.fr/products#product-launch-stages)):
+- On SSD instances, to create daily hot backups instead of standard
+backups, select **Hot** in the **Backup type** section, and then in
+the **Set hot to standard** field, enter an integer from 1 to 10 to
+specify the number of days before each backup automatically
+transitions to a standard backup. The default is 3 days, and the
+value can't exceed the retention period. You can't select **Hot** if
+tiered storage is enabled. For more information, see
+[Configure hot automated backups](/bigtable/docs/managing-backups#configure-hot-automated-backups).
 
-- 
+- To set a custom retention period, in the **Backup configuration**
+section, enter an integer from 3 to 90 in the **Retention period**
+field to specify the number of days to retain backups.
 
-Select **Enable tiered storage**.
-
-- 
-
-In the **Age threshold** field, enter the number of days after which
-Bigtable moves data from SSD storage to infrequent access
-storage. The number must be 30 or greater.
-
-- 
-
-Optional, **Enterprise Plus edition**: By default, a daily backup is
-created in all clusters in the table's instance. To choose clusters
-where Bigtable must create a daily backup of the table,
-select cluster locations in the **Select clusters to back up** field.
-For more information, see
+- In the Enterprise Plus edition, to choose specific clusters where
+Bigtable creates daily backups, in the **Backup
+configuration** section, select the clusters in the **Select
+clusters to back up** list, and then click **OK**. For more
+information, see
 [Configure automated backup cluster locations](/bigtable/docs/managing-backups#automated-backup-cluster-locations).
+
+- 
+
+Optional: In the **Configure tiered storage** section, enable infrequent
+access storage for the table as part of [tiered storage](/bigtable/docs/tiered-storage)
+([Preview](/products#product-launch-stages)). You can't enable tiered
+storage if **Hot** is selected for automated backups.
+
+- 
+
+Select the **Enable tiered storage** checkbox.
+
+- 
+
+In the **Age threshold** field, enter an integer of 30 or greater to
+specify the number of days after which Bigtable moves
+data from SSD storage to infrequent access storage.
 
 - 
 
@@ -328,19 +348,19 @@ for a complete list of options.
 gcloud bigtable instances tables create TABLE_ID \ 
 --instance = INSTANCE_ID \ 
 --project = PROJECT_ID \ 
---column-families = COLUMN-FAMILIES 
+--column-families = COLUMN_FAMILIES 
 ```
 
 
 Replace the following:
 
-- TABLE_ID : a unique ID for the new table
+- ` TABLE_ID `: a unique ID for the new table
 
-- INSTANCE_ID : the ID of the instance
+- ` INSTANCE_ID `: the ID of the instance
 
-- PROJECT_ID : the project that will contain the new table
+- ` PROJECT_ID `: the project that will contain the new table
 
-- COLUMN-FAMILIES : a comma-separated list of column family
+- ` COLUMN_FAMILIES `: a comma-separated list of column family
 names. You can add more column families later.
 
 Optional:
@@ -366,10 +386,11 @@ and app profile usage requirements. For more information, see
 ```
 
 
-Replace RETENTION_PERIOD with the length of time that
+Replace ` RETENTION_PERIOD ` with the length of time that
 Bigtable should retain change stream data for the table.
 The time must be from one to seven days. Acceptable units are days (d),
-hours (h), minutes (m), and seconds (s). Examples: `48h` or `6d`
+hours (h), minutes (m), and seconds (s)—for example, `48h` or
+`6d`.
 
 - 
 
@@ -383,7 +404,7 @@ seven days, use the
 gcloud bigtable instances tables create TABLE_ID \ 
 --instance = INSTANCE_ID \ 
 --project = PROJECT_ID \ 
---column-families = COLUMN-FAMILIES \ 
+--column-families = COLUMN_FAMILIES \ 
 --enable-automated-backup
 ```
 
@@ -395,23 +416,29 @@ To configure a different retention period, use the
 with a unit of `m`, `h`, or `d` (minutes, hours, or days), such as `15d`
 for 15 days.
 
-**Enterprise Plus edition**: By default, a daily backup is
-created in all clusters in the table's instance. To configure cluster
-locations where Bigtable must create a daily backup of
-the table, use the `--automated-backup-locations` flag instead of the
-`--enable-automated-backup` flag. Provide a comma-separated list of
-cluster locations where the automated backup must be enabled. Example:
-`us-central1-a,us-east1-b,europe-west1-c`.
+On SSD instances, to configure Bigtable to create hot
+automated backups that automatically transition to standard backups, use
+the `--automated-backup-keep-hot-duration` flag instead of the
+`--enable-automated-backup` flag. Provide a duration from `24h` (1 day)
+to `10d` (10 days), not exceeding the retention period. Express the
+value as a number with a unit of `s`, `m`, `h`, or `d` (seconds,
+minutes, hours, or days), such as `24h` or `2d`. For more information,
+see [Configure hot automated
+backups](/bigtable/docs/managing-backups#configure-hot-automated-backups).
+
+**Enterprise Plus edition**: by default, Bigtable creates
+a daily backup in all clusters in the table's instance. To configure
+cluster locations where Bigtable must create a daily
+backup of the table, use the `--automated-backup-locations` flag instead
+of the `--enable-automated-backup` flag. Provide a comma-separated list
+of cluster locations where the automated backup must be
+enabled—for example, `us-central1-a,us-east1-b,europe-west1-c`.
 
 - 
 
 To enable infrequent access as part of [tiered storage](/bigtable/docs/tiered-storage)
-([Preview](https://documentation.s3ns.fr/products#product-launch-stages)), use the
-
-`--tiered-storage-infrequent-access-older-than` flag and replace
-AGE_THRESHOLD with a value of at least 30 days. Acceptable
-units are days (`d`), hours (`h`), minutes (`m`), and seconds (`s`).
-Example: `32d` or `32d12h`.
+([Preview](/products#product-launch-stages)), use the
+`--tiered-storage-infrequent-access-older-than` flag:
 
 
 ```
@@ -422,15 +449,14 @@ gcloud beta bigtable instances tables create TABLE_ID \
 ```
 
 
+Replace ` AGE_THRESHOLD ` with a value of at least 30 days.
+Acceptable units are days (`d`), hours (`h`), minutes (`m`), and seconds
+(`s`)—for example, `32d` or `32d12h`.
+
 - 
 
 To configure the [timestamp granularity](/bigtable/docs/data-types#timestamp_granularity)
-for the table, use the `--timestamp-granularity` flag and replace
-TIMESTAMP_GRANULARITY with the level of precision. The
-default precision is millisecond and the value is `MILLIS`. If you want
-the table to accept timestamps with microsecond precision, set the value
-to `MICROS`. Microsecond precision timestamps are available only for
-instances in the Enterprise Plus edition.
+for the table, use the `--timestamp-granularity` flag:
 
 
 ```
@@ -442,15 +468,22 @@ gcloud bigtable instances tables create TABLE_ID \
 ```
 
 
+Replace TIMESTAMP_GRANULARITY with the level of
+precision. The default precision is millisecond and the value is
+`MILLIS`. If you want the table to accept timestamps with microsecond
+precision, set the value to `MICROS`. Microsecond precision timestamps
+are available only for instances in the Enterprise Plus edition.
+
 
 
 ### cbt
 
-Use the following command, replacing ` TABLE_NAME ` with the
-name of your table. You can't use the 
+You can't use the 
 `cbt` CLI
-to create a table
-with a change stream enabled.
+to create a table with a change stream
+enabled.
+
+To create a table, run the following command:
 
 
 ```
@@ -458,11 +491,13 @@ cbt createtable TABLE_ID
 ```
 
 
+Replace ` TABLE_ID ` with a unique ID for the new table.
+
 Optional: To create an [aggregate column
 family](/bigtable/docs/aggregates#aggregate-column-families) in the table,
 append the column family name with the aggregation type. The following
 creates an aggregate column family with a garbage
-collection policy of `never`.
+collection policy of `never`:
 
 
 ```
@@ -472,12 +507,12 @@ cbt createtable TABLE_ID families= FAMILY_NAME :never: TYPE
 
 Replace the following:
 
-- TABLE_ID : a unique ID for the new table
+- ` TABLE_ID `: a unique ID for the new table
 
-- FAMILY_NAME : : a comma-separated list of column family
-names. You can add more column families later.
+- ` FAMILY_NAME `: a comma-separated list of column family names. You
+can add more column families later.
 
-- TYPE : the aggregate type. Must be `intsum`, `intmin`, `intmax`,
+- ` TYPE `: the aggregate type. Must be `intsum`, `intmin`, `intmax`,
 or `inthll`.
 
 
@@ -536,49 +571,50 @@ for a complete list of options.
 gcloud bigtable instances tables create TABLE_ID \ 
 --instance = INSTANCE_ID \ 
 --project = PROJECT_ID \ 
---column-families = COLUMN-FAMILIES \ 
+--column-families = COLUMN_FAMILIES \ 
 --splits = SPLITS 
 ```
 
 
 Replace the following:
 
-- TABLE_ID : a unique ID for the new table
+- ` TABLE_ID `: a unique ID for the new table
 
-- INSTANCE_ID : the ID of the instance
+- ` INSTANCE_ID `: the ID of the instance
 
-- PROJECT_ID : the project that will contain the new table
+- ` PROJECT_ID `: the project that will contain the new table
 
-- COLUMN-FAMILIES : a comma-separated list of column family
+- ` COLUMN_FAMILIES `: a comma-separated list of column family
 names. You can add more column families later.
 
-- SPLITS : the row keys where the table should initially be
+- ` SPLITS `: the row keys where the table should initially be
 split—for example, `10,20`.
 
 
 
 ### cbt
 
-To pre-split a table based on the row key, use the following syntax to
-create the table. Replace `[TABLE_NAME]` with the table name and `[SPLITS]`
-with a comma-separated list of row-key prefixes to use for the pre-splits.
+To pre-split a table based on the row key, run the following command:
 
 
 ```
-``` none 
-cbt createtable [ TABLE_NAME ] splits =[ SPLITS ] 
-``` 
+cbt createtable TABLE_ID splits= SPLITS 
 ```
 
+
+Replace the following:
+
+- ` TABLE_ID `: a unique ID for the new table
+
+- ` SPLITS `: a comma-separated list of row-key prefixes to use for
+the pre-splits
 
 For example, to pre-split the table `my-table` at row keys that begin with
 `10` and `20`:
 
 
 ```
-```none
 cbt createtable my-table splits=10,20
-```
 ```
 
 
@@ -726,13 +762,19 @@ You can't use the gcloud CLI to add column families to a table.
 
 ### cbt
 
-To add a column family to a table, use the following command:
+To add a column family to a table, run the following command:
 
 
 ```
 cbt createfamily TABLE_ID FAMILY_NAME 
 ```
 
+
+Replace the following:
+
+- ` TABLE_ID `: the ID of the table in which to add the column family
+
+- ` FAMILY_NAME `: the name of the column family to add
 
 For example, to add the column families `cf1` and `cf2` to the table `my-table`:
 
@@ -757,12 +799,12 @@ cbt createfamily TABLE_ID FAMILY_NAME :never: TYPE
 
 Replace the following:
 
-- TABLE_ID : the table ID
+- ` TABLE_ID `: the table ID
 
-- FAMILY_NAME : : a comma-separated list of column family
-names. You can add more column families later.
+- ` FAMILY_NAME `: a comma-separated list of column family names. You
+can add more column families later.
 
-- TYPE : the aggregation type. Must be `intsum`, `intmin`,
+- ` TYPE `: the aggregation type. Must be `intsum`, `intmin`,
 `intmax`, or `inthll`.
 
 
@@ -831,15 +873,20 @@ You can't use the gcloud CLI to delete column families from a table.
 
 ### cbt
 
-To delete a column family from a table, use the following command, replacing
-`[TABLE_NAME]` with the table name and `[FAMILY_NAME]` with the column
-family name:
+To delete a column family from a table, run the following command:
 
 
 ```
-cbt deletefamily [ TABLE_NAME ] [ FAMILY_NAME ] 
+cbt deletefamily TABLE_ID FAMILY_NAME 
 ```
 
+
+Replace the following:
+
+- ` TABLE_ID `: the ID of the table from which to delete the column
+family
+
+- ` FAMILY_NAME `: the name of the column family to delete
 
 For example, to delete the column family `cf2` from the table `my-table`:
 
@@ -887,7 +934,7 @@ to expand a list of replications of the table.
 
 To view a list of tables, run the
 [`gcloud bigtable instances tables list`](/sdk/gcloud/reference/bigtable/instances/tables/list)
-command.
+command:
 
 
 ```
@@ -895,10 +942,7 @@ gcloud bigtable instances tables list --instances = INSTANCE_IDS
 ```
 
 
-Replace the following:
-
-- INSTANCE_IDS : a comma-separated list of instance IDs.
-
+Replace ` INSTANCE_IDS ` with a comma-separated list of instance IDs.
 
 
 ### cbt
@@ -911,11 +955,9 @@ cbt ls INSTANCE_ID
 ```
 
 
-Replace the following:
-
-- `INSTANCE_ID` : 
-The permanent identifier for the instance.
-
+Replace ` INSTANCE_ID ` with 
+the permanent identifier for the instance
+.
 
 
 ### C++
@@ -1751,9 +1793,9 @@ gcloud bigtable instances tables describe TABLE_ID \
 
 Replace the following:
 
-- TABLE_ID : a unique ID of the table
+- ` TABLE_ID `: a unique ID of the table
 
-- INSTANCE_ID : the ID of the instance
+- ` INSTANCE_ID `: the ID of the instance
 
 
 
@@ -1764,12 +1806,15 @@ You can use the
 to get a list of existing column families
 in a table.
 
-Use the following command, replacing `[TABLE_NAME]` with the table name:
+To view the column families in a table, run the following command:
 
 
 ```
-cbt ls [ TABLE_NAME ] 
+cbt ls TABLE_ID 
 ```
+
+
+Replace ` TABLE_ID ` with the unique ID of the table.
 
 
 
@@ -1809,9 +1854,11 @@ instructions on how to view, set, and update garbage collection policies.
 For instructions on how to back up a table and restore from a backup to a new
 table, see [Manage backups](/bigtable/docs/managing-backups).
 
-If you have enabled automated backup while creating a table, then you can modify
-automated backup configuration for a table to enable or disable automated
-backup, or change the retention period to up to 90 days.
+If you enable automated backup when you create a table, then you can later
+modify the table's automated backup configuration. You can enable or disable
+automated backup, configure hot automated backups on SSD instances, change the
+retention period to up to 90 days, or, in Enterprise
+Plus edition, select the clusters where Bigtable stores backups.
 For more information, see [Use automated backup](/bigtable/docs/managing-backups#use-automated-backup).
 
 ## Enable, disable, or configure a change stream
@@ -1893,9 +1940,9 @@ gcloud bigtable instances tables delete TABLE_ID --instance = INSTANCE_ID
 
 Replace the following:
 
-- TABLE_ID : the unique ID of the table
+- ` TABLE_ID `: the unique ID of the table
 
-- INSTANCE_ID : the ID of the instance
+- ` INSTANCE_ID `: the ID of the instance
 
 - 
 
@@ -1905,13 +1952,15 @@ In the terminal, enter `y` to confirm table deletion.
 
 ### cbt
 
-To delete a table, use the following command, replacing `[TABLE_NAME]` with
-the table name:
+To delete a table, run the following command:
 
 
 ```
-cbt deletetable [ TABLE_NAME ] 
+cbt deletetable TABLE_ID 
 ```
+
+
+Replace ` TABLE_ID ` with the unique ID of the table.
 
 
 
@@ -1931,9 +1980,9 @@ gcloud bigtable instances tables undelete TABLE_ID --instance = INSTANCE_ID
 
 Replace the following:
 
-- TABLE_ID : the unique identifier for the table
+- ` TABLE_ID `: the unique identifier for the table
 
-- INSTANCE_ID : the ID of the instance
+- ` INSTANCE_ID `: the ID of the instance
 
 When you undelete a table, Bigtable enables deletion protection for the
 table automatically.
@@ -2012,38 +2061,40 @@ visible.
 
 ### gcloud
 
-To enable deletion protection for a table, run the [`gcloud bigtable instances
-table update`](/sdk/gcloud/reference/bigtable/instances/tables/update) command:
+To enable deletion protection for a table, run the
+[`gcloud bigtable instances tables update`](/sdk/gcloud/reference/bigtable/instances/tables/update)
+command:
 
 
 ```
-```sh
-gcloud bigtable instances tables update TABLE_ID \
---instance= INSTANCE_ID \
+gcloud bigtable instances tables update TABLE_ID \ 
+--instance = INSTANCE_ID \ 
 --deletion-protection
-```
-```
-
-
-To disable deletion protection for a table, run the following:
-
-
-```
-```sh
-gcloud bigtable instances tables update TABLE_ID \
---instance= INSTANCE_ID \
---no-deletion-protection
-```
 ```
 
 
 Replace the following:
 
+- ` TABLE_ID `: the unique identifier for the table
+
+- ` INSTANCE_ID `: the ID of the instance
+
+To disable deletion protection for a table, run the following command:
+
 
 ```
-+ TABLE_ID : the unique identifier for the table
-+ INSTANCE_ID : the ID of the instance
+gcloud bigtable instances tables update TABLE_ID \ 
+--instance = INSTANCE_ID \ 
+--no-deletion-protection
 ```
+
+
+Replace the following:
+
+- ` TABLE_ID `: the unique identifier for the table
+
+- ` INSTANCE_ID `: the ID of the instance
+
 
 
 ### cbt
@@ -2114,16 +2165,16 @@ gcloud beta bigtable instances tables update TABLE_ID \
 
 Replace the following:
 
-- TABLE_ID : the ID for the table that you want to update.
+- ` TABLE_ID `: the ID for the table that you want to update
 
-- INSTANCE_ID : the ID of the instance.
+- ` INSTANCE_ID `: the ID of the instance
 
-- PROJECT_ID : the project that contains the table that
-you want to update.
+- ` PROJECT_ID `: the project that contains the table that
+you want to update
 
-- AGE_THRESHOLD : the age threshold, which must be at
+- ` AGE_THRESHOLD `: the age threshold, which must be at
 least 30 days. Acceptable units are days (`d`), hours (`h`), minutes
-(`m`), and seconds (`s`). Example: from `32d` previously to
+(`m`), and seconds (`s`)—for example, from `32d` previously to
 `33d`.
 
 
@@ -2192,11 +2243,11 @@ gcloud beta bigtable instances tables update TABLE_ID \
 
 Replace the following:
 
-- TABLE_ID : the ID for the table that you want to update
+- ` TABLE_ID `: the ID for the table that you want to update
 
-- INSTANCE_ID : the ID of the instance
+- ` INSTANCE_ID `: the ID of the instance
 
-- PROJECT_ID : the project that contains the table that
+- ` PROJECT_ID `: the project that contains the table that
 you want to update
 
 

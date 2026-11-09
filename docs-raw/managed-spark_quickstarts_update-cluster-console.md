@@ -1,7 +1,7 @@
 # Quickstart: Create a cluster by using the Google Cloud Dedicated console
 
 Source: https://berlin.devsitetest.how/managed-spark/docs/quickstarts/update-cluster-console
-Last updated: 2026-10-26
+Last updated: 2026-11-09
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/managed-spark/docs/tpc-differences) for more details.
 
@@ -476,19 +476,14 @@ All:
 
 - 
 
-In the Google Cloud Dedicated console, go to the Managed Service for Apache Spark
-**Clusters** page.
+In the Google Cloud Dedicated console navigation menu, under **Infrastructure**, go
+to the Managed Service for Apache Spark **Clusters** page.
 
 [Go to Clusters](https://console.cloud.berlin-build0.goog/dataproc/clusters) 
 
 - 
 
-Click **Create cluster**.
-
-- 
-
-In the **Create Dataproc cluster** dialog, click **Create** in the **Cluster
-on Compute Engine** row.
+Click **Create cluster**, and then choose **Cluster on Compute Engine**.
 
 - 
 
@@ -522,31 +517,40 @@ minutes.
 
 Submit a Spark job that estimates a value of Pi:
 
-- In the Managed Service for Apache Spark navigation menu, click **Jobs**.
+- In the Managed Service for Apache Spark navigation menu, click **Jobs (and Batches)** (or **Jobs**).
 
 - 
 
 On the **Jobs** page, click
 add_box **Submit job**, and then do
-the following:
+the following on the **Submit a job** page:
 
-- In the **Job ID** field, use the default setting, or provide an ID that
-is unique to your Google Cloud Dedicated project.
+- Under **Select compute type for job**, select **Spark on Compute
+Engine**.
 
-- In the **Cluster** drop-down, select **`example-cluster`**.
+- In the **Cluster job details** section:
 
-- For **Job type**, select **Spark**.
+- In the **Job ID** field, use the default setting, or provide an ID
+that is unique to your Google Cloud Dedicated project.
 
-- In the **Main class or jar** field, enter
-`org.apache.spark.examples.SparkPi`.
+- In the **Cluster** menu, select **`example-cluster`**.
+
+- 
+
+In the **Files and artifacts** section:
+
+- For **Job type**, select **Spark (Scala / Java)**.
+
+- Under **Driver configuration**, select **Main class**, and in the
+**Main class** field, enter `org.apache.spark.examples.SparkPi`.
 
 - 
 
 In the **Jar files** field, enter
-`file:///usr/lib/spark/examples/jars/spark-examples.jar`. (This sample
-jar is pre-installed on the cluster. For custom jobs, specify a
-Cloud Storage path; see [Submit a
-job](/managed-spark/docs/guides/submit-job).)
+`file:///usr/lib/spark/examples/jars/spark-examples.jar`. (This
+sample jar is pre-installed on the cluster. For custom jobs, specify
+a Cloud Storage path; see
+[Submit a job](/managed-spark/docs/guides/submit-job).)
 
 - 
 

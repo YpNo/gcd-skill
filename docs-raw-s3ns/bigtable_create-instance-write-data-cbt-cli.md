@@ -1,7 +1,7 @@
 # Quickstart: Create an instance and write data with the cbt CLI
 
 Source: https://documentation.s3ns.fr/bigtable/docs/create-instance-write-data-cbt-cli
-Last updated: 2026-10-28
+Last updated: 2026-11-06
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/bigtable/docs/tpc-differences) for more details.
 

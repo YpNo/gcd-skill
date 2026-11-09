@@ -1,7 +1,7 @@
 # Gemini Enterprise Agent Platform
 
 Source: https://documentation.s3ns.fr/gemini-enterprise-agent-platform
-Last updated: 2026-10-26
+Last updated: 2026-11-02
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/gemini-enterprise-agent-platform/tpc-differences) for more details.
 
@@ -162,6 +162,6 @@ Deploy open models to endpoints for online inference.
 
 
 
-For high-level product overviews and marketing details across Google Cloud products, visit the Gemini Enterprise Agent Platform product page.
+For high-level product overviews and marketing details across Cloud de Confiance by S3NS products, visit the Gemini Enterprise Agent Platform product page.
 
 [Go to the Agent Platform product page](https://documentation.s3ns.fr/products/gemini-enterprise-agent-platform)

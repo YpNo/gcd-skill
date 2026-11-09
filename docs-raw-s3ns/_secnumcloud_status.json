@@ -2,7 +2,7 @@
   "source_url": "https://www.s3ns.io/offres/premi3ns-cloud-de-confiance",
   "summary": {
     "qualified": 29,
-    "in_progress": 10,
+    "in_progress": 13,
     "upcoming": 4
   },
   "services": [
@@ -257,6 +257,27 @@
       "status_label": "Qualification en cours",
       "description": "Traitez et analysez de grands volumes de données avec Apache Spark, grâce à des clusters flexibles dont les ressources s'adaptent à vos besoins.",
       "url": "https://documentation.s3ns.fr/managed-spark/docs"
+    },
+    {
+      "name": "model garden",
+      "status": "in_progress",
+      "status_label": "Qualification en cours",
+      "description": "Découvrez, testez, personnalisez et déployez des modèles d'IA de Google et de ses partenaires pour répondre aux besoins de vos applications.",
+      "url": "https://cloud.google.com/model-garden"
+    },
+    {
+      "name": "model registry",
+      "status": "in_progress",
+      "status_label": "Qualification en cours",
+      "description": "Centralisez, organisez et versionnez vos modèles de machine learning pour simplifier leur suivi, leur évaluation et leur déploiement.",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/machine-learning/model-registry/introduction?hl=fr"
+    },
+    {
+      "name": "online inference",
+      "status": "in_progress",
+      "status_label": "Qualification en cours",
+      "description": "Déployez vos modèles de machine learning et obtenez des prédictions en temps réel, avec une faible latence, pour vos applications.",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/machine-learning/predictions?hl=fr"
     },
     {
       "name": "Cloud Quota",

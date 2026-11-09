@@ -1,7 +1,7 @@
 # IAM release notes
 
 Source: https://berlin.devsitetest.how/iam/docs/release-notes
-Last updated: 2026-10-26
+Last updated: 2026-11-07
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -180,6 +180,26 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## October 29, 2026
+
+
+Feature 
+
+
+The Admin (`roles/admin`), Writer (`roles/writer`), and Reader (`roles/reader`)
+basic roles are generally available
+([GA](https://berlin.devsitetest.how/products#product-launch-stages)). For more
+information, see [Basic roles](/iam/docs/roles-overview#basic).
+
+The legacy basic roles—Owner (`roles/owner`), Editor (`roles/editor`), and
+Viewer (`roles/viewer`)—are still available for use and are being
+actively maintained. However, if you need to grant a basic role, we recommend
+granting the Admin, Writer, or Reader role instead of a legacy basic role.
+This is because the newer roles support additional features, such as the use of
+[IAM Conditions](/iam/docs/conditions-overview).
 
 
 

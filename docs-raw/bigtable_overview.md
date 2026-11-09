@@ -1,7 +1,7 @@
 # Bigtable overview
 
 Source: https://berlin.devsitetest.how/bigtable/docs/overview
-Last updated: 2026-10-28
+Last updated: 2026-11-06
 
 - 
 

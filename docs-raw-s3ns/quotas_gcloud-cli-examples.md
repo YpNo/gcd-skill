@@ -277,7 +277,7 @@ similar to the following sample:
 ... 
 { 
 "name" : "projects/PROJECT_NUMBER/locations/global/services/compute.googleapis.com/quotaInfos/CPUS-per-project-region" , 
-** "quotaId" : "CPUS-per-project-region" ** , 
+"quotaId" : "CPUS-per-project-region" , 
 "metric" : "compute.googleapis.com/cpus" , 
 "containerType" : "PROJECT" , 
 "dimensions" : [ 
@@ -784,7 +784,7 @@ the project and the enablement setting:
 
 ```
 gcloud quotas adjuster settings update --project= RESOURCE_PROJECT_ID \
---enablement=**enabled**
+--enablement=enabled
 ```
 
 
