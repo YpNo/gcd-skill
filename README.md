@@ -28,11 +28,11 @@ Clone the repo and symlink it into your project's `.claude/skills/` directory:
 
 ```bash
 # Clone the skill repo
-git clone https://github.com/rochacbruno/gcd-claude-skill.git
+git clone https://github.com/romain-bailleul/gcd-skill.git
 
 # From your project root, create the skills directory and symlink
 mkdir -p .claude/skills
-ln -s /path/to/gcd-claude-skill .claude/skills/gcd
+ln -s /path/to/gcd-skill .claude/skills/gcd
 ```
 
 The skill activates automatically when Claude detects sovereign-cloud-related work in that project. You can also invoke it directly with `/gcd`.
@@ -49,9 +49,9 @@ git commit -m "Add GCD skill"
 Symlink into your personal skills directory so the skill is available across all projects:
 
 ```bash
-git clone https://github.com/rochacbruno/gcd-claude-skill.git
+git clone https://github.com/romain-bailleul/gcd-skill.git
 mkdir -p ~/.claude/skills
-ln -s /path/to/gcd-claude-skill ~/.claude/skills/gcd
+ln -s /path/to/gcd-skill ~/.claude/skills/gcd
 ```
 
 ### Claude Code - as a plugin
@@ -60,11 +60,11 @@ The repo includes a `.claude-plugin/plugin.json` manifest, so it can be loaded a
 
 ```bash
 # Load via additional directory
-claude --add-dir /path/to/gcd-claude-skill
+claude --add-dir /path/to/gcd-skill
 
 # Or place in skills dir and it auto-loads as a skills-directory plugin
 mkdir -p ~/.claude/skills
-ln -s /path/to/gcd-claude-skill ~/.claude/skills/gcd
+ln -s /path/to/gcd-skill ~/.claude/skills/gcd
 ```
 
 ### Other agents (Cursor, Gemini CLI, VS Code Copilot, etc.)
@@ -74,7 +74,7 @@ Clone the repo and place (or symlink) the `SKILL.md` and `references/` directory
 ## Structure
 
 ```
-gcd-claude-skill/
+gcd-skill/
   SKILL.md                              # Main skill (agentskills standard)
   .claude-plugin/
     plugin.json                         # Claude Code plugin manifest
@@ -211,6 +211,10 @@ python3 scripts/sync-skill.py
 ```
 
 Each region's docs are scraped into their respective output directory (`docs-raw/` for Berlin, `docs-raw-s3ns/` for S3NS). Running `python3 scripts/sync-skill.py` parses both regions' manifests and `*_tpc-differences.md` pages, automatically updating product inventories, coverage tables, and injecting new product difference sections whenever new services are added to the documentation.
+
+## Credits & Acknowledgments
+
+Originally based on [rochacbruno/gcd-claude-skill](https://github.com/rochacbruno/gcd-claude-skill) by Bruno Rocha, and subsequently extended and maintained independently with dynamic service discovery, parallel HTTP SSR scraping, S3NS PREMI3NS SecNumCloud 3.2 qualification tracking, and automated reference synchronization.
 
 ## License
 
