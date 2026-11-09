@@ -1,7 +1,7 @@
 # Retrieve a public key
 
 Source: https://berlin.devsitetest.how/kms/docs/retrieve-public-key
-Last updated: 2026-11-07
+Last updated: 2026-10-27
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/kms/docs/tpc-differences) for more details.
 
@@ -127,11 +127,6 @@ Guides
 
 
 
-
-- On this page 
-- [ Required roles ](#required-roles)
-- [ Retrieve a public key ](#retrieve)
-- 
 
 
 
@@ -296,8 +291,8 @@ required, expand the **Required permissions** section:
 
 
 
-#### Required permissions
 
+#### Required permissions
 
 
 
@@ -372,12 +367,10 @@ To download the public key for an enabled asymmetric key version:
 
 
 
-[Console](#console) [ gcloud ](#gcloud) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) [API](#api) 
-More 
 
 
 
-
+### Console
 
 
 
@@ -463,6 +456,8 @@ Each portion of the filename is separated by a hyphen, for example
 
 
 
+### gcloud 
+
 
 
 
@@ -538,6 +533,8 @@ For information on all flags and possible values, run the command with the
 
 
 
+
+### C# 
 
 
 
@@ -628,6 +625,8 @@ return result ;
 
 
 
+
+### Go 
 
 
 
@@ -762,6 +761,8 @@ return nil
 
 
 
+### Java 
+
 
 
 
@@ -871,6 +872,8 @@ System . out . printf ( "Public key: %s%n" , publicKey . [ getPem ](https://berl
 
 
 
+
+### Node.js 
 
 
 
@@ -988,6 +991,8 @@ return getPublicKey ();
 
 
 
+### PHP 
+
 
 
 
@@ -1083,6 +1088,8 @@ return $publicKey;
 
 
 
+
+### Python 
 
 
 
@@ -1214,6 +1221,8 @@ return crc32c_fun ( data )
 
 
 
+### Ruby 
+
 
 
 
@@ -1259,7 +1268,7 @@ To run this code, first [set up a Ruby development environment](/ruby/docs/setup
 require "google/cloud/kms" 
 
 # Create the client. 
-client = Google :: Cloud :: [ Kms ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-inventory-v1/latest/Google-Cloud-Kms.html) . [ key_management_service ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms/latest/Google-Cloud-Kms.html)
+client = Google :: Cloud :: [ Kms ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-v1/latest/Google-Cloud-Kms.html) . [ key_management_service ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms/latest/Google-Cloud-Kms.html)
 
 # Build the key version name. 
 key_version_name = client . [ crypto_key_version_path ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-v1/latest/Google-Cloud-Kms-V1-KeyManagementService-Paths.html) project : project_id , 
@@ -1298,6 +1307,8 @@ puts "Public key: #{ public_key . pem } "
 
 
 
+
+### API
 
 
 
@@ -1351,7 +1362,7 @@ ZSBkYXkgOik=\n-----END PUBLIC KEY-----\n" ,
 "algorithm" : " ALGORITHM " , 
 "pemCrc32c" : "2561089887" , 
 "name" : "projects/ PROJECT_ID /locations/ LOCATION /keyRings/ 
-KEY_RING /cryptoKeys/ KEY_NAME /cryptoKeyVersions/
+KEY_RING /cryptoKeys/ KEY_NAME /cryptoKeyVersions/ 
 KEY_VERSION " , 
 "protectionLevel" : " PROTECTION_LEVEL " 
 } 
@@ -1371,7 +1382,7 @@ the following:
 } 
 "algorithm" : " ALGORITHM " , 
 "name" : "projects/ PROJECT_ID /locations/ LOCATION /keyRings/ 
-KEY_RING /cryptoKeys/ KEY_NAME /cryptoKeyVersions/
+KEY_RING /cryptoKeys/ KEY_NAME /cryptoKeyVersions/ 
 KEY_VERSION " , 
 "protectionLevel" : " PROTECTION_LEVEL " 
 } 

@@ -1,7 +1,7 @@
 # Tokens overview
 
 Source: https://berlin.devsitetest.how/docs/authentication/tokens
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,12 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ User authentication ](#user_authentication)
-- [ Workload authentication ](#workload_authentication)
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -174,7 +168,7 @@ APIs using the Cloud Client Libraries, the Google Cloud Dedicated console, or th
 Google Cloud CLI—the process of selecting the right type of token, and
 obtaining and refreshing those tokens is handled automatically for you.
 
-## User authentication 
+## User authentication
 
 When human users interact with Google Cloud Dedicated in Germany, they don't interact with
 Google Cloud Dedicated in Germany APIs directly. Instead, they use a *client* to act on their behalf.

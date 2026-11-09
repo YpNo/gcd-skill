@@ -1,7 +1,7 @@
 # Set up a local development environment
 
 Source: https://documentation.s3ns.fr/docs/get-started/developer-environment
-Last updated: 2026-11-03
+Last updated: 2026-10-27
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/get-started/tpc-differences) for more details.
 
@@ -88,15 +88,6 @@ Get started
 
 
 
-- On this page 
-- [ Before you begin ](#prerequisites)
-- [ Set up the gcloud CLI and authentication ](#cli)
-- [ Install Cloud Client Libraries ](#libraries)
-- [ Install the google-cloud-developer plugin ](#google-cloud-developer)
-- [ Alternative tools and environments ](#alternatives)
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -159,16 +150,16 @@ code:
 
 - [Enable required Cloud APIs](/apis/docs/getting-started) for your project.
 
-- Install [Cloud Client Libraries](/apis/docs/cloud-client-libraries) for your
-programming language (such as Java, Python, or Go). Your code authenticates
-automatically using ADC.
+- Install [Cloud Client Libraries](/apis/docs/cloud-client-libraries) for
+your programming language (such as Java, Python, or Go). Your code
+authenticates automatically using ADC.
 
 ## Install the `google-cloud-developer` plugin
 
-If you use an agent such as Claude Code CLI, Antigravity CLI, or Codex CLI to
-assist you in your development work, you can install the
-`google-cloud-developer` plugin to get help with Cloud de Confiance tasks and
-coding. This plugin includes:
+If you use an agent such as Claude Code CLI, Antigravity CLI, or Codex CLI to assist
+you in your development work, you can install the `google-cloud-developer`
+plugin to get help with Cloud de Confiance tasks and coding. This plugin
+includes:
 
 - Skills to help with account creation, billing setup, project management, and
 authentication to Cloud de Confiance services and APIs.
@@ -185,27 +176,34 @@ Install the `google-cloud-developer` plugin using the following instructions
 based on your agent.
 
 
-[Antigravity](#antigravity) [Claude Code CLI](#claude-code-cli) [Codex CLI](#codex-cli) 
-More 
 
+### Antigravity CLI
 
+- 
 
-
-Install the plugin from the Antigravity Marketplace:
-
-- In Antigravity, go to Customizations > Marketplace and search for
-"Google Cloud Developer".
-
-- Click the **Add** button.
-
-Alternatively, install the plugin using the Antigravity CLI:
+Install the plugin by specifying its location in the
+[Google Agent Skills](https://g.dev/cloud/agent-plugins) repository:
 
 
 ```
-agy plugin install google-cloud-developer
+agy plugin install https://github.com/google/skills/plugins/cloud/google-cloud-developer
 ```
 
 
+- 
+
+Enable the Developer Knowledge API in your Cloud de Confiance project by
+using the gcloud CLI:
+
+
+```
+gcloud services enable developerknowledge.googleapis.com --project= YOUR_PROJECT_ID 
+```
+
+
+
+
+### Claude Code CLI
 
 - 
 
@@ -232,8 +230,7 @@ gcloud services enable developerknowledge.googleapis.com --project= YOUR_PROJECT
 - 
 
 Create an API key for the Developer Knowledge API by following the
-instructions
-[Create and secure the API key](https://developers.google.com/knowledge/quickstart#create-secure-key).
+instructions [Create and secure the API key](https://developers.google.com/knowledge/quickstart#create-secure-key).
 Save the key you create in a secure location.
 
 - 
@@ -248,6 +245,7 @@ export DEVELOPERKNOWLEDGE_API_KEY= YOUR_API_KEY
 
 
 
+### Codex CLI
 
 - 
 
@@ -274,8 +272,7 @@ gcloud services enable developerknowledge.googleapis.com --project= YOUR_PROJECT
 - 
 
 Create an API key for the Developer Knowledge API by following the
-instructions
-[Create and secure the API key](https://developers.google.com/knowledge/quickstart#create-secure-key).
+instructions [Create and secure the API key](https://developers.google.com/knowledge/quickstart#create-secure-key).
 Save the key you create in a secure location.
 
 - 
@@ -318,5 +315,4 @@ tooling, consider the following:
 
 ## What's next
 
-- Learn about
-[Authentication in Cloud de Confiance](/docs/get-started/authentication).
+- Learn about [Authentication in Cloud de Confiance](/docs/get-started/authentication).

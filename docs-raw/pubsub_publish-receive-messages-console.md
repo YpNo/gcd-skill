@@ -1,7 +1,7 @@
 # Quickstart: Publish and receive messages in Pub/Sub using the Google Cloud Dedicated console
 
 Source: https://berlin.devsitetest.how/pubsub/docs/publish-receive-messages-console
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/pubsub/docs/tpc-differences) for more details.
 
@@ -126,15 +126,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Before you begin ](#before-you-begin)
-- [ Create a topic ](#create_a_topic)
-- [ Add a second subscription ](#add_a_second_subscription)
-- [ Publish a message to the topic ](#publish_a_message_to_the_topic)
-- [ Pull the messages from the subscription ](#pull_the_messages_from_the_subscription)
-- [ Clean up ](#clean-up)
-- [ What's next ](#whats-next)
-- 
 
 
 
@@ -144,8 +135,7 @@ Guides
 
 
 
-
-# Publish and receive messages in Pub/ Sub using the Google Cloud Dedicated console 
+# Publish and receive messages in Pub/Sub using the Google Cloud Dedicated console
 
 
 
@@ -157,7 +147,7 @@ Google Cloud Dedicated console.
 
 
 
-## Before you begin 
+## Before you begin
 
 
 
@@ -188,8 +178,8 @@ select or create a Google Cloud Dedicated project.
 
 
 
-Roles required to select or create a project**
 
+**Roles required to select or create a project**
 
 
 
@@ -261,7 +251,6 @@ Enable the Pub/Sub API, if it is not already enabled.
 
 **Roles required to enable APIs**
 
-
 To enable APIs, you need the `serviceusage.services.enable` permission. If you
 created the project, then you likely already have this permission through the
 Owner role (`roles/owner`). Otherwise, you can get this permission through the
@@ -294,8 +283,8 @@ Pub/Sub Admin
 
 
 
-#### Check for the roles
 
+#### Check for the roles
 
 
 
@@ -333,8 +322,8 @@ the list of roles includes the required roles.
 
 
 
-#### Grant the roles
 
+#### Grant the roles
 
 
 

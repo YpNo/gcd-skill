@@ -1,7 +1,7 @@
 # Monitoring in Google Cloud Dedicated versus Google Cloud
 
 Source: https://berlin.devsitetest.how/monitoring/docs/tpc-differences
-Last updated: 2026-11-06
+Last updated: 2026-10-26
 
 - 
 
@@ -113,15 +113,6 @@ Guides
 
 
 
-- On this page 
-- [ Key differences ](#key-differences)
-
-- [ Workflows and tools ](#workflow-differences)
-
-- [ Recommendations ](#recommendations)
-- [ Related guides ](#related-guides)
-- 
-
 
 
 
@@ -152,7 +143,7 @@ Google Cloud, in the [Recommendations](#recommendations) section.
 
 
 
-## Key differences 
+## Key differences
 
 
 

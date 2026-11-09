@@ -1,7 +1,7 @@
 # Export table data to Cloud Storage
 
 Source: https://documentation.s3ns.fr/bigquery/docs/exporting-data
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/bigquery/docs/tpc-differences) for more details.
 
@@ -126,42 +126,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Export limitations ](#export_limitations)
-- [ Before you begin ](#before_you_begin)
-
-- [ Required permissions ](#required_permissions)
-
-- [ Export formats and compression types ](#export_formats_and_compression_types)
-- [ Export data ](#export-data-in-bigquery)
-
-- [ Export table data ](#export_table_data)
-- [ Export table metadata ](#export_table_metadata)
-- [ Export query results ](#export_query_results)
-
-- [ Other ways to export data ](#other_export_options)
-- [ Avro export details ](#avro_export_details)
-- [ Parquet export details ](#parquet_export_details)
-- [ Exporting data into one or more files ](#exporting_data_into_one_or_more_files)
-
-- [ Limit the exported file size ](#limit_the_exported_file_size)
-- [ Extract compressed table ](#extract_compressed_table)
-
-- [ Example use case ](#example-export-data)
-- [ Quota policy ](#quota_policy)
-
-- [ View current quota usage ](#view_current_quota_usage)
-
-- [ Troubleshooting ](#troubleshooting)
-
-- [ Diagnose issues using Logs Explorer ](#diagnose-export-issues)
-- [ Exceeded extract bytes per day quota error ](#ts-exceeded-extract-bytes-per-day-quota)
-- [ Failed to export on nested schema error ](#failed-to-export)
-
-- [ Pricing ](#pricing)
-- [ Table security ](#table_security)
-- [ What's next ](#whats_next)
-- 
 
 
 
@@ -170,8 +134,7 @@ Guides
 
 
 
-
-# Export table data to Cloud Storage 
+# Export table data to Cloud Storage
 
 
 
@@ -182,7 +145,7 @@ BigQuery](/bigquery/docs/loading-data), you can export it by
 using the Cloud de Confiance console, the bq command-line tool, the API, client libraries,
 or [alternative export methods](#other_export_options).
 
-## Export limitations 
+## Export limitations
 
 When you export data from BigQuery, note the following:
 
@@ -385,11 +348,8 @@ You can export table data by:
 Select one of the following:
 
 
-[ Console ](#console) [ SQL ](#sql) [ bq ](#bq) [ API ](#api) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) 
-More 
 
-[ Python ](#python) [ Ruby ](#ruby) 
-
+### Console
 
 - 
 
@@ -416,8 +376,7 @@ Click **Overview > Tables**, and then select a table.
 
 - 
 
-In the details pane, click
-**More > Export to Google Cloud Storage**.
+In the details pane, click upload **Export / sync** > **Cloud Storage**.
 
 - 
 
@@ -442,6 +401,7 @@ To check on the progress of the job, in the **Explorer** pane, click
 To export views to Cloud Storage, use [`EXPORT DATA OPTIONS` statement](/bigquery/docs/reference/standard-sql/export-statements).
 
 
+### SQL
 
 Use the
 [`EXPORT DATA` statement](/bigquery/docs/reference/standard-sql/export-statements#export_data_statement).
@@ -483,6 +443,7 @@ For more information about how to run queries, see [Run an interactive query](/b
 
 
 
+### bq
 
 Use the [`bq extract`](/bigquery/docs/reference/bq-cli-reference#bq_extract) command with the `--destination_format` flag.
 
@@ -602,6 +563,7 @@ gs://example-bucket/single_partition.csv
 ```
 
 
+### API
 
 To export data, create an `extract` job and populate the job configuration.
 
@@ -664,6 +626,7 @@ those operations will succeed.
 
 
 
+### C#
 
 
 
@@ -792,6 +755,7 @@ Console . Write ( $"Exported table to {destinationUri}." );
 
 
 
+### Go
 
 
 
@@ -941,6 +905,7 @@ return nil
 
 
 
+### Java
 
 
 
@@ -1030,7 +995,7 @@ import com.google.cloud.[RetryOption](https://documentation.s3ns.fr/java/docs/re
 import com.google.cloud.bigquery.[BigQuery](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.BigQuery.html) ; 
 import com.google.cloud.bigquery.[BigQueryException](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.BigQueryException.html) ; 
 import com.google.cloud.bigquery.[BigQueryOptions](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.BigQueryOptions.html) ; 
-import com.google.cloud.bigquery.[Job](https://documentation.s3ns.fr/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.Job.html) ; 
+import com.google.cloud.bigquery.[Job](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Job.html) ; 
 import com.google.cloud.bigquery.[Table](https://documentation.s3ns.fr/java/docs/reference/google-cloud-biglake/latest/com.google.cloud.bigquery.biglake.v1.Table.html) ; 
 import com.google.cloud.bigquery.[TableId](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.TableId.html) ; 
 import org.threeten.bp.[Duration](https://documentation.s3ns.fr/java/docs/reference/google-cloud-compute/latest/com.google.cloud.compute.v1.Duration.html) ; 
@@ -1068,10 +1033,10 @@ try {
 [ TableId ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.TableId.html) tableId = [ TableId ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.TableId.html) . of ( projectId , datasetName , tableName ); 
 [ Table ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-biglake/latest/com.google.cloud.bigquery.biglake.v1.Table.html) table = bigquery . [ getTable ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getTable_com_google_cloud_bigquery_TableId_com_google_cloud_bigquery_BigQuery_TableOption____) ( tableId ); 
 
-[ Job ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.Job.html) job = table . [ extract ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Table.html#com_google_cloud_bigquery_Table_extract_java_lang_String_java_lang_String_com_google_cloud_bigquery_BigQuery_JobOption____) ( dataFormat , destinationUri ); 
+[ Job ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Job.html) job = table . [ extract ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Table.html#com_google_cloud_bigquery_Table_extract_java_lang_String_java_lang_String_com_google_cloud_bigquery_BigQuery_JobOption____) ( dataFormat , destinationUri ); 
 
 // Blocks until this job completes its execution, either failing or succeeding. 
-[ Job ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.Job.html) completedJob = 
+[ Job ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Job.html) completedJob = 
 job . [ waitFor ](https://documentation.s3ns.fr/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.Job.html#com_google_cloud_bigquery_Job_waitFor_com_google_cloud_bigquery_BigQueryRetryConfig_com_google_cloud_RetryOption____) ( 
 RetryOption . initialRetryDelay ( Duration . ofSeconds ( 1 )), 
 RetryOption . totalTimeout ( Duration . ofMinutes ( 3 ))); 
@@ -1110,6 +1075,7 @@ System . out . println ( "Table extraction job was interrupted. \n" + e . toStri
 
 
 
+### Node.js
 
 
 
@@ -1252,6 +1218,7 @@ throw errors ;
 
 
 
+### PHP
 
 
 
@@ -1386,6 +1353,7 @@ printf('Exported %s to %s' . PHP_EOL, $table->id(), $destinationUri);
 
 
 
+### Python
 
 
 
@@ -1513,6 +1481,7 @@ print (
 
 
 
+### Ruby
 
 
 
@@ -1603,7 +1572,7 @@ require "google/cloud/bigquery"
 def extract_table bucket_name = "my-bucket" , 
 dataset_id = "my_dataset_id" , 
 table_id = "my_table_id" 
-bigquery = Google :: Cloud :: [ Bigquery ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-bigquery/latest/Google-Cloud-Bigquery.html) . [ new ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-bigquery/latest/Google-Cloud-Bigquery.html)
+bigquery = Google :: Cloud :: [ Bigquery ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-bigquery-data_exchange-v1beta1/latest/Google-Cloud-Bigquery.html) . [ new ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-bigquery/latest/Google-Cloud-Bigquery.html)
 dataset = bigquery . dataset dataset_id 
 table = dataset . table table_id 
 
@@ -1927,9 +1896,8 @@ property:
 
 
 
+`destinationUris` options | 
 
-| `destinationUris` options | 
-| 
 
 
 
@@ -1948,7 +1916,7 @@ wildcard URI.
 
 
 
-Property definition:**
+**Property definition:**
 
 
 
@@ -2091,12 +2059,10 @@ WHERE export_id = i ;
 
 
 
-[ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ Python ](#python) 
-**More 
 
 
 
-
+### Go 
 
 
 
@@ -2249,6 +2215,8 @@ return nil
 
 
 
+
+### Java 
 
 
 
@@ -2424,6 +2392,8 @@ System . out . println ( "Table extraction job was interrupted. \n" + e . toStri
 
 
 
+### Node.js 
+
 
 
 
@@ -2568,6 +2538,8 @@ throw errors ;
 
 
 
+
+### Python 
 
 
 
@@ -2717,7 +2689,7 @@ results should be persisted to disk.
 For information on extract job quotas, see [Extract jobs](/bigquery/quotas#export_jobs)
 on the Quotas and limits page.
 
-Usage for extract jobs is available in the `INFORMATION_SCHEMA`.
+Usage for extract jobs are available in the `INFORMATION_SCHEMA`.
 The job entry in the `JOBS_BY_*` system tables for the extract job contains a
 `total_bytes_processed` value that can be used to monitor the aggregate usage to
 ensure that it stays under 50 TiB per-day. To learn how to query the
@@ -2752,7 +2724,7 @@ policy that monitors the number of bytes exported.
 - 
 
 In the Cloud de Confiance console, go to the
-notifications*  Alerting** page:
+notifications* **Alerting** page:
 
 
 [Go to **Alerting**](https://console.cloud.s3nscloud.fr/monitoring/alerting)

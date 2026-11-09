@@ -1,7 +1,7 @@
 # Quickstart: Publish and receive messages in Pub/Sub by using the gcloud CLI
 
 Source: https://berlin.devsitetest.how/pubsub/docs/publish-receive-messages-gcloud
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/pubsub/docs/tpc-differences) for more details.
 
@@ -126,19 +126,6 @@ Guides
 
 
 
-- On this page 
-- [ Before you begin ](#before-you-begin)
-
-- [ Set up your project ](#project_setup)
-- [ Required roles ](#required_roles)
-
-- [ Create a topic ](#create_a_topic)
-- [ Create a subscription ](#create_a_subscription)
-- [ Publish messages ](#publish_messages)
-- [ Receive messages ](#receive_messages)
-- [ How did it go? ](#how-did-it-go)
-- [ What's next ](#whats-next)
-- 
 
 
 
@@ -148,8 +135,7 @@ Guides
 
 
 
-
-# Publish and receive messages in Pub/ Sub by using the gcloud CLI 
+# Publish and receive messages in Pub/Sub by using the gcloud CLI
 
 
 
@@ -166,7 +152,7 @@ This page shows you how to do the following operations in Pub/Sub using the Goog
 
 
 
-## Before you begin 
+## Before you begin
 
 
 

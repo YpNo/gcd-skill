@@ -1,7 +1,7 @@
 # Create projects
 
 Source: https://berlin.devsitetest.how/resource-manager/docs/creating-managing-projects
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/resource-manager/docs/tpc-differences) for more details.
 
@@ -128,18 +128,6 @@ Guides
 
 
 
-- On this page 
-- [ Key characteristics of projects ](#key-characteristics)
-- [ Before you begin ](#before_you_begin)
-- [ Create a project ](#creating_a_project)
-
-- [ Add tags during project creation ](#add_tags_during_project_creation)
-- [ Designate project environments with tags ](#designate_project_environments_with_tags)
-- [ Creating a project using a service account ](#creating_a_project_using_a_service_account)
-
-- [ Managing project quotas ](#managing_project_quotas)
-- [ What's next ](#whats_next)
-- 
 
 
 
@@ -149,42 +137,36 @@ Guides
 
 
 
-
-Projects are the fundamental operating unit in the Google Cloud Dedicated in Germany
-resource hierarchy and let you organize, isolate, and control your cloud
-resources. Sitting between folders (or the organization resource) and service
-resources such as virtual machines and storage, projects help you manage APIs,
-billing, and permissions across environments. To create and manage projects,
-you can use the Google Cloud Dedicated console, the Google Cloud CLI, or the Cloud Resource Manager API.
-
-## Key characteristics of projects 
+Projects are the fundamental operating unit in the Google Cloud Dedicated in Germany resource
+hierarchy. Projects exist between folders (or the organization) and resources
+such as virtual machines and storage. This page explains how to create
+Google Cloud Dedicated projects using the Cloud Resource Manager API and the Google Cloud Dedicated console.
 
 Key characteristics of projects include the following:
 
 - 
 
-**The primary service container**: A project is the base level where you
-enable Google Cloud Dedicated services (APIs) and create resources such as
-Compute Engine instances or BigQuery datasets.
+The primary service container: A project is the base level where all
+Google Cloud Dedicated in Germany services (APIs) are enabled and where resources like
+Compute Engine instances or BigQuery datasets are created.
 
 - 
 
-**The trust boundary**: Projects serve as an isolation layer. By default,
-resources in one project don't have access to resources in another project,
-which helps establish a secure perimeter for different applications or
-environments.
+The trust boundary: Projects serve as an isolation layer. By default,
+resources in one project don't have access to resources in another,
+establishing a secure perimeter for different applications or environments.
 
 - 
 
-**The billing unit**: Projects are the primary way that you track, organize,
-and separate costs across your organization.
+The billing unit: Projects are the primary way businesses track, organize, and separate costs
+across their organization.
 
 - 
 
-**The policy attachment point**: Although projects inherit policies from
-folders and the organization resource, the project level is the most common
-place where you grant specific Identity and Access Management (IAM) permissions to
-developers and service accounts for daily tasks.
+The policy attachment point: While policies often inherit from folders, the
+project level is the most common place where specific permissions (
+Identity and Access Management (IAM)) are granted to developers and service accounts
+for daily tasks.
 
 ## Before you begin
 
@@ -272,11 +254,8 @@ the [`projects.create()`](/resource-manager/reference/rest/v3/projects/create)
 method.
 
 
-[Console](#console) [gcloud](#gcloud) [REST](#rest) 
-More 
 
-
-
+### Console
 
 To create a new project, do the following:
 
@@ -321,6 +300,7 @@ the new project.
 
 
 
+### gcloud
 
 - 
 
@@ -382,6 +362,7 @@ gcloud projects create PROJECT_ID --folder = FOLDER_ID
 
 
 
+### REST
 
 You can't use certain words in the project ID when you create a new project
 with the `projects.create()` method. Some examples include `google`, `null`, `undefined`, and `ssl`.
@@ -467,11 +448,8 @@ to this role, see [Manage tags on resources](/resource-manager/docs/tags/tags-cr
 You can only add the namespace for the tag key-value pairs in one of the following ways:
 
 
-[gcloud](#gcloud) [REST](#rest) 
-More 
 
-
-
+### gcloud
 
 To add tags during project creation, run the following command:
 
@@ -494,6 +472,7 @@ where the tag keys are defined.
 
 
 
+### REST
 
 The following snippet is a JSON request where you create a project and
 add tags to it.

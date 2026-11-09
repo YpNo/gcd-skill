@@ -1,7 +1,7 @@
 # Learn about Cloud Billing
 
 Source: https://documentation.s3ns.fr/docs/get-started/learn-about-billing
-Last updated: 2026-11-04
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/get-started/tpc-differences) for more details.
 
@@ -87,24 +87,6 @@ Get started
 
 
 
-
-- On this page 
-- [ Key components and relationships ](#key_components_and_relationships)
-- [ Types of Cloud Billing accounts ](#account-types)
-- [ Manage your account and find out your costs ](#manage_your_account_and_find_out_your_costs)
-
-- [ Basic account management ](#basic_account_management)
-- [ Control who can access billing ](#control_who_can_access_billing)
-- [ View your costs ](#view_your_costs)
-
-- [ Monitor and optimize your cloud spend ](#monitor_and_optimize_your_cloud_spend)
-
-- [ Set budgets and spending alerts ](#set_budgets_and_spending_alerts)
-- [ View and manage cost anomalies ](#view_and_manage_cost_anomalies)
-- [ Optimize costs (FinOps) ](#optimize_costs_finops)
-
-- [ What's next ](#whats_next)
-- 
 
 
 

@@ -1,7 +1,7 @@
 # Google Kubernetes Engine documentation
 
 Source: https://berlin.devsitetest.how/kubernetes-engine/docs
-Last updated: 2026-10-30
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/kubernetes-engine/docs/tpc-differences) for more details.
 
@@ -120,11 +120,12 @@ Google Kubernetes Engine (GKE)
 
 
 
-# Google Kubernetes Engine documentation 
+
+# Google Kubernetes Engine documentation
 
 
 
-[Read product documentation](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/kubernetes-engine-overview)
+Read product documentation 
 
 
 

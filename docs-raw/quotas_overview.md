@@ -1,7 +1,7 @@
 # Cloud Quotas overview
 
 Source: https://berlin.devsitetest.how/docs/quotas/overview
-Last updated: 2026-10-28
+Last updated: 2026-10-26
 
 - 
 
@@ -93,17 +93,6 @@ Guides
 
 
 
-- On this page 
-- [ Types of quotas ](#types-of-quota)
-- [ Quotas and the Google Cloud Dedicated hierarchy ](#gcp-hierarchy)
-- [ Regions and zones ](#regions_and_zones)
-- [ Manage quota values ](#manage_quota_values)
-
-- [ When you run out of quota ](#running_out)
-- [ About quota adjustments ](#about_increase_requests)
-
-- [ What's next ](#whats_next)
-- 
 
 
 
@@ -113,8 +102,7 @@ Guides
 
 
 
-
-Google Cloud Dedicated in Germany uses quotas to help maintain fairness and reduce
+Google Cloud Dedicated in Germany uses quotas to help ensure fairness and reduce
 spikes in resource use and availability. A quota restricts how much of a
 Google Cloud Dedicated resource your Google Cloud Dedicated project can use. Quotas
 apply to a range of resource types, including hardware, software, and network

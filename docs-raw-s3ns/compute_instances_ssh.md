@@ -1,7 +1,7 @@
 # About SSH connections
 
 Source: https://documentation.s3ns.fr/compute/docs/instances/ssh
-Last updated: 2026-11-06
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/compute/docs/tpc-differences) for more details.
 
@@ -128,11 +128,6 @@ Guides
 
 
 
-- On this page 
-- [ Metadata-managed SSH connections ](#metadata)
-- [ What's next? ](#whats_next)
-- 
-
 
 
 
@@ -180,11 +175,8 @@ VMs without using the Cloud de Confiance console or the gcloud CLI, you must
 perform some configurations yourself.
 
 
-[ Console ](#console) [ gcloud ](#gcloud) [ Third-party tools ](#third-party-tools) 
-More 
 
-
-
+### Console
 
 - You use the [SSH button in the
 Cloud de Confiance console](https://console.cloud.s3nscloud.fr/compute/instances) to [connect
@@ -221,6 +213,7 @@ doesn't store the public key on the VM.
 
 
 
+### gcloud
 
 - You use the `gcloud compute ssh` command to
 [connect to your VM](/compute/docs/instances/connecting-to-instance#gcetools).
@@ -258,6 +251,7 @@ doesn't store the public key on the VM.
 
 
 
+### Third-party tools
 
 - You create an SSH key pair and username. See
 [

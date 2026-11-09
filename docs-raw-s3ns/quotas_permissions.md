@@ -1,7 +1,7 @@
 # Quota permissions
 
 Source: https://documentation.s3ns.fr/docs/quotas/permissions
-Last updated: 2026-11-04
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/quotas/tpc-differences) for more details.
 
@@ -108,14 +108,6 @@ Guides
 
 
 
-- On this page 
-- [ Permissions for viewing quota ](#permissions_viewing)
-- [ Permissions for changing quota ](#permissions_changing)
-- [ Permissions for viewing quota increase requests ](#permissions_increase)
-- [ Permissions for creating an alert policy for a quota ](#permissions_create_alert)
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -170,7 +162,10 @@ these permissions by default, see the
 [IAM permissions reference](/iam/docs/roles-permissions).
 
 Cloud Quotas can also be viewed programmatically by using the
-[Service Usage API](/service-usage/docs/reference/rest).
+[Service Usage API](/service-usage/docs/reference/rest). To learn about the
+IAM roles and permissions required for this approach, see
+[Access control with IAM](/service-usage/docs/access-control) in the
+Service Usage documentation.
 
 ## Permissions for changing quota
 

@@ -1,7 +1,7 @@
 # Organization Policy overview
 
 Source: https://documentation.s3ns.fr/organization-policy/overview
-Last updated: 2026-10-26
+Last updated: 2026-10-22
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/organization-policy/tpc-differences) for more details.
 
@@ -128,23 +128,6 @@ Guides
 
 
 
-- On this page 
-- [ Benefits ](#benefits)
-- [ Common use cases ](#common_use_cases)
-- [ Differences from Identity and Access Management ](#differences_from_iam)
-- [ How organization policy works ](#how_organization_policy_works)
-- [ Constraints ](#constraints)
-
-- [ Managed constraints ](#managed-constraints)
-- [ Custom constraints ](#custom-constraints)
-- [ Managed constraints (legacy) ](#legacy-constraints)
-
-- [ Conditional organization policies ](#conditional_organization_policies)
-- [ Inheritance ](#inheritance)
-- [ Violations ](#violations)
-- [ Next steps ](#next_steps)
-- 
-
 
 
 
@@ -160,7 +143,7 @@ organization's Cloud de Confiance resources. As the
 you can configure constraints across your entire
 [resource hierarchy](/resource-manager/docs/cloud-platform-resource-hierarchy).
 
-## Benefits 
+## Benefits
 
 - Centralize control to configure restrictions on how your organization's
 resources can be used.

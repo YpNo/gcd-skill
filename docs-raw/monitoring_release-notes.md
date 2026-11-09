@@ -1,7 +1,7 @@
 # Monitoring release notes
 
 Source: https://berlin.devsitetest.how/monitoring/docs/release-notes
-Last updated: 2026-11-06
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/monitoring/docs/tpc-differences) for more details.
 
@@ -127,13 +127,6 @@ Resources
 
 
 
-
-- On this page 
-- [ June 25, 2024 ](#June_25_2024)
-- [ June 17, 2024 ](#June_17_2024)
-- [ June 06, 2024 ](#June_06_2024)
-- [ May 28, 2024 ](#May_28_2024)
-- 
 
 
 

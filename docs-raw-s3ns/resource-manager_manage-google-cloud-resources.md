@@ -1,7 +1,7 @@
 # Quickstart: Create your Cloud de Confiance by S3NS resource hierarchy
 
 Source: https://documentation.s3ns.fr/resource-manager/docs/manage-google-cloud-resources
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/resource-manager/docs/tpc-differences) for more details.
 
@@ -126,18 +126,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Before you begin ](#before-you-begin)
-- [ View your resources ](#view_your_resources)
-- [ Create a project resource ](#create_a_project_resource)
-- [ Create a folder resource ](#create_a_folder_resource)
-- [ Grant IAM roles at the organization level ](#grant-iam-roles-org)
-- [ Create a billing account ](#create_a_billing_account)
-- [ Migrate existing billing accounts ](#migrate_existing_billing_accounts)
-- [ View billing accounts under the organization resource ](#view_billing_accounts_under_the_organization_resource)
-- [ Clean up ](#clean-up)
-- [ What's next ](#whats-next)
-- 
 
 
 
@@ -147,24 +135,21 @@ Guides
 
 
 
-
-# Manage your Cloud de Confiance by S3NS resources 
-
+# Manage your Cloud de Confiance by S3NS resources
 
 
 
-A Cloud de Confiance by S3NS resource hierarchy lets you organize cloud assets,
-establish access control boundaries, and centralize administrative control. In
-this quickstart, you view and manage resources, grant Identity and Access Management
-(IAM) roles at the organization level, and manage billing
-accounts using the
+
+This page explains how to view and manage your Cloud de Confiance by S3NS
+resources, grant Identity and Access Management (IAM) roles at the organization
+level, and manage organization resource billing accounts using the
 [Cloud de Confiance console](https://console.cloud.s3nscloud.fr/).
 
 
 
 
 
-## Before you begin 
+## Before you begin
 
 
 
@@ -258,8 +243,8 @@ Billing Account Creator, Folder Creator, Project Creator
 
 
 
-#### Check for the roles
 
+#### Check for the roles
 
 
 
@@ -267,7 +252,7 @@ Billing Account Creator, Folder Creator, Project Creator
 - 
 
 
-In the Cloud de Confiance console, go to the IAM** page.
+In the Cloud de Confiance console, go to the **IAM** page.
 
 
 [Go to IAM](https://console.cloud.s3nscloud.fr/projectselector/iam-admin/iam?supportedpurview=organizationId)
@@ -297,8 +282,8 @@ the list of roles includes the required roles.
 
 
 
-#### Grant the roles
 
+#### Grant the roles
 
 
 

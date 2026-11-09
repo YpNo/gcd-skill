@@ -1,7 +1,7 @@
 # Allow access to Cloud de Confiance console domains
 
 Source: https://documentation.s3ns.fr/docs/get-started/required-domains
-Last updated: 2026-10-28
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/get-started/tpc-differences) for more details.
 
@@ -88,11 +88,6 @@ Get started
 
 
 
-- On this page 
-- [ Required domains ](#required_domains)
-- [ Monitoring domains ](#monitoring_domains)
-- 
-
 
 
 
@@ -109,7 +104,7 @@ errors when accessing or using the Cloud de Confiance console. This document lis
 domains and domain patterns that must be allowed for
 the Cloud de Confiance console to function properly.
 
-## Required domains 
+## Required domains
 
 The following domains and domain patterns are required for
 Cloud de Confiance console functionality. If any of these domains are blocked,
@@ -160,11 +155,6 @@ Google APIs |
 | 
 apis.google.com | 
 Google API Client Libraries | 
-|
-
-| 
-accounts.google.com | 
-Google Account authentication and sign-in | 
 |
 
 | 

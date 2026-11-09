@@ -1,7 +1,7 @@
 # Set up ADC for a containerized development environment
 
 Source: https://berlin.devsitetest.how/docs/authentication/set-up-adc-containerized-environment
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,12 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ Test containerized applications locally ](#local-testing)
-- [ Run containerized applications on Google Cloud Dedicated ](#gcp-containerized)
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -167,7 +161,7 @@ Authentication for containerized applications running on Cloud Run
 or Google Kubernetes Engine is handled differently between local testing environments
 and Google Cloud Dedicated environments.
 
-### Test containerized applications locally 
+### Test containerized applications locally
 
 To test your containerized application on your local workstation, you can
 configure your container to authenticate with your

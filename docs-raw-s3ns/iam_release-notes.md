@@ -1,7 +1,7 @@
 # IAM release notes
 
 Source: https://documentation.s3ns.fr/iam/docs/release-notes
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -128,21 +128,6 @@ Resources
 
 
 
-- On this page 
-- [ October 29, 2026 ](#October_29_2026)
-- [ September 12, 2025 ](#September_12_2025)
-- [ June 13, 2025 ](#June_13_2025)
-- [ May 28, 2025 ](#May_28_2025)
-- [ May 15, 2025 ](#May_15_2025)
-- [ May 07, 2025 ](#May_07_2025)
-- [ December 09, 2024 ](#December_09_2024)
-- [ September 12, 2024 ](#September_12_2024)
-- [ August 12, 2024 ](#August_12_2024)
-- [ July 30, 2024 ](#July_30_2024)
-- [ June 10, 2024 ](#June_10_2024)
-- [ May 08, 2024 ](#May_08_2024)
-- 
-
 
 
 
@@ -195,26 +180,6 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
-
-
-
-## October 29, 2026
-
-
-Feature 
-
-
-The Admin (`roles/admin`), Writer (`roles/writer`), and Reader (`roles/reader`)
-basic roles are generally available
-([GA](https://documentation.s3ns.fr/products#product-launch-stages)). For more
-information, see [Basic roles](/iam/docs/roles-overview#basic).
-
-The legacy basic roles—Owner (`roles/owner`), Editor (`roles/editor`), and
-Viewer (`roles/viewer`)—are still available for use and are being
-actively maintained. However, if you need to grant a basic role, we recommend
-granting the Admin, Writer, or Reader role instead of a legacy basic role.
-This is because the newer roles support additional features, such as the use of
-[IAM Conditions](/iam/docs/conditions-overview).
 
 
 

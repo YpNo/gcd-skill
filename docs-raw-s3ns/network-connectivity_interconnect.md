@@ -1,7 +1,7 @@
 # Cloud Interconnect documentation
 
 Source: https://documentation.s3ns.fr/network-connectivity/docs/interconnect
-Last updated: 2026-11-03
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/network-connectivity/docs/interconnect/tpc-differences) for more details.
 
@@ -140,11 +140,12 @@ Cloud Interconnect
 
 
 
-# Cloud Interconnect documentation 
+
+# Cloud Interconnect documentation
 
 
 
-[Read product documentation](https://documentation.s3ns.fr/network-connectivity/docs/interconnect/concepts/overview)
+Read product documentation 
 
 
 
@@ -515,10 +516,10 @@ Partner Cross-Cloud Interconnect for OCI
 [
 
 
-Partner Cross-Cloud Interconnect for managed cloud partners
+Partner Cross-Cloud Interconnect for AWS
 
 
-](/network-connectivity/docs/interconnect/concepts/partner-cci-for-csp-overview)
+](/network-connectivity/docs/interconnect/concepts/partner-cci-for-aws-overview)
 
 
 

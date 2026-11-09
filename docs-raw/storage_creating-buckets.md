@@ -1,7 +1,7 @@
 # Create a bucket
 
 Source: https://berlin.devsitetest.how/storage/docs/creating-buckets
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/storage/docs/tpc-differences) for more details.
 
@@ -128,20 +128,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Required roles ](#required-roles)
-- [ Create a new bucket ](#create-bucket)
-- [ What's next ](#whats_next)
-- 
-
-
-
-
-
-
-
-
-
 
 
 
@@ -172,7 +158,7 @@ If you're creating a bucket for the first time, see
 comprehensive walkthrough of the tasks you can perform with
 Cloud Storage.
 
-## Required roles 
+## Required roles
 
 In order to get the required permissions for creating a Cloud Storage
 bucket, ask your administrator to grant you the Storage Admin
@@ -184,9 +170,8 @@ To see the exact permissions that are required, expand the
 
 
 
+
 #### Required permissions
-
-
 
 - `storage.buckets.create`
 
@@ -216,14 +201,11 @@ To create a bucket with specific settings or advanced configurations, complete
 the following steps.
 
 
-[Console](#console) [Command line](#command-line) [Client libraries](#client-libraries) [Terraform](#terraform) [REST APIs](#rest-apis) 
-More 
+
+### Console
 
 
-
-
-
-- In the Google Cloud Dedicated console, go to the Cloud Storage Buckets** page.
+- In the Google Cloud Dedicated console, go to the Cloud Storage **Buckets** page.
 
 [Go to Buckets](https://console.cloud.berlin-build0.goog/storage/browser)
 
@@ -669,6 +651,7 @@ operations in the Google Cloud Dedicated console, see
 
 
 
+### Command line
 
 - 
 
@@ -763,6 +746,7 @@ gcloud CLI, see [`buckets create` options](/sdk/gcloud/reference/storage/buckets
 
 
 
+### Client libraries
 
 
 
@@ -803,12 +787,10 @@ gcloud CLI, see [`buckets create` options](/sdk/gcloud/reference/storage/buckets
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) [ Rust ](#rust) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -921,6 +903,8 @@ std :: cout "Bucket " bucket_metadata - > name () " created."
 
 
 
+
+### C# 
 
 
 
@@ -1065,6 +1049,8 @@ return newlyCreatedBucket ;
 
 
 
+### Go 
+
 
 
 
@@ -1198,6 +1184,8 @@ return nil
 
 
 
+
+### Java 
 
 
 
@@ -1338,6 +1326,8 @@ System . out . println (
 
 
 
+### Node.js 
+
 
 
 
@@ -1474,6 +1464,8 @@ createBucketWithStorageClassAndLocation (). catch ( console . error );
 
 
 
+### PHP 
+
 
 
 
@@ -1599,6 +1591,8 @@ printf('Created bucket %s in %s with storage class %s', $bucketName, $storageCla
 
 
 
+### Python 
+
 
 
 
@@ -1719,6 +1713,8 @@ return new_bucket
 
 
 
+### Ruby 
+
 
 
 
@@ -1780,7 +1776,7 @@ def create_bucket_class_location bucket_name :
 
 require "google/cloud/storage" 
 
-storage = Google :: Cloud :: [ Storage ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage-control/latest/Google-Cloud-Storage.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage.html)
+storage = Google :: Cloud :: [ Storage ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage.html)
 bucket = storage . [ create_bucket ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage-Project.html) bucket_name , 
 location : "ASIA" , 
 storage_class : "COLDLINE" 
@@ -1825,6 +1821,8 @@ end
 
 
 
+
+### Rust 
 
 
 
@@ -1913,6 +1911,7 @@ Ok (())
 
 
 
+### Terraform
 
 You can use a [Terraform resource to create a storage bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket).
 
@@ -1955,11 +1954,10 @@ uniform_bucket_level_access = true
 
 
 
-[JSON API](#json-api) [XML API](#xml-api) 
-More 
+### REST APIs
 
 
-
+### JSON API
 
 - 
 
@@ -2031,6 +2029,7 @@ example, `my-project`.
 
 
 
+### XML API
 
 - 
 

@@ -1,7 +1,7 @@
 # Cloud Billing documentation
 
 Source: https://documentation.s3ns.fr/billing/docs
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/billing/docs/tpc-differences) for more details.
 
@@ -120,11 +120,12 @@ Cloud Billing
 
 
 
-# Cloud Billing documentation 
+
+# Cloud Billing documentation
 
 
 
-[Read product documentation](https://documentation.s3ns.fr/billing/docs/concepts)
+Read product documentation 
 
 
 
@@ -469,18 +470,6 @@ Differences from Google Cloud
 
 
 ](/billing/docs/tpc-differences)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

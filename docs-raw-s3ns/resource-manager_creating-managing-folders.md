@@ -1,7 +1,7 @@
 # Create folders
 
 Source: https://documentation.s3ns.fr/resource-manager/docs/creating-managing-folders
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/resource-manager/docs/tpc-differences) for more details.
 
@@ -128,23 +128,6 @@ Guides
 
 
 
-- On this page 
-- [ Example folder hierarchy ](#example-folder-hierarchy)
-- [ Before you begin ](#before_you_begin)
-- [ Set up permissions to manage folders ](#folder-permissions)
-- [ Create folders ](#creating-folders)
-
-- [ Add tags during folder creation ](#add_tags_during_folder_creation)
-
-- [ Retrieve your folder ID ](#retrieve_folder_id)
-- [ Propagation delay ](#propagation-delay)
-- [ Delete folders ](#delete)
-- [ Configure access to folders ](#folder-access)
-
-- [ Handle long-running operations ](#handle-long-running-operations)
-
-- [ What's next ](#whats_next)
-- 
 
 
 
@@ -154,21 +137,21 @@ Guides
 
 
 
+This page describes how to create Cloud de Confiance by S3NS folders to group and organize projects
+in a resource hierarchy. You can use folders to delegate administrative duties, enforce
+environment-specific organization policies, and streamline cost management across
+your departments.
 
-Cloud de Confiance by S3NS folders let you group and organize projects in a
-resource hierarchy. You can use folders to delegate administrative duties,
-enforce environment-specific organization policies, and streamline cost
-management across departments.
-
-As nodes in the [Cloud de Confiance resource
-hierarchy](/resource-manager/docs/cloud-platform-resource-hierarchy), folders
-can contain projects, other folders, or a combination of both under an
-organization resource. They also let you group resources that share common
-Identity and Access Management (IAM) roles, deny policies, or organization policies.
-Although a folder can contain multiple child folders or resources, each folder
-or resource can have only one parent.
-
-## Example folder hierarchy 
+Folders are nodes in the
+[Cloud Platform Resource Hierarchy](/resource-manager/docs/cloud-platform-resource-hierarchy).
+A folder can contain projects, other folders, or a combination of both.
+Organization resources can use folders to group projects under the organization resource node in a
+hierarchy. For example, your organization resource might contain multiple departments,
+each with its own set of Cloud de Confiance resources. Folders allow
+you to group these resources on a per-department basis. Folders are
+used to group resources that share common allow or deny policies. While a folder
+can contain multiple folders or resources, a given folder or resource can have
+exactly one parent.
 
 In the following diagram, the organization resource, "Company", has folders
 representing "Standard Workloads", "Regulated Workloads", and
@@ -202,12 +185,12 @@ The topic describes how you can control who has what access to folders and
 the resources they contain.
 
 - Understand how to set [folder permissions](#folder-permissions).
-Folders support a number of different IAM roles.
-If you want to broadly set up permissions so users can see the structure of
-their projects, grant the entire domain the **Organization Viewer** and
-**Folder Viewer** roles at the organization resource level. To restrict
-visibility to branches of your folder hierarchy, grant the **Folder Viewer**
-role on the folder or folders you want users to see.
+Folders support a number of different Identity and Access Management (IAM) roles. If you want to
+broadly set up permissions so users can see the structure of their projects,
+grant the entire domain the **Organization Viewer** and **Folder Viewer**
+roles at the organization resource level. To restrict visibility to branches of your
+folder hierarchy, grant the **Folder Viewer** role on the folder or folders
+you want users to see.
 
 - [Create folders](#creating-folders). As you plan how to organize your Cloud
 resources, we recommend that you start with a single folder as a sandbox
@@ -253,11 +236,8 @@ can grant it to other accounts.
 To set up folder permissions, follow these steps:
 
 
-[Console](#console) [gcloud](#gcloud) [REST](#rest) 
-More 
 
-
-
+### Console
 
 - In the Cloud de Confiance console, open the **Manage resources** page.
 
@@ -284,6 +264,7 @@ then select the role that you want to grant, such as **Folder Admin**.
 
 
 
+### gcloud
 
 To grant the Folder Admin role to a principal using Google Cloud CLI,
 run the following command:
@@ -296,6 +277,7 @@ gcloud organizations add-iam-policy-binding ORGANIZATION_ID \
 ```
 
 
+### REST
 
 The request JSON:
 
@@ -344,11 +326,8 @@ the following requirements:
 To create a folder, follow these steps:
 
 
-[Console](#console) [gcloud](#gcloud) [API](#api) 
-More 
 
-
-
+### Console
 
 To create folders, do the following:
 
@@ -386,6 +365,7 @@ resource or folder under which you want to create your new folder.
 
 
 
+### gcloud
 
 Folders can be created programmatically using the
 Google Cloud CLI.
@@ -425,6 +405,7 @@ parent is an organization resource.
 
 
 
+### API
 
 [Folders](/resource-manager/reference/rest/v3/folders) can be
 created with an API request.
@@ -522,11 +503,8 @@ in this role, see [Create and manage tags](/resource-manager/docs/tags/tags-crea
 You can only add the namespace for the tag key-value pairs in one of the following ways:
 
 
-[gcloud](#gcloud) [REST](#rest) 
-More 
 
-
-
+### gcloud
 
 To add tags during folder creation, run the following command:
 
@@ -550,6 +528,7 @@ resource. An example of comma-separated key-value pairs is `123/environment=prod
 
 
 
+### REST
 
 The following snippet is a JSON request that creates a folder and adds
 tags to it.
@@ -578,11 +557,8 @@ You can retrieve the ID of a folder using the Cloud de Confiance console or
 Google Cloud CLI.
 
 
-[Console](#console) [gcloud](#gcloud) 
-More 
 
-
-
+### Console
 
 - In the Cloud de Confiance console, open the **Manage resources** page.
 
@@ -591,6 +567,7 @@ the **ID** column next to the folder's display name.
 
 
 
+### gcloud
 
 To locate your folder ID, run the following command:
 
@@ -623,11 +600,8 @@ To configure access to folders, you must have the **Folder IAM Administrator**
 or **Folder Admin** role at the parent level.
 
 
-[Console](#console) [gcloud](#gcloud) [API](#api) 
-More 
 
-
-
+### Console
 
 - 
 
@@ -664,6 +638,7 @@ of the members' new role.
 
 
 
+### gcloud
 
 You can configure access to folders programmatically using the
 Google Cloud CLI or the REST API.
@@ -701,6 +676,7 @@ Replace the following:
 
 
 
+### API
 
 The `setIamPolicy` method sets the access control policy on a folder,
 replacing any existing policy. The `resource` field should be the folder's

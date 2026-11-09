@@ -1,7 +1,7 @@
 # BigQuery in Cloud de Confiance versus Google Cloud
 
 Source: https://documentation.s3ns.fr/bigquery/docs/tpc-differences
-Last updated: 2026-10-27
+Last updated: 2026-10-26
 
 - 
 
@@ -113,19 +113,6 @@ Guides
 
 
 
-- On this page 
-- [ Key differences ](#key-differences)
-
-- [ API and service availability ](#api-differences)
-- [ Regions and zones ](#regions-and-zones)
-- [ Cost management ](#cost-management-differences)
-- [ Security and access control ](#security-differences)
-- [ Integrations ](#integrations-differences)
-- [ Workflows and tools ](#workflow-differences)
-
-- [ Related guides ](#related-guides)
-- 
-
 
 
 
@@ -148,7 +135,7 @@ BigQuery documentation.
 
 
 
-## Key differences 
+## Key differences
 
 
 

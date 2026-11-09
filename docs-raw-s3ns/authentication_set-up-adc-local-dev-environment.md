@@ -1,7 +1,7 @@
 # Set up ADC for a local development environment
 
 Source: https://documentation.s3ns.fr/docs/authentication/set-up-adc-local-dev-environment
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,19 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ User credentials ](#local-user-cred)
-
-- [ Tips for configuring ADC with your user credentials ](#tips_for_configuring_adc_with_your_user_credentials)
-
-- [ Service account credentials ](#service-account)
-
-- [ Service account impersonation ](#sa-impersonation)
-- [ Service account keys ](#local-key)
-
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -174,7 +161,7 @@ You can provide either [your user credentials](#local-user-cred) or
 [service account credentials](#service-account) to ADC in a local development
 environment.
 
-## User credentials 
+## User credentials
 
 When your code is running in a local development environment, such as a
 development workstation, the best option is to use the credentials associated
@@ -397,8 +384,8 @@ a new session, set the variable again.
 
 
 
-**Example:** Linux or macOS
 
+**Example:** Linux or macOS
 
 
 ```
@@ -422,8 +409,8 @@ export GOOGLE_APPLICATION_CREDENTIALS = "/home/user/Downloads/service-account-fi
 
 
 
-**Example:** Windows
 
+**Example:** Windows
 
 
 

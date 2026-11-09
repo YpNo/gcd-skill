@@ -1,7 +1,7 @@
 # Identity and Access Management documentation
 
 Source: https://documentation.s3ns.fr/iam/docs
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/iam/docs/tpc-differences) for more details.
 
@@ -120,11 +120,12 @@ IAM
 
 
 
-# Identity and Access Management documentation 
+
+# Identity and Access Management documentation
 
 
 
-[Read product documentation](https://documentation.s3ns.fr/iam/docs/overview)
+Read product documentation 
 
 
 

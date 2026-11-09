@@ -1,7 +1,7 @@
 # IAM in Google Cloud Dedicated versus Google Cloud
 
 Source: https://berlin.devsitetest.how/iam/docs/tpc-differences
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 - 
 
@@ -113,17 +113,6 @@ Guides
 
 
 
-- On this page 
-- [ Key differences ](#key-differences)
-
-- [ Integrations ](#integrations-differences)
-- [ Security and access control ](#security-differences)
-- [ Workflows and tools ](#Workflows and tools)
-- [ Insights and observability ](#observability-differences)
-
-- [ Related guides ](#related-guides)
-- 
-
 
 
 
@@ -147,7 +136,7 @@ IAM documentation.
 
 
 
-## Key differences 
+## Key differences
 
 
 

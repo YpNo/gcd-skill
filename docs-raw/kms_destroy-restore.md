@@ -1,7 +1,7 @@
 # Destroy and restore key versions
 
 Source: https://berlin.devsitetest.how/kms/docs/destroy-restore
-Last updated: 2026-11-07
+Last updated: 2026-10-27
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/kms/docs/tpc-differences) for more details.
 
@@ -127,22 +127,6 @@ Guides
 
 
 
-
-- On this page 
-- [ Before you begin ](#before-begin)
-
-- [ Understand the risks ](#understand-risks)
-- [ Required roles ](#required-roles)
-- [ Check whether the key version is in use ](#pre-destroy-checklist)
-
-- [ Destroy a key version ](#destroy)
-
-- [ Destroying external keys ](#destroy-external)
-
-- [ Restore a key version ](#restore)
-- [ Required IAM permissions ](#iam)
-- [ Deletion timeline ](#timeline)
-- 
 
 
 
@@ -356,12 +340,10 @@ You can destroy an enabled or disabled key version.
 
 
 
-[Console](#console) [ gcloud ](#gcloud) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) [API](#api) 
-More 
 
 
 
-
+### Console
 
 
 
@@ -418,6 +400,7 @@ Destruction**.
 
 
 
+### gcloud 
 
 
 
@@ -488,6 +471,7 @@ For information on all flags and possible values, run the command with the
 
 
 
+### C# 
 
 
 
@@ -579,6 +563,8 @@ return result ;
 
 
 
+
+### Go 
 
 
 
@@ -686,6 +672,8 @@ return nil
 
 
 
+
+### Java 
 
 
 
@@ -796,6 +784,8 @@ System . out . printf ( "Destroyed key version: %s%n" , response . [ getName ](h
 
 
 
+### Node.js 
+
 
 
 
@@ -901,6 +891,8 @@ return destroyKeyVersion ();
 
 
 
+### PHP 
+
 
 
 
@@ -996,6 +988,8 @@ return $destroyedVersion;
 
 
 
+
+### Python 
 
 
 
@@ -1103,6 +1097,8 @@ return destroyed_version
 
 
 
+### Ruby 
+
 
 
 
@@ -1148,7 +1144,7 @@ To run this code, first [set up a Ruby development environment](/ruby/docs/setup
 require "google/cloud/kms" 
 
 # Create the client. 
-client = Google :: Cloud :: [ Kms ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-inventory-v1/latest/Google-Cloud-Kms.html) . [ key_management_service ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms/latest/Google-Cloud-Kms.html)
+client = Google :: Cloud :: [ Kms ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-v1/latest/Google-Cloud-Kms.html) . [ key_management_service ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms/latest/Google-Cloud-Kms.html)
 
 # Build the key version name. 
 key_version_name = client . [ crypto_key_version_path ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-v1/latest/Google-Cloud-Kms-V1-KeyManagementService-Paths.html) project : project_id , 
@@ -1187,6 +1183,8 @@ puts "Destroyed key version: #{ destroyed_version . name } "
 
 
 
+
+### API
 
 
 
@@ -1227,7 +1225,6 @@ you want to destroy.
 
 - ` KEY_VERSION `: the number of the key version that you want to
 destroy.
-
 
 
 
@@ -1297,12 +1294,10 @@ you can restore the key version by submitting a restoration request.
 
 
 
-[Console](#console) [ gcloud ](#gcloud) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) [API](#api) 
-More 
 
 
 
-
+### Console
 
 
 
@@ -1366,6 +1361,7 @@ In the confirmation prompt, click **Restore**.
 
 
 
+### gcloud 
 
 
 
@@ -1436,6 +1432,7 @@ For information on all flags and possible values, run the command with the
 
 
 
+### C# 
 
 
 
@@ -1526,6 +1523,8 @@ return result ;
 
 
 
+
+### Go 
 
 
 
@@ -1633,6 +1632,8 @@ return nil
 
 
 
+
+### Java 
 
 
 
@@ -1743,6 +1744,8 @@ System . out . printf ( "Restored key version: %s%n" , response . [ getName ](ht
 
 
 
+### Node.js 
+
 
 
 
@@ -1848,6 +1851,8 @@ return restoreKeyVersion ();
 
 
 
+### PHP 
+
 
 
 
@@ -1943,6 +1948,8 @@ return $restoredVersion;
 
 
 
+
+### Python 
 
 
 
@@ -2050,6 +2057,8 @@ return restored_version
 
 
 
+### Ruby 
+
 
 
 
@@ -2095,7 +2104,7 @@ To run this code, first [set up a Ruby development environment](/ruby/docs/setup
 require "google/cloud/kms" 
 
 # Create the client. 
-client = Google :: Cloud :: [ Kms ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-inventory-v1/latest/Google-Cloud-Kms.html) . [ key_management_service ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms/latest/Google-Cloud-Kms.html)
+client = Google :: Cloud :: [ Kms ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-v1/latest/Google-Cloud-Kms.html) . [ key_management_service ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms/latest/Google-Cloud-Kms.html)
 
 # Build the key version name. 
 key_version_name = client . [ crypto_key_version_path ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-kms-v1/latest/Google-Cloud-Kms-V1-KeyManagementService-Paths.html) project : project_id , 
@@ -2134,6 +2143,8 @@ puts "Restored key version: #{ restored_version . name } "
 
 
 
+
+### API
 
 
 
@@ -2174,7 +2185,6 @@ you want to restore.
 
 - ` KEY_VERSION `: the number of the key version that you want to
 restore.
-
 
 
 

@@ -1,7 +1,7 @@
 # Export your Cloud de Confiance by S3NS resources to Terraform format
 
 Source: https://documentation.s3ns.fr/docs/terraform/resource-management/export
-Last updated: 2026-11-06
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/terraform/tpc-differences) for more details.
 
@@ -127,26 +127,6 @@ Guides
 
 
 
-
-- On this page 
-- [ Roles ](#roles)
-- [ Before you begin ](#before-you-begin)
-- [ Limitations ](#limitations)
-- [ Export the entire project configuration to Terraform HCL code ](#export_the_entire_project_configuration_to_terraform_hcl_code)
-
-- [ Write the output to a directory structure ](#write_the_output_to_a_directory_structure)
-- [ Write the output to a single file ](#write_the_output_to_a_single_file)
-
-- [ Filter the output ](#filter_the_output)
-
-- [ List the supported resource types to filter on ](#list_the_supported_resource_types_to_filter_on)
-- [ Export a single resource type ](#export_a_single_resource_type)
-- [ Export multiple resource types ](#export_multiple_resource_types)
-- [ Use a file to specify the resource types to export ](#use_a_file_to_specify_the_resource_types_to_export)
-
-- [ Troubleshooting ](#troubleshooting)
-- [ Next steps ](#next_steps)
-- 
 
 
 
@@ -412,13 +392,13 @@ gcloud beta services identity create --service=cloudasset.googleapis.com
 Ensure that the [Cloud Asset Service
 Agent](/iam/docs/service-agents)
 (`gcp-sa-cloudasset.s3ns-system.iam.gserviceaccount.com`) has the
-`roles/cloudasset.serviceAgent` role:
+`roles/servicenetworking.serviceAgent` role:
 
 
 ```
 gcloud projects add-iam-policy-binding PROJECT_ID \
 --member=serviceAccount:service- PROJECT_NUMBER @gcp-sa-cloudasset.s3ns-system.iam.gserviceaccount.com \
---role=roles/cloudasset.serviceAgent
+--role=roles/servicenetworking.serviceAgent
 ```
 
 

@@ -1,7 +1,7 @@
 # Data analytics
 
 Source: https://documentation.s3ns.fr/docs/data
-Last updated: 2026-11-03
+Last updated: 2026-10-26
 
 - 
 
@@ -129,8 +129,9 @@ Data analytics
 
 
 
-### Data and AI platform
 
+
+### Data and AI platform
 
 
 
@@ -202,8 +203,8 @@ Understand your data using a fully managed, highly scalable data platform with b
 
 
 
-### Data analysis
 
+### Data analysis
 
 
 
@@ -284,8 +285,8 @@ Maximize your data analysis investments when running analytic queries on large d
 
 
 
-### Data governance and sharing
 
+### Data governance and sharing
 
 
 
@@ -375,8 +376,8 @@ Enable intelligent data management with unified metadata and governance and secu
 
 
 
-### Data integration and orchestration
 
+### Data integration and orchestration
 
 
 
@@ -511,8 +512,8 @@ Create, schedule, monitor, and manage workflows using a fully managed orchestrat
 
 
 
-### Data lakehouses
 
+### Data lakehouses
 
 
 
@@ -566,13 +567,22 @@ Build an open, managed, high-performance lakehouse that provides a single source
 
 
 
+
 ### Data processing
 
 
 
 
-
 Empower your data journey, from robust batch processing using managed Apache Spark and Apache Hadoop, to dynamic real-time stream processing with serverless, scalable pipelines using Apache Beam.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -640,16 +650,7 @@ Perform batch processing, querying, and streaming using a managed Apache Spark a
 
 
 
-
-
-
-
-
-
-
-
 ### Streaming
-
 
 
 
@@ -730,8 +731,8 @@ Ingest event streams from anywhere, at any scale.
 
 
 
-### AI and ML
 
+### AI and ML
 
 
 

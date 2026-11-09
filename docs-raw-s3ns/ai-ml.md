@@ -1,7 +1,7 @@
 # AI and ML
 
 Source: https://documentation.s3ns.fr/docs/ai-ml
-Last updated: 2026-11-02
+Last updated: 2026-10-26
 
 - 
 
@@ -129,8 +129,9 @@ AI and ML
 
 
 
-### Platform overview
 
+
+### Platform overview
 
 
 
@@ -229,8 +230,8 @@ Discover, test, customize, and deploy select models and assets.
 
 
 
-### Agents
 
+### Agents
 
 
 
@@ -401,8 +402,8 @@ Design and test your agents.
 
 
 
-### Search and grounding
 
+### Search and grounding
 
 
 
@@ -519,8 +520,8 @@ Perform vector similarity searches.
 
 
 
-### Notebooks
 
+### Notebooks
 
 
 
@@ -601,8 +602,8 @@ Use an integrated notebook-based production environment.
 
 
 
-### Model development
 
+### Model development
 
 
 
@@ -773,8 +774,8 @@ Perform distributed computing and parallel processing for your ML workflow.
 
 
 
-### Deploy and serve
 
+### Deploy and serve
 
 
 

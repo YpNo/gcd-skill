@@ -1,7 +1,7 @@
 # How Application Default Credentials works
 
 Source: https://berlin.devsitetest.how/docs/authentication/application-default-credentials
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,16 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ Search order ](#order)
-
-- [ GOOGLE_APPLICATION_CREDENTIALS environment variable ](#GAC)
-- [ A credential file created by using the gcloud auth application-default login command ](#personal)
-- [ The attached service account ](#attached-sa)
-
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -200,7 +190,7 @@ the relative merit of each location. For help with
 understanding the best ways to provide credentials to ADC, see
 [Set up Application Default Credentials](/docs/authentication/provide-credentials-adc).
 
-### GOOGLE_ APPLICATION_ CREDENTIALS environment variable
+### GOOGLE_APPLICATION_CREDENTIALS environment variable
 
 You can use the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to provide
 the location of a credential JSON file. This JSON file can be one of the

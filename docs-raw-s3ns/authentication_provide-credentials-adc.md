@@ -1,7 +1,7 @@
 # Set up Application Default Credentials
 
 Source: https://documentation.s3ns.fr/docs/authentication/provide-credentials-adc
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,12 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ Provide credentials to ADC ](#how-to)
-- [ The gcloud CLI and ADC ](#gcloud-credentials)
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -172,7 +166,7 @@ For information about where ADC looks for credentials and in what order, see
 If you are using API keys, then you don't need to set up ADC. For more
 information, see [Use API keys to access APIs](/docs/authentication/api-keys-use).
 
-## Provide credentials to ADC 
+## Provide credentials to ADC
 
 Select the environment where your code is running:
 

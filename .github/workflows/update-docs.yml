@@ -4,12 +4,25 @@ on:
   schedule:
     - cron: "23 3 * * *"  # 03:23 UTC daily
   workflow_dispatch: {}
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "references/**"
+      - "docs-raw/**"
+      - "docs-raw-s3ns/**"
+      - "SKILL.md"
+      - "README.md"
+      - ".github/workflows/update-docs.yml"
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: update-sovereign-cloud-docs-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  scrape:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,46 +31,92 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
+      - name: Compile and smoke-test Python scripts
         run: |
-          pip install playwright
-          playwright install chromium --with-deps
+          python3 -m py_compile scripts/scrape-gcd-docs.py scripts/sync-skill.py
+          python3 -c "import importlib.util, json, pathlib; spec = importlib.util.spec_from_file_location('s', 'scripts/scrape-gcd-docs.py'); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); data = json.loads(pathlib.Path('docs-raw-s3ns/_secnumcloud_status.json').read_text()); prods, probes = m.discover_products_from_secnumcloud(data); assert len(prods) > 20 and len(probes) > 10"
 
-      - name: Save previous update trackers
+      - name: Verify skill and reference files are in sync
+        run: python3 -u scripts/sync-skill.py --check
+
+  scrape:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Save previous manifests and update trackers
         run: |
           cp docs-raw/_last_updated.json /tmp/previous_tracker_berlin.json 2>/dev/null || echo "{}" > /tmp/previous_tracker_berlin.json
           cp docs-raw-s3ns/_last_updated.json /tmp/previous_tracker_s3ns.json 2>/dev/null || echo "{}" > /tmp/previous_tracker_s3ns.json
+          cp docs-raw/_manifest.json /tmp/previous_manifest_berlin.json 2>/dev/null || echo "{}" > /tmp/previous_manifest_berlin.json
+          cp docs-raw-s3ns/_manifest.json /tmp/previous_manifest_s3ns.json 2>/dev/null || echo "{}" > /tmp/previous_manifest_s3ns.json
+          cp docs-raw-s3ns/_secnumcloud_status.json /tmp/previous_secnumcloud_s3ns.json 2>/dev/null || echo "{}" > /tmp/previous_secnumcloud_s3ns.json
 
-      - name: Scrape Berlin (GCD) docs
-        run: python3 -u scripts/scrape-gcd-docs.py --region berlin
-
-      - name: Scrape S3NS (Cloud de Confiance) docs
+      - name: Scrape S3NS (Cloud de Confiance) docs and PREMI3NS SecNumCloud status
+        id: scrape_s3ns
+        continue-on-error: true
         run: python3 -u scripts/scrape-gcd-docs.py --region s3ns
 
-      - name: Diff update trackers
+      - name: Scrape Berlin (GCD) docs
+        id: scrape_berlin
+        continue-on-error: true
+        run: python3 -u scripts/scrape-gcd-docs.py --region berlin
+
+      - name: Verify at least one region scrape succeeded
+        run: |
+          if [ "${{ steps.scrape_berlin.outcome }}" = "failure" ] && [ "${{ steps.scrape_s3ns.outcome }}" = "failure" ]; then
+            echo "ERROR: Both Berlin and S3NS scrapes failed." >&2
+            exit 1
+          fi
+
+      - name: Synchronize skill capabilities and references
+        run: |
+          python3 -u scripts/sync-skill.py
+          python3 -u scripts/sync-skill.py --check
+
+      - name: Detect documentation and skill changes
         id: diff
         run: |
           CHANGED=false
           if ! diff -q /tmp/previous_tracker_berlin.json docs-raw/_last_updated.json > /dev/null 2>&1; then
             CHANGED=true
-            echo "Berlin documentation changes detected:"
-            diff /tmp/previous_tracker_berlin.json docs-raw/_last_updated.json || true
+            echo "Berlin last-updated tracker changes detected:"
+            diff -u /tmp/previous_tracker_berlin.json docs-raw/_last_updated.json || true
           fi
           if ! diff -q /tmp/previous_tracker_s3ns.json docs-raw-s3ns/_last_updated.json > /dev/null 2>&1; then
             CHANGED=true
-            echo "S3NS documentation changes detected:"
-            diff /tmp/previous_tracker_s3ns.json docs-raw-s3ns/_last_updated.json || true
+            echo "S3NS last-updated tracker changes detected:"
+            diff -u /tmp/previous_tracker_s3ns.json docs-raw-s3ns/_last_updated.json || true
+          fi
+          if ! diff -q /tmp/previous_secnumcloud_s3ns.json docs-raw-s3ns/_secnumcloud_status.json > /dev/null 2>&1; then
+            CHANGED=true
+            echo "S3NS SecNumCloud 3.2 qualification status changes detected:"
+            diff -u /tmp/previous_secnumcloud_s3ns.json docs-raw-s3ns/_secnumcloud_status.json || true
+          fi
+          if [ -n "$(git status --porcelain docs-raw/ docs-raw-s3ns/ references/ SKILL.md README.md)" ]; then
+            CHANGED=true
+            echo "Repository file changes detected:"
+            git status --short docs-raw/ docs-raw-s3ns/ references/ SKILL.md README.md
           fi
           if [ "$CHANGED" = "false" ]; then
-            echo "No documentation changes detected in either region."
+            echo "No documentation or skill changes detected in either region."
           fi
           echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
 
-      - name: Commit updated docs
+      - name: Commit updated docs and skill references
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs-raw/ docs-raw-s3ns/
-          git commit -m "chore: update scraped GCD docs ($(date -u +%Y-%m-%d))"
+          git add docs-raw/ docs-raw-s3ns/ references/ SKILL.md README.md
+          git commit -m "chore: update scraped GCD/S3NS docs and sync skill ($(date -u +%Y-%m-%d))"
+          git pull --rebase --autostash
           git push

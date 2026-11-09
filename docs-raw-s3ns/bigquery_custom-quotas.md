@@ -1,7 +1,7 @@
 # Create custom query quotas
 
 Source: https://documentation.s3ns.fr/bigquery/docs/custom-quotas
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/bigquery/docs/tpc-differences) for more details.
 
@@ -126,13 +126,6 @@ Guides
 
 
 
-- On this page 
-- [ Required role ](#required_role)
-- [ Set or modify custom quotas ](#set-custom-quotas)
-- [ Returned error messages ](#error-messages)
-- [ Example ](#example)
-- [ What's next ](#whats_next)
-- 
 
 
 
@@ -141,8 +134,7 @@ Guides
 
 
 
-
-# Create custom query quotas 
+# Create custom query quotas
 
 
 

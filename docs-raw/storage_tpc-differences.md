@@ -1,7 +1,7 @@
 # Cloud Storage in Google Cloud Dedicated versus Google Cloud
 
 Source: https://berlin.devsitetest.how/storage/docs/tpc-differences
-Last updated: 2026-11-09
+Last updated: 2026-10-26
 
 - 
 
@@ -113,20 +113,6 @@ Guides
 
 
 
-- On this page 
-- [ Key differences ](#key-differences)
-
-- [ Locations, availability, and disaster recovery ](#availability-differences)
-- [ Integrations ](#integrations-differences)
-- [ Security and access control ](#security-differences)
-- [ Network ](#network-differences)
-- [ Workflows and tools ](#workflow-differences)
-- [ Insights and observability ](#observability-differences)
-- [ Other differences ](#other-differences)
-
-- [ Related guides ](#related-guides)
-- 
-
 
 
 
@@ -149,7 +135,7 @@ Cloud Storage documentation.
 
 
 
-## Key differences 
+## Key differences
 
 
 
@@ -226,6 +212,13 @@ buckets in a default location.
 ### Integrations
 
 
+
+| 
+**Storage Transfer Service**
+| 
+The Storage Transfer Service is not available in Google Cloud Dedicated.
+| 
+|
 
 | 
 **Storage Insights**

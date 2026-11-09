@@ -1,7 +1,7 @@
 # Get an ID token
 
 Source: https://berlin.devsitetest.how/docs/authentication/get-id-token
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,16 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ Methods for getting an ID token ](#methods)
-
-- [ Get an ID token from the metadata server ](#metadata-server)
-- [ Use a connecting service to generate an ID token ](#connecting-service)
-- [ Generate an ID token by impersonating a service account ](#impersonation)
-
-- [ What's next ](#whats-next)
-- 
-
 
 
 
@@ -183,7 +173,7 @@ used to authenticate to.
 When you get the ID token, you can include it in an
 `Authorization` header in the request to the target service.
 
-## Methods for getting an ID token 
+## Methods for getting an ID token
 
 There are various ways to get an ID token. This page describes the following
 methods:
@@ -234,11 +224,8 @@ To retrieve an ID token from the metadata server, you query the identity
 endpoint for the service account, as shown in this example.
 
 
-[ curl ](#curl) [ PowerShell ](#powershell) [ Java ](#java) [ Go ](#go) [ Node.js ](#node.js) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
-
-
+### curl
 
 Replace ` AUDIENCE ` with the URI for the target service,
 for example `http://www.example.com`.
@@ -250,6 +237,7 @@ curl -H "Metadata-Flavor: Google" \
 ```
 
 
+### PowerShell
 
 Replace ` AUDIENCE ` with the URI for the target service,
 for example `http://www.example.com`.
@@ -263,6 +251,7 @@ $value
 ```
 
 
+### Java
 
 To run this code sample, you must first complete the following steps:
 
@@ -343,6 +332,7 @@ System . out . println ( "Generated ID token." );
 
 
 
+### Go
 
 Before running code samples, set the `GOOGLE_CLOUD_UNIVERSE_DOMAIN` environment
 variable to `apis-berlin-build0.goog`.
@@ -415,6 +405,7 @@ return nil
 
 
 
+### Node.js
 
 To run this code sample, you must first complete the following steps:
 
@@ -475,6 +466,7 @@ getIdTokenFromMetadataServer ();
 
 
 
+### Python
 
 To run this code sample, you must first complete the following steps:
 
@@ -545,6 +537,7 @@ print ( "Generated ID token." )
 
 
 
+### Ruby
 
 To run this code sample, you must first complete the following steps:
 
@@ -655,7 +648,6 @@ For step-by-step instructions, see
 
 Identify or [create a service account](/iam/docs/service-accounts-create#creating) to be the privilege-bearing
 service account.
-
 
 
 - 

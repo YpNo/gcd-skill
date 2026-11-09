@@ -1,7 +1,7 @@
 # Google Cloud products at a glance
 
 Source: https://berlin.devsitetest.how/docs/product-list
-Last updated: 2026-11-02
+Last updated: 2026-09-04
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/tpc-differences) for more details.
 
@@ -63,23 +63,6 @@ Documentation
 
 
 
-
-- On this page 
-- [ Cross-product tools ](#cross-product-tools)
-- [ AI and ML ](#ai-and-ml)
-- [ App development ](#app-development)
-- [ App hosting ](#app-hosting)
-- [ Compute ](#compute)
-- [ Data analytics and pipelines ](#data-analytics-and-pipelines)
-- [ Databases ](#databases)
-- [ Distributed, hybrid, and multicloud ](#distributed,-hybrid,-and-multicloud)
-- [ Industry solutions ](#industry-solutions)
-- [ Migration ](#migration)
-- [ Networking ](#networking)
-- [ Observability and monitoring ](#observability-and-monitoring)
-- [ Security ](#security)
-- [ Storage ](#storage)
-- 
 
 
 
@@ -156,7 +139,7 @@ A quick reference for Google Cloud products
 
 
 
-## Cross-product tools 
+## Cross-product tools
 
 
 
@@ -346,14 +329,6 @@ Analyze, classify, search documents
 Enterprise Knowledge Graph 
 Consolidate & reconcile organizational knowledge 
 ](/enterprise-knowledge-graph/docs)
-
-
-
-- 
-[
-Gemini Cloud Assist 
-AI assistance for cloud operations 
-](/cloud-assist)
 
 
 
@@ -835,14 +810,6 @@ Data foundation for enterprise analytics
 
 - 
 [
-Data Agent Kit 
-IDE extension & agent plugin for data workflows 
-](/data-agent-kit)
-
-
-
-- 
-[
 Data Studio 
 Interactive dashboards & data reporting 
 ](/data-studio)
@@ -884,8 +851,8 @@ Change data capture/replication service
 - 
 [
 Knowledge Catalog 
-Unified data & AI metadata management 
-](/knowledge-catalog/docs)
+Agentic context & data governance 
+](/dataplex/docs)
 
 
 
@@ -939,14 +906,6 @@ Analyze & contextualize factory data
 
 - 
 [
-Orchestration Pipelines 
-Declarative orchestration & deployment framework 
-](/orchestration-pipelines)
-
-
-
-- 
-[
 Pub/Sub 
 Global real-time messaging 
 ](/pubsub/docs)
@@ -961,7 +920,7 @@ Global real-time messaging
 
 
 
-## Databases 
+## Databases
 
 
 
@@ -1047,14 +1006,6 @@ Horizontally scalable relational DB
 
 
 
-- 
-[
-Spanner Omni 
-Self-managed Spanner for your environment 
-](/spanner-omni)
-
-
-
 
 
 
@@ -1122,6 +1073,14 @@ Publish & discover services at scale
 ## Industry solutions
 
 
+
+
+
+- 
+[
+AI Commerce Search 
+Personalized search for retail 
+](/retail/docs)
 
 
 
@@ -1448,14 +1407,6 @@ App error reporting
 
 - 
 [
-Google Cloud Observability 
-Monitor, log & trace cloud workloads 
-](/stackdriver/docs/observability)
-
-
-
-- 
-[
 Logging 
 Centralized data & event logging 
 ](/logging/docs)
@@ -1729,14 +1680,6 @@ Check URLs for safety
 Backup and DR Service 
 Backup & DR SaaS 
 ](/backup-disaster-recovery/docs)
-
-
-
-- 
-[
-Cloud FTP 
-Managed SFTP & FTP file transfers 
-](/cloud-ftp)
 
 
 

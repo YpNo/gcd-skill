@@ -1,7 +1,7 @@
 # Allow access to Google Cloud Dedicated console domains
 
 Source: https://berlin.devsitetest.how/docs/get-started/required-domains
-Last updated: 2026-10-28
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/get-started/tpc-differences) for more details.
 
@@ -88,11 +88,6 @@ Get started
 
 
 
-- On this page 
-- [ Required domains ](#required_domains)
-- [ Monitoring domains ](#monitoring_domains)
-- 
-
 
 
 
@@ -109,7 +104,7 @@ errors when accessing or using the Google Cloud Dedicated console. This document
 domains and domain patterns that must be allowed for
 the Google Cloud Dedicated console to function properly.
 
-## Required domains 
+## Required domains
 
 The following domains and domain patterns are required for
 Google Cloud Dedicated console functionality. If any of these domains are blocked,
@@ -160,11 +155,6 @@ Google APIs |
 | 
 apis.google.com | 
 Google API Client Libraries | 
-|
-
-| 
-accounts.google.com | 
-Google Account authentication and sign-in | 
 |
 
 | 

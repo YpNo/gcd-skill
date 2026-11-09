@@ -1,7 +1,7 @@
 # Compute Engine documentation
 
 Source: https://documentation.s3ns.fr/compute/docs
-Last updated: 2026-11-06
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/compute/docs/tpc-differences) for more details.
 
@@ -120,11 +120,12 @@ Compute Engine
 
 
 
-# Compute Engine documentation 
+
+# Compute Engine documentation
 
 
 
-[Read product documentation](https://documentation.s3ns.fr/compute/docs/overview)
+Read product documentation 
 
 
 

@@ -1,7 +1,7 @@
 # Reauthentication
 
 Source: https://documentation.s3ns.fr/docs/authentication/reauthentication
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,17 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ Google Workspace session configuration ](#workspace-session)
-- [ Identity-Aware Proxy reauthentication ](#iap)
-- [ Refresh token expiration ](#refresh-token)
-- [ Sensitive actions ](#sensitive-actions)
-
-- [ When reauthentication is required ](#when_reauthentication_is_required)
-
-- [ Disable reauthentication ](#disable)
-- 
-
 
 
 
@@ -170,7 +159,7 @@ Guides
 This page describes some scenarios when you might need to authenticate again,
 even if you previously authenticated successfully.
 
-## Google Workspace session configuration 
+## Google Workspace session configuration
 
 If you are accessing Cloud de Confiance by S3NS by using a Google Workspace user
 account, your Google Workspace administrator can configure the maximum

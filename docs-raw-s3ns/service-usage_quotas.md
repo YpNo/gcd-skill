@@ -1,7 +1,7 @@
 # Quotas and system limits
 
 Source: https://documentation.s3ns.fr/service-usage/docs/quotas
-Last updated: 2026-10-28
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/service-usage/docs/tpc-differences) for more details.
 
@@ -126,11 +126,6 @@ Resources
 
 
 
-- On this page 
-- [ Rate quotas ](#rate_quotas)
-- [ Get quota and system limit metric names ](#get-metric-names)
-- [ Request a quota adjustment ](#request_a_quota_adjustment)
-- 
 
 
 
@@ -139,15 +134,12 @@ Resources
 
 
 
-
-# Quotas and system limits 
-
+# Quotas and system limits
 
 
-Service Usage uses quotas and system limits to maintain fair resource
-allocation, prevent service overloads, and help you manage resource use.
 
-Quotas and system limits are similar but differ in the following ways:
+This document lists the quotas and system limits that apply to
+Service Usage.
 
 
 - *Quotas* have default values, but you can typically request
@@ -155,7 +147,7 @@ adjustments.
 
 - *System limits* are fixed values that can't be changed.
 
-Cloud de Confiance by S3NS uses quotas to help maintain fairness and reduce
+Cloud de Confiance by S3NS uses quotas to help ensure fairness and reduce
 spikes in resource use and availability. A quota restricts how much of a
 Cloud de Confiance resource your Cloud de Confiance project can use. Quotas
 apply to a range of resource types, including hardware, software, and network
@@ -250,11 +242,8 @@ limits by using either the Cloud de Confiance console or the
 gcloud CLI.
 
 
-[ Console ](#console) [ gcloud ](#gcloud) 
-More 
 
-
-
+### Console
 
 - 
 
@@ -285,6 +274,7 @@ property name or value in the field next to
 filter_list **Filter**—for example, **Service Usage API**.
 
 
+### gcloud
 
 To get the metric names for a Cloud de Confiance by S3NS service by
 using the gcloud CLI, run the

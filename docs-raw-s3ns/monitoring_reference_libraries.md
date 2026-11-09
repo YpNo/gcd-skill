@@ -1,7 +1,7 @@
 # Monitoring client libraries
 
 Source: https://documentation.s3ns.fr/monitoring/docs/reference/libraries
-Last updated: 2026-11-07
+Last updated: 2026-10-22
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/monitoring/docs/tpc-differences) for more details.
 
@@ -128,13 +128,6 @@ Reference
 
 
 
-- On this page 
-- [ Install the client library ](#install)
-- [ Set up authentication ](#authentication)
-- [ Use the client library ](#use)
-- [ Additional resources ](#resources)
-- 
-
 
 
 
@@ -183,12 +176,10 @@ on agent metrics, see the
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -226,6 +217,8 @@ for details about this client library's requirements and install dependencies.
 
 
 
+
+### C# 
 
 
 
@@ -274,6 +267,8 @@ For more information, see [Setting Up a C# Development Environment](/dotnet/docs
 
 
 
+### Go 
+
 
 
 
@@ -317,6 +312,8 @@ For more information, see [Setting Up a Go Development Environment](/go/docs/set
 
 
 
+
+### Java 
 
 
 
@@ -482,7 +479,7 @@ the following to your dependencies:
 
 
 ```
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "3.102.0" 
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "3.100.0" 
 ```
 
 
@@ -534,6 +531,8 @@ For more information, see [Setting Up a Java Development Environment](/java/docs
 
 
 
+### Node.js 
+
 
 
 
@@ -576,6 +575,8 @@ For more information, see [Setting Up a Node.js Development Environment](/nodejs
 
 
 
+
+### PHP 
 
 
 
@@ -623,6 +624,8 @@ For more information, see [Using PHP on Google Cloud](/php/docs).
 
 
 
+### Python 
+
 
 
 
@@ -667,6 +670,8 @@ For more information, see [Setting Up a Python Development Environment](/python/
 
 
 
+### Ruby 
+
 
 
 
@@ -680,8 +685,6 @@ gem install google-cloud-monitoring
 
 
 For more information, see [Setting Up a Ruby Development Environment](/ruby/docs/setup).
-
-
 
 
 
@@ -844,12 +847,10 @@ The following example shows how to use the client library.
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -942,6 +943,8 @@ return 1 ;
 
 
 
+
+### C# 
 
 
 
@@ -1088,6 +1091,8 @@ Console . WriteLine ( "Done writing time series data." );
 
 
 
+### Go 
+
 
 
 
@@ -1229,6 +1234,8 @@ fmt . Printf ( "Done writing time series data.\n" )
 
 
 
+
+### Java 
 
 
 
@@ -1377,6 +1384,8 @@ System . out . printf ( "Done writing time series data.%n" );
 
 
 
+### Node.js 
+
 
 
 
@@ -1493,6 +1502,8 @@ quickstart ();
 
 
 
+
+### PHP 
 
 
 
@@ -1624,6 +1635,8 @@ $client->close();
 
 
 
+### Python 
+
 
 
 
@@ -1716,6 +1729,8 @@ return True
 
 
 
+### Ruby 
+
 
 
 
@@ -1761,7 +1776,7 @@ metric_service_client = Google :: Cloud :: [ Monitoring ](https://documentation.
 project_path = metric_service_client . project_path project : project_id 
 
 series = Google :: Cloud :: [ Monitoring ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring/latest/Google-Cloud-Monitoring.html) :: [ V3 ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3.html) :: TimeSeries . new 
-series . [ metric ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3-TimeSeries.html) = Google :: Api :: [ Metric ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-logging-v2/latest/Google-Api-Metric.html) . new type : "custom.googleapis.com/my_metric" , 
+series . [ metric ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3-TimeSeries.html) = Google :: Api :: [ Metric ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-bigquery-migration-v2/latest/Google-Api-Metric.html) . new type : "custom.googleapis.com/my_metric" , 
 labels : { "my_key" = > metric_label } 
 
 resource = Google :: Api :: [ MonitoredResource ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-service_usage-v1/latest/Google-Api-MonitoredResource.html) . new type : "gce_instance" 
@@ -1773,7 +1788,7 @@ series . [ resource ](https://documentation.s3ns.fr/ruby/docs/reference/google-c
 point = Google :: Cloud :: [ Monitoring ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring/latest/Google-Cloud-Monitoring.html) :: [ V3 ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3.html) :: Point . new 
 point . value = Google :: Cloud :: [ Monitoring ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring/latest/Google-Cloud-Monitoring.html) :: [ V3 ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3.html) :: TypedValue . new double_value : 3 . 14 
 now = Time . now 
-end_time = Google :: Protobuf :: [ Timestamp ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-hypercompute_cluster-v1beta/latest/Google-Protobuf-Timestamp.html) . new seconds : now . to_i , nanos : now . nsec 
+end_time = Google :: Protobuf :: [ Timestamp ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-certificate_manager-v1/latest/Google-Protobuf-Timestamp.html) . new seconds : now . to_i , nanos : now . nsec 
 point . interval = Google :: Cloud :: [ Monitoring ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring/latest/Google-Cloud-Monitoring.html) :: [ V3 ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3.html) :: TimeInterval . new end_time : end_time 
 series . [ points ](https://documentation.s3ns.fr/ruby/docs/reference/google-cloud-monitoring-v3/latest/Google-Cloud-Monitoring-V3-TimeSeries.html) point 
 
@@ -1781,8 +1796,6 @@ metric_service_client . create_time_series name : project_path , time_series : [
 
 puts "Successfully wrote time series." 
 ```
-
-
 
 
 
@@ -1826,12 +1839,10 @@ puts "Successfully wrote time series."
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -1879,6 +1890,8 @@ client library for C++:
 
 
 
+### C# 
+
 
 
 
@@ -1923,6 +1936,8 @@ client library for C#:
 
 
 
+
+### Go 
 
 
 
@@ -1970,6 +1985,7 @@ client library for Go:
 
 
 
+### Java 
 
 
 
@@ -2017,6 +2033,7 @@ client library for Java:
 
 
 
+### Node.js 
 
 
 
@@ -2057,6 +2074,8 @@ client library for Java:
 
 
 
+
+### PHP 
 
 
 
@@ -2104,6 +2123,7 @@ client library for PHP:
 
 
 
+### Python 
 
 
 
@@ -2151,6 +2171,7 @@ client library for Python:
 
 
 
+### Ruby 
 
 
 

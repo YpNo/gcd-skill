@@ -1,7 +1,7 @@
 # Resource Manager documentation
 
 Source: https://documentation.s3ns.fr/resource-manager/docs
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/resource-manager/docs/tpc-differences) for more details.
 
@@ -120,11 +120,12 @@ Resource Manager
 
 
 
-# Resource Manager documentation 
+
+# Resource Manager documentation
 
 
 
-[Read product documentation](https://documentation.s3ns.fr/resource-manager/docs/manage-google-cloud-resources)
+Read product documentation 
 
 
 

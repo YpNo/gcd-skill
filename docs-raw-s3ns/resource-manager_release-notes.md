@@ -1,7 +1,7 @@
 # Resource Manager release notes
 
 Source: https://documentation.s3ns.fr/resource-manager/docs/release-notes
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/resource-manager/docs/tpc-differences) for more details.
 
@@ -128,11 +128,6 @@ Resources
 
 
 
-- On this page 
-- [ February 19, 2025 ](#February_19_2025)
-- [ June 04, 2024 ](#June_04_2024)
-- 
-
 
 
 
@@ -187,7 +182,7 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
-## February 19, 2025 
+## February 19, 2025
 
 
 Feature 

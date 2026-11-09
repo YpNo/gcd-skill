@@ -1,7 +1,7 @@
 # Quickstart: Set up Service Usage for a development environment
 
 Source: https://berlin.devsitetest.how/service-usage/docs/set-up-development-environment
-Last updated: 2026-11-02
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/service-usage/docs/tpc-differences) for more details.
 
@@ -126,14 +126,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Set up to call the API directly ](#api)
-
-- [ Enable the Service Usage API ](#enable)
-- [ Test with curl ](#test)
-
-- [ Next steps ](#next)
-- 
 
 
 
@@ -142,25 +134,25 @@ Guides
 
 
 
-
-# Set up Service Usage for a development environment 
-
+# Set up Service Usage for a development environment
 
 
-The Service Usage API lets you manage APIs and services in your
-Google Cloud Dedicated project. In this quickstart, you configure your
-development environment to interact with the Service Usage API for testing purposes.
 
-- For most operational use cases, the simplest way to enable and disable
-services is to use Google Cloud Dedicated console.
+This page describes how to set up your development environment to use the
+Service Usage API.
 
-- If you need to create scripts, you can use the Google Cloud CLI.
+- For most operational use cases, the simplest way to
+enable and disable services is to use Google Cloud Dedicated console.
 
-- If you need to program against the Service Usage API, use one of the
-[client libraries](/service-usage/docs/libraries).
+- If you need to create
+scripts, you can use the Google Cloud CLI.
 
-- To experiment with the API, follow the setup instructions in this guide and
-use the `curl` command to test the API without setting up a full application
+- If you need to
+program against the Service Usage API, use one of
+the [client libraries](/service-usage/docs/libraries).
+
+- To experiment with the API, you can follow the alternative setup instructions in this guide
+and use the `curl` command to test the API without setting up a full application
 development environment.
 
 ## Set up to call the API directly
@@ -202,8 +194,8 @@ select or create a Google Cloud Dedicated project.
 
 
 
-Roles required to select or create a project**
 
+**Roles required to select or create a project**
 
 
 
@@ -258,7 +250,6 @@ Enable the Service Usage API, if it is not already enabled.
 
 
 **Roles required to enable APIs**
-
 
 To enable APIs, you need the `serviceusage.services.enable` permission. If you
 created the project, then you likely already have this permission through the

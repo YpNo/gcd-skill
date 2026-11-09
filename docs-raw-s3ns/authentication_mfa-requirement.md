@@ -1,7 +1,7 @@
 # 2-step verification requirement for Cloud de Confiance by S3NS
 
 Source: https://documentation.s3ns.fr/docs/authentication/mfa-requirement
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -147,24 +147,6 @@ Guides
 
 
 
-
-- On this page 
-- [ Interfaces that require 2SV ](#scope)
-- [ Timelines for 2SV requirement ](#timelines)
-- [ Enable 2SV for Google Accounts ](#enable-google)
-
-- [ Additional factors for Google Accounts ](#additional-factors)
-
-- [ Enable 2SV in Google Workspace ](#enable-workspace)
-- [ Enable 2SV for third-party identity providers ](#enable-idp)
-- [ Recover account access if a factor is lost or stolen ](#recover)
-- [ Enterprise Cloud Identity (non-SSO) features ](#cloudid)
-
-- [ Monitor 2SV conformance ](#monitor)
-- [ Extend the deadline for the 2SV requirement ](#extend)
-- [ Opt out of the 2SV requirement ](#opt-out)
-
-- 
 
 
 

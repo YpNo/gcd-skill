@@ -1,7 +1,7 @@
 # Logging client libraries
 
 Source: https://berlin.devsitetest.how/logging/docs/reference/libraries
-Last updated: 2026-11-07
+Last updated: 2026-10-22
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/logging/docs/tpc-differences) for more details.
 
@@ -128,15 +128,6 @@ Reference
 
 
 
-- On this page 
-- [ Install the client library ](#install)
-- [ Set up authentication ](#authentication)
-- [ Use the client library ](#use)
-- [ Code samples ](#writ-logs-neos)
-- [ Additional resources ](#resources)
-- [ Additional client libraries ](#more-libraries)
-- 
-
 
 
 
@@ -192,12 +183,10 @@ are more than 24 hours in the future are discarded.
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -235,6 +224,8 @@ for details about this client library's requirements and install dependencies.
 
 
 
+
+### C# 
 
 
 
@@ -279,6 +270,8 @@ For more information, see [Setting Up a C# Development Environment](/dotnet/docs
 
 
 
+### Go 
+
 
 
 
@@ -322,6 +315,8 @@ For more information, see [Setting Up a Go Development Environment](/go/docs/set
 
 
 
+
+### Java 
 
 
 
@@ -530,6 +525,8 @@ For more information, see [Setting Up a Java Development Environment](/java/docs
 
 
 
+### Node.js 
+
 
 
 
@@ -572,6 +569,8 @@ For more information, see [Setting Up a Node.js Development Environment](/nodejs
 
 
 
+
+### PHP 
 
 
 
@@ -616,6 +615,8 @@ For more information, see [Using PHP on Google Cloud](/php/docs).
 
 
 
+
+### Python 
 
 
 
@@ -662,6 +663,8 @@ For more information, see [Setting Up a Python Development Environment](/python/
 
 
 
+### Ruby 
+
 
 
 
@@ -675,8 +678,6 @@ gem install google-cloud-logging
 
 
 For more information, see [Setting Up a Ruby Development Environment](/ruby/docs/setup).
-
-
 
 
 
@@ -839,12 +840,10 @@ The following example shows how to use the client library.
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -936,6 +935,8 @@ return 1 ;
 
 
 
+
+### C# 
 
 
 
@@ -1063,6 +1064,8 @@ Console . WriteLine ( "Log Entry created." );
 
 
 
+### Go 
+
 
 
 
@@ -1172,6 +1175,8 @@ fmt . Printf ( "Logged: %v\n" , text )
 
 
 
+
+### Java 
 
 
 
@@ -1283,6 +1288,8 @@ System . out . printf ( "Logged: %s%n" , textPayload );
 
 
 
+### Node.js 
+
 
 
 
@@ -1382,6 +1389,8 @@ writeLog ();
 
 
 
+### PHP 
+
 
 
 
@@ -1479,6 +1488,8 @@ echo 'Logged ' . $text;
 
 
 
+### Python 
+
 
 
 
@@ -1564,6 +1575,8 @@ print ( "Logged: {} " . format ( text ))
 
 
 
+### Ruby 
+
 
 
 
@@ -1640,8 +1653,6 @@ puts "Logged #{ entry . [ payload ](https://berlin.devsitetest.how/ruby/docs/ref
 
 
 
-
-
 ## Code samples
 
 For all code samples, see [All logging samples](/logging/docs/samples).
@@ -1664,12 +1675,10 @@ For all code samples, see [All logging samples](/logging/docs/samples).
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -1717,6 +1726,8 @@ client library for C++:
 
 
 
+### C# 
+
 
 
 
@@ -1761,6 +1772,8 @@ client library for C#:
 
 
 
+
+### Go 
 
 
 
@@ -1808,6 +1821,7 @@ client library for Go:
 
 
 
+### Java 
 
 
 
@@ -1855,6 +1869,7 @@ client library for Java:
 
 
 
+### Node.js 
 
 
 
@@ -1901,6 +1916,7 @@ client library for Node.js:
 
 
 
+### PHP 
 
 
 
@@ -1948,6 +1964,7 @@ client library for PHP:
 
 
 
+### Python 
 
 
 
@@ -1995,6 +2012,7 @@ client library for Python:
 
 
 
+### Ruby 
 
 
 
@@ -2013,9 +2031,6 @@ client library for Ruby:
 - [`google-cloud-logging` on Stack Overflow](https://stackoverflow.com/search?q=%5Bgoogle-cloud-logging%5D+%5Bruby%5D) 
 
 - [Source code](https://github.com/googleapis/google-cloud-ruby) 
-
-
-
 
 
 

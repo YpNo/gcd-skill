@@ -1,7 +1,7 @@
 # Upload objects from a file system
 
 Source: https://berlin.devsitetest.how/storage/docs/uploading-objects
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/storage/docs/tpc-differences) for more details.
 
@@ -128,21 +128,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Required roles ](#required-roles)
-- [ Upload an object to a bucket ](#uploading-an-object)
-- [ Upload the contents of a directory to a bucket ](#uploading-directory)
-- [ What's next ](#whats_next)
-- 
-
-
-
-
-
-
-
-
-
 
 
 
@@ -168,7 +153,7 @@ choose the optimal upload method based on your file size, see
 
 For instructions on uploading from memory, see [Upload objects from memory](/storage/docs/uploading-objects-from-memory).
 
-## Required roles 
+## Required roles
 
 To get the permissions that you need to upload objects to a bucket, ask your
 administrator to grant you the Storage Object User
@@ -179,9 +164,8 @@ bucket. To see the exact permissions that are required, expand the
 
 
 
+
 #### Required permissions
-
-
 
 - `storage.objects.create`
 
@@ -224,13 +208,10 @@ For information about granting roles on buckets, see
 Complete the following steps to upload an object to a bucket:
 
 
-[Console](#console) [Command line](#command-line) [Client libraries](#client-libraries) [Terraform](#terraform) [REST APIs](#rest-apis) 
-More 
 
+### Console
 
-
-
-- In the Google Cloud Dedicated console, go to the Cloud Storage Buckets** page.
+- In the Google Cloud Dedicated console, go to the Cloud Storage **Buckets** page.
 
 [Go to Buckets](https://console.cloud.berlin-build0.goog/storage/browser)
 
@@ -258,6 +239,7 @@ operations in the Google Cloud Dedicated console, see
 [Troubleshooting](/storage/docs/troubleshooting#trouble-console).
 
 
+### Command line
 
 Use the [`gcloud storage cp`](/sdk/gcloud/reference/storage/cp) command:
 
@@ -292,6 +274,7 @@ You can set fixed-key and custom [object metadata](/storage/docs/metadata) as pa
 object upload by using [command flags](/sdk/gcloud/reference/storage/cp#FLAGS).
 
 
+### Client libraries
 
 
 
@@ -323,12 +306,10 @@ object upload by using [command flags](/sdk/gcloud/reference/storage/cp#FLAGS).
 
 
 
-[ C++ ](#c++) [ C# ](#c) [ Go ](#go) [ Java ](#java) [ Node.js ](#node.js) [ PHP ](#php) [ Python ](#python) [ Ruby ](#ruby) [ Rust ](#rust) 
-More 
 
 
 
-
+### C++ 
 
 
 
@@ -435,6 +416,8 @@ std :: cout "Uploaded " file_name " to object " metadata - > name ()
 
 
 
+
+### C# 
 
 
 
@@ -543,6 +526,8 @@ Console . WriteLine ( $"Uploaded {objectName}." );
 
 
 
+
+### Go 
 
 
 
@@ -692,6 +677,8 @@ return nil
 
 
 
+
+### Java 
 
 
 
@@ -963,6 +950,8 @@ System . out . println (
 
 
 
+### Node.js 
+
 
 
 
@@ -1215,6 +1204,8 @@ uploadDirectoryWithTransferManager (). catch ( console . error );
 
 
 
+### PHP 
+
 
 
 
@@ -1330,6 +1321,8 @@ printf('Uploaded %s to gs://%s/%s' . PHP_EOL, basename($source), $bucketName, $o
 
 
 
+
+### Python 
 
 
 
@@ -1634,6 +1627,8 @@ print ( "Uploaded {} to {} ." . format ( name , bucket . name ))
 
 
 
+### Ruby 
+
 
 
 
@@ -1701,7 +1696,7 @@ def upload_file bucket_name :, local_file_path :, file_name : nil
 
 require "google/cloud/storage" 
 
-storage = Google :: Cloud :: [ Storage ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage-control/latest/Google-Cloud-Storage.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage.html)
+storage = Google :: Cloud :: [ Storage ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage.html) . [ new ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage.html)
 bucket = storage . bucket bucket_name , skip_lookup : true 
 
 file = bucket . [ create_file ](https://berlin.devsitetest.how/ruby/docs/reference/google-cloud-storage/latest/Google-Cloud-Storage-Bucket.html) local_file_path , file_name 
@@ -1739,6 +1734,8 @@ end
 
 
 
+
+### Rust 
 
 
 
@@ -1821,6 +1818,7 @@ Ok (())
 
 
 
+### Terraform
 
 You can use a [Terraform resource](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_object) to upload an object.
 Either `content` or `source` must be specified.
@@ -1860,11 +1858,10 @@ bucket = google_storage_bucket.static.id
 
 
 
-[JSON API](#json-api) [XML API](#xml-api) 
-More 
+### REST APIs
 
 
-
+### JSON API
 
 The JSON API distinguishes between *media uploads*, in which only
 object data is included in the request, and *JSON API multipart uploads*,
@@ -2002,6 +1999,7 @@ If the request succeeds, the server returns the HTTP `200 OK` status
 code along with the file's metadata.
 
 
+### XML API
 
 - 
 
@@ -2052,11 +2050,8 @@ replacing the object. For more information, see
 Complete the following steps to copy the contents of a directory to a bucket:
 
 
-[Command line](#command-line) 
-More 
 
-
-
+### Command line
 
 Use the [`gcloud storage rsync`](/sdk/gcloud/reference/storage/rsync) command with the `--recursive` flag:
 

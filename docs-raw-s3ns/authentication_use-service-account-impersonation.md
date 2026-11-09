@@ -1,7 +1,7 @@
 # Use service account impersonation
 
 Source: https://documentation.s3ns.fr/docs/authentication/use-service-account-impersonation
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,22 +148,6 @@ Guides
 
 
 
-- On this page ** 
-- [ Before you begin ](#before_you_begin)
-
-- [ Enable APIs ](#enable-apis)
-- [ Required roles ](#required-roles)
-
-- [ Use the gcloud CLI ](#gcloud)
-
-- [ Use impersonation for a specific gcloud CLI command ](#gcloud-command)
-- [ Use impersonation with the gcloud CLI by default ](#gcloud-config)
-
-- [ Set up Application Default Credentials for using client libraries ](#adc)
-- [ Generate and manage short-lived credentials ](#short-lived-creds)
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -203,8 +187,7 @@ Service Account Credentials API in your project.
 
 
 
-Roles required to enable APIs**
-
+**Roles required to enable APIs**
 
 To enable APIs, you need the `serviceusage.services.enable` permission. If you
 created the project, then you likely already have this permission through the

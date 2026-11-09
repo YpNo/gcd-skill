@@ -1,7 +1,7 @@
 # Set up ADC for a cloud-based development environment
 
 Source: https://berlin.devsitetest.how/docs/authentication/set-up-adc-cloud-dev-environment
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/authentication/tpc-differences) for more details.
 
@@ -148,10 +148,6 @@ Guides
 
 
 
-- On this page 
-- [ What's next ](#whats_next)
-- 
-
 
 
 
@@ -169,7 +165,7 @@ you need to use a different user account to configure ADC, or configure ADC
 using a service account, use a local development environment or a
 Google Cloud Dedicated compute resource as your development environment.
 
-## What's next 
+## What's next
 
 - Get more information about [Cloud Code](/code/docs).
 

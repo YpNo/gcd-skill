@@ -1,7 +1,7 @@
 # Google Cloud Armor documentation
 
 Source: https://berlin.devsitetest.how/armor/docs
-Last updated: 2026-11-04
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/armor/docs/tpc-differences) for more details.
 
@@ -120,11 +120,12 @@ Google Cloud Armor
 
 
 
-# Google Cloud Armor documentation 
+
+# Google Cloud Armor documentation
 
 
 
-[Read product documentation](https://berlin.devsitetest.how/armor/docs/cloud-armor-overview)
+Read product documentation 
 
 
 
@@ -318,7 +319,7 @@ Google Cloud Armor security policy overview
 Configuring security policies
 
 
-](/armor/docs/create-security-policies)
+](/armor/docs/configure-security-policies)
 
 
 
@@ -494,7 +495,7 @@ monitor_heart
 Custom rules language reference
 
 
-](/armor/docs/create-security-policy-rules)
+](/armor/docs/rules-language-reference)
 
 
 

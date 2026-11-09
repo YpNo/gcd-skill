@@ -1,7 +1,7 @@
 # Logging in Cloud de Confiance versus Google Cloud
 
 Source: https://documentation.s3ns.fr/logging/docs/tpc-differences
-Last updated: 2026-11-06
+Last updated: 2026-10-26
 
 - 
 
@@ -113,14 +113,6 @@ Guides
 
 
 
-- On this page 
-- [ Key differences ](#key-differences)
-
-- [ Workflows and tools ](#workflow-differences)
-
-- [ Related guides ](#related-guides)
-- 
-
 
 
 
@@ -145,7 +137,7 @@ Logging documentation.
 
 
 
-## Key differences 
+## Key differences
 
 
 
@@ -225,7 +217,7 @@ legacy Logging agent.
 
 
 | 
-
+| 
 |
 
 | 

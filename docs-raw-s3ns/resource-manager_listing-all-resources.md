@@ -1,7 +1,7 @@
 # List all projects and folders in your hierarchy
 
 Source: https://documentation.s3ns.fr/resource-manager/docs/listing-all-resources
-Last updated: 2026-11-07
+Last updated: 2026-10-26
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/resource-manager/docs/tpc-differences) for more details.
 
@@ -128,18 +128,6 @@ Guides
 
 
 
-- On this page 
-- [ List all resource nodes ](#list_all_resource_nodes)
-
-- [ Example to list all resource nodes ](#example_to_list_all_resource_nodes)
-
-- [ Reduce latency on gcloud projects list ](#reduce_latency_on_gcloud_projects_list)
-
-- [ Exclude Apps Script projects example ](#exclude_apps_script_projects_example)
-
-- [ Search resources ](#search_resources)
-- [ Troubleshooting omitted resources ](#troubleshooting_omitted_resources)
-- 
 
 
 
@@ -149,17 +137,36 @@ Guides
 
 
 
+Resources in Cloud de Confiance by S3NS are organized into a
+[hierarchy](/resource-manager/docs/cloud-platform-resource-hierarchy), with each node (Organizations,
+Folders, Projects, and so forth) having a reference to its parent. You can use
+that reference as a key filter term for scans to improve the consistency of
+resource searches.
 
-The Cloud Resource Manager API lets you discover and catalog every folder and project
-across your Cloud de Confiance by S3NS
-[resource hierarchy](/resource-manager/docs/cloud-platform-resource-hierarchy).
-This visibility helps you conduct audit checks and build custom management
-tools. Standard list operations can omit resources when users have restricted
-[custom roles](/iam/docs/creating-custom-roles). You can filter your queries by
-parent references to get consistent search results and identify nodes that
-least-privilege permissions might otherwise hide.
+You can grant users permissions using
+[custom roles](/iam/docs/creating-custom-roles). These roles operate on the
+principle of least privilege, and generally provide only the minimum necessary
+permissions required to do a particular task.
 
-## List all resource nodes 
+This scheme can be useful for isolating different user groups. For example:
+
+- A large company with departments that shouldn't be able to inspect the
+resources of their peers.
+
+- Contractors who are given permissions to a specific Project, but no other
+resources.
+
+As a result of their restricted permissions, however, custom roles may cause
+many resources in your hierarchy to be omitted when executing a list operation.
+When performing searches as a user that has been granted a custom role, it can
+be difficult to tell why certain resources are not appearing.
+
+To avoid this scenario, this page discusses the best practices for listing all
+of the resources managed by the Cloud Resource Manager API in your resource hierarchy. You
+can use this guidance to configure custom audit checks, or to create your own
+user experience on top of the Cloud Resource Manager API.
+
+## List all resource nodes
 
 When you scan your resource hierarchy to list every resource, you need strongly
 consistent results. If your scan misses resources or provides outdated results,
