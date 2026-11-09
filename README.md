@@ -1,4 +1,4 @@
-# Google Cloud Dedicated (GCD) Agent Skill
+# Google Cloud Dedicated (GCD) & Cloud de Confiance by S3NS — Agent Skill
 
 An [Agent Skill](https://agentskills.io) that gives AI coding agents expertise in Google Cloud's sovereign cloud platforms - Google Cloud Dedicated (Berlin) and Cloud de Confiance by S3NS (France). Works with Claude Code, Cursor, Gemini CLI, VS Code Copilot, and any other agent that supports the agentskills standard.
 
