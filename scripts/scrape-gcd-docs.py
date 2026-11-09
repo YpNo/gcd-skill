@@ -718,6 +718,9 @@ def discover_links_from_page(
 # to documentation product slugs so they are automatically probed during crawl.
 PREMI3NS_NAME_TO_PRODUCT_SLUG = {
     "gemini platform": "gemini-enterprise-agent-platform",
+    "model garden": "gemini-enterprise-agent-platform",
+    "model registry": "gemini-enterprise-agent-platform",
+    "online inference": "gemini-enterprise-agent-platform",
     "managed service for apache airflow": "composer",
     "managed service for apache spark": "managed-spark",
     "cloud quota": "quotas",

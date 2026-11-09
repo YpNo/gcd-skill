@@ -95,9 +95,9 @@ On **Cloud de Confiance by S3NS** (`u-france-east1`, PREMI3NS offering), service
 | Gemini platform | `Qualification en cours` | Agent Platform (Gemini Enterprise Agent Platform) |
 | Managed Service for Apache Airflow | `Qualification en cours` | Managed Airflow (Cloud Composer 3) |
 | Managed Service for Apache Spark | `Qualification en cours` | Managed Service for Apache Spark (Dataproc) |
-| model garden | `Qualification en cours` | model garden |
-| model registry | `Qualification en cours` | model registry |
-| online inference | `Qualification en cours` | online inference |
+| model garden | `Qualification en cours` | Agent Platform (Gemini Enterprise Agent Platform) |
+| model registry | `Qualification en cours` | Agent Platform (Gemini Enterprise Agent Platform) |
+| online inference | `Qualification en cours` | Agent Platform (Gemini Enterprise Agent Platform) |
 | Secret Manager | `Qualification en cours` | Secret Manager |
 | Storage Transfer Service | `Qualification en cours` | Storage Transfer Service |
 

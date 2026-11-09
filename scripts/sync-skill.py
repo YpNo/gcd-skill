@@ -304,6 +304,9 @@ KNOWN_PRODUCT_META = {
 # Explicit fallback mapping from PREMI3NS service names (when URL points to cloud.google.com)
 SECNUMCLOUD_NAME_TO_SLUG = {
     "gemini platform": "gemini-enterprise-agent-platform",
+    "model garden": "gemini-enterprise-agent-platform",
+    "model registry": "gemini-enterprise-agent-platform",
+    "online inference": "gemini-enterprise-agent-platform",
     "managed service for apache airflow": "composer",
     "managed service for apache spark": "managed-spark",
     "cloud quota": "quotas",
@@ -371,11 +374,10 @@ def slug_from_secnumcloud_item(item: dict, available_products: dict | None = Non
     if url:
         parsed = urlparse(url)
         clean_path = parsed.path.rstrip("/")
-        # Only use slug_from_manifest_entry directly if it's a documentation URL (/.../docs...)
-        if "/docs" in clean_path:
-            slug = slug_from_manifest_entry(clean_path, "")
-            if slug:
-                return slug
+        # Use slug_from_manifest_entry if it's a documentation URL (/.../docs...) or matches a known/discovered product
+        slug = slug_from_manifest_entry(clean_path, "")
+        if slug and ("/docs" in clean_path or slug in KNOWN_PRODUCT_META or (available_products and slug in available_products)):
+            return slug
         # Otherwise handle marketing URLs like /spanner or /products/alloydb
         parts = [p for p in clean_path.strip("/").split("/") if p]
         candidates = []
