@@ -234,7 +234,7 @@ When uncertain whether a feature is available, query the docs directly
 <!-- AUTO-SYNC:SECNUMCLOUD-CHECKLIST:END -->
 - [ ] No use of unavailable features within available services:
   - GKE Standard mode (Autopilot only)
-  - Persistent Disk or Local SSD (Hyperdisk Balanced only)
+  - Persistent Disk or Local SSD (Hyperdisk Balanced and Hyperdisk Balanced High Availability only)
   - N2, E2, T2A, or other unavailable VM series (C3, M3, A3 Edge only)
   - BigQuery scheduled queries, data masking, column-level access control
   - Bigtable GoogleSQL, Data Boost, BigQuery federation, or Terraform provisioning
@@ -269,7 +269,7 @@ When uncertain whether a feature is available, query the docs directly
 - [ ] GCS backend for state uses `storage_custom_endpoint` for the region.
 - [ ] No Terraform resources for unavailable services.
 - [ ] Machine types are C3, M3, or A3 Edge only.
-- [ ] Disk types are `hyperdisk-balanced` only.
+- [ ] Disk types are `hyperdisk-balanced` or `hyperdisk-balanced-high-availability` only.
 - [ ] Image projects use the region prefix (e.g., `eu0-system:debian-cloud`
       or `s3ns-system:debian-cloud`).
 

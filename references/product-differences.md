@@ -230,6 +230,7 @@ All products share these platform-wide constraints:
   - Backend buckets (Cloud Storage cannot be used as a load balancer backend)
   - Serverless NEGs, internet NEGs, and hybrid connectivity NEGs (only zonal NEGs and Private Service Connect NEGs are supported)
   - Cloud CDN
+  - Cloud Trace
   - Certificate Manager and Google-managed SSL certificates (use self-managed certificates)
   - Service Extensions
 
@@ -301,8 +302,9 @@ All products share these platform-wide constraints:
 **Database engines:**
 - MySQL and PostgreSQL only. SQL Server is unavailable.
 
-**Edition:**
-- Only Enterprise Plus edition. Enterprise edition is unavailable.
+**Edition and versions:**
+- Only Enterprise Plus edition (Enterprise edition is unavailable).
+- Supported versions: MySQL `8.0`, `8.4`, `9.7` and PostgreSQL `12` through `18` (MySQL `5.6`/`5.7` and PostgreSQL `9.6`/`10`/`11` are unavailable).
 
 **Machine types:** C3 series only:
 - `db-perf-optimized-N-4`, `db-perf-optimized-N-8`, `db-perf-optimized-N-22`, `db-perf-optimized-N-44`, `db-perf-optimized-N-88`, `db-perf-optimized-N-176`
@@ -313,6 +315,10 @@ All products share these platform-wide constraints:
 - Private Service Connect is available.
 - Private Service Connect with service automation is unavailable.
 - Private services access is unavailable.
+
+**Organization policies:**
+- Built-in constraints `constraints/sql.restrictPublicIp`, `constraints/sql.restrictAuthorizedNetworks`, and `constraints/gcp.restrictCmekCryptoKeyProjects` are available.
+- Requiring CMEK via `constraints/gcp.restrictNonCmekServices` and custom/managed Cloud SQL constraints (`constraints/sql.managed.*`, `sqladmin.googleapis.com/*`) are unavailable.
 
 **Unavailable features:**
 - Database Migration Service
@@ -343,7 +349,6 @@ All products share these platform-wide constraints:
 - Usage logs and storage logs (legacy logging)
 - Legacy storage classes (Multi-Regional, Regional, DRA)
 - Cannot set a default project for interoperability access
-- *(Note: The older Cloud Storage differences page mentions Storage Transfer Service as unavailable, but Storage Transfer Service is now available with limitations — see **Storage Transfer Service** below.)*
 
 **Cloud Storage FUSE:**
 - Supported on GKE >= 1.36.0-gke.1266000 with `custom-endpoint` and `skipCSIBucketAccessCheck` (see GKE section).
@@ -368,7 +373,7 @@ All products share these platform-wide constraints:
 
 All other series (N2, E2, T2A, etc.), AMD, and Arm-based types are unavailable. TPUs are unavailable.
 
-**Disks:** Hyperdisk Balanced only. All other disk types (Persistent Disk, Local SSD, etc.) are unavailable.
+**Disks:** **Hyperdisk Balanced** (zonal) and **Hyperdisk Balanced High Availability** (regional synchronous replication across two zones in the same region) only. All other disk types (Persistent Disk, Local SSD, etc.) are unavailable.
 
 **OS images available:** Debian, Ubuntu LTS, Rocky Linux, Container-Optimized OS.
 - Image projects use `eu0-system:` (Berlin) or `s3ns-system:` (S3NS) prefix (e.g. `eu0-system:debian-cloud` or `s3ns-system:debian-cloud`).
@@ -380,7 +385,6 @@ All other series (N2, E2, T2A, etc.), AMD, and Arm-based types are unavailable. 
 **Unavailable VM features:**
 - OS Login, VM Manager
 - Interactive serial console access, IAP TCP forwarding
-- Bulk VM creation
 - Future reservations (on-demand reservations are available)
 
 **Cost:** Spot VMs available (up to 60% discount). Preemptible VMs, CUDs, and SUDs are unavailable.
@@ -467,7 +471,6 @@ Google Accounts, Google Groups, and Cloud Identity are unavailable.
 **Security unavailable:**
 - GKE security posture, Binary Authorization, Confidential GKE Nodes
 - GKE control plane authority, Policy Controller
-- Application-layer Secret encryption
 - Connect gateway
 - Privileged workload admission allowlists
 - Secure kernel module loading
