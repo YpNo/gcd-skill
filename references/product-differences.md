@@ -586,23 +586,30 @@ Google Accounts, Google Groups, and Cloud Identity are unavailable.
 
 ## Pub/Sub
 
-**Unavailable subscription types:** BigQuery subscriptions, Cloud Storage subscriptions.
+*Source: `/pubsub/docs/tpc-differences` on S3NS and Berlin, both last updated 2026-10-26, same
+content in both regions.*
 
 **Unavailable features:**
-- Dead-letter queues
-- Exactly-once delivery
-- Filtering
-- Ordering keys
-- Schemas
-- Snapshots and seek
 - Authentication for push subscriptions
-- Payload unwrapping for push subscriptions
-- All import topics (Kinesis, Cloud Storage, Event Hubs, MSK, Confluent Cloud)
+- Schemas
+- AI Inference Single Message Transforms (SMTs). Other SMTs are not listed as unavailable.
+- Import topics from Amazon Kinesis Data Streams, Azure Event Hubs, Amazon MSK and Confluent Cloud
 - Pub/Sub Lite
 
-**Unavailable integrations:** Dataflow, Cloud Functions, App Engine, Cloud Run event triggers.
+**Unsupported integrations:** Dataflow, Cloud Functions, App Engine and Cloud Run. For
+third-party integrations, check with the vendor.
 
-**Architecture:** Data is regional only, not globally available. Resource location restrictions are not supported.
+**Availability:** single region, zonal separation supported. No multi-region features and no
+cross-region failover.
+
+**Architecture:** data is not globally available, only in the universe's region. Resource
+location restrictions are not supported.
+
+**No longer listed as unavailable** (this section listed them until October 2026): dead-letter
+topics, exactly-once delivery, filtering, ordering keys, snapshots and seek, BigQuery and Cloud
+Storage subscriptions, push payload unwrapping, and Cloud Storage import topics. The page lists
+only what is unavailable, so treat these as available, and test one before depending on it.
+Features in preview are not available.
 
 ---
 
