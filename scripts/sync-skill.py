@@ -27,6 +27,12 @@ from urllib.parse import urlparse
 BASE_DIR = Path(__file__).resolve().parent.parent
 BERLIN_DIR = BASE_DIR / "docs-raw"
 S3NS_DIR = BASE_DIR / "docs-raw-s3ns"
+# Docs site each scraped directory came from: `default_output_dir` -> `base_url` in
+# REGIONS of scripts/scrape-gcd-docs.py (tests/test_absolute_doc_links.py keeps them equal).
+DOCS_BASE_URLS = {
+    BERLIN_DIR.name: "https://berlin.devsitetest.how",
+    S3NS_DIR.name: "https://documentation.s3ns.fr",
+}
 
 PRODUCT_DIFFS_FILE = BASE_DIR / "references" / "product-differences.md"
 SERVICES_FILE = BASE_DIR / "references" / "services.md"
@@ -438,6 +444,29 @@ def slug_from_manifest_entry(path: str, filename: str) -> str | None:
     return None
 
 
+# `](/path`, optionally `](  </path`, but not a protocol-relative `](//host`.
+_ROOT_RELATIVE_LINK_RE = re.compile(r"\]\(\s*(<?)/(?!/)")
+
+
+def docs_base_url_for(md_path: Path) -> str | None:
+    """Return the docs site base URL for a page scraped into docs-raw/ or docs-raw-s3ns/.
+
+    Returns None for any other directory: guessing a host would publish wrong links.
+    """
+    return DOCS_BASE_URLS.get(md_path.parent.name)
+
+
+def absolutize_doc_links(text: str, base_url: str) -> str:
+    """Prefix root-relative markdown link targets with base_url.
+
+    Scraped pages link within their own docs site (`[x](/docs/...)`). Copied into a
+    skill file, such a link resolves against wherever the file is viewed (github.com),
+    so it must carry the docs host. Absolute, protocol-relative, anchor and relative
+    links are left unchanged.
+    """
+    return _ROOT_RELATIVE_LINK_RE.sub(lambda m: f"]({m.group(1)}{base_url}/", text)
+
+
 def parse_tpc_markdown(md_path: Path) -> dict:
     """Deterministically parse a `*_tpc-differences.md` file."""
     text = md_path.read_text(encoding="utf-8")
@@ -488,6 +517,16 @@ def parse_tpc_markdown(md_path: Path) -> dict:
         sort_keys=True,
     )
     digest = hashlib.sha256(digest_payload.encode("utf-8")).hexdigest()[:10]
+
+    # After the digest: it tracks upstream content, and a changed digest makes
+    # sync_product_differences inject an UPSTREAM-DIFFS block into curated sections.
+    base_url = docs_base_url_for(md_path)
+    if base_url:
+        bullets = [absolutize_doc_links(b, base_url) for b in bullets]
+        sections = [
+            (name, [(feat, absolutize_doc_links(desc, base_url)) for feat, desc in rows])
+            for name, rows in sections
+        ]
 
     return {
         "title": raw_title,
