@@ -581,6 +581,8 @@ def html_to_markdown(content: str) -> str:
 
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
+    # Escaped markers (&lt;!--) only become real after unescaping: strip them again.
+    text = re.sub(r"<!--|--!?>", "", text)
 
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
@@ -601,6 +603,27 @@ def path_to_filename(path: str) -> str:
 
 
 # -- Fetchers (HTTP SSR + Optional Playwright) ---------------------------------
+
+class SameHostHttpsRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Follow a redirect only to https on the same host as the original request.
+
+    The default handler follows redirects to any host and scheme, and forwards
+    custom headers such as X-DevSite-Proxy to the new host. A refused redirect
+    raises HTTPError, which callers treat as a failed fetch.
+    """
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        newurl = urllib.parse.urljoin(req.full_url, newurl)
+        old = urllib.parse.urlsplit(req.full_url)
+        new = urllib.parse.urlsplit(newurl)
+        if new.scheme != "https" or new.hostname != old.hostname:
+            raise urllib.error.HTTPError(
+                newurl, code,
+                f"refused redirect from {old.hostname} to {new.scheme}://{new.hostname}",
+                headers, fp,
+            )
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
 
 def fetch_http(base_url: str, path: str, extra_headers: dict[str, str]) -> dict | None:
     """Fetch a DevSite page via standard HTTP (SSR).
@@ -1351,6 +1374,7 @@ def main():
                         help="Override the >20%% page-drop safety check")
     args = parser.parse_args()
 
+    urllib.request.install_opener(urllib.request.build_opener(SameHostHttpsRedirectHandler))
     script_dir = Path(__file__).parent.parent
 
     if args.secnumcloud_only:
