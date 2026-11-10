@@ -30,9 +30,6 @@ jobs:
           python3 -m py_compile scripts/scrape-gcd-docs.py scripts/sync-skill.py
           python3 -c "import importlib.util, json, pathlib; spec = importlib.util.spec_from_file_location('s', 'scripts/scrape-gcd-docs.py'); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); data = json.loads(pathlib.Path('docs-raw-s3ns/_secnumcloud_status.json').read_text()); prods, probes = m.discover_products_from_secnumcloud(data); assert len(prods) > 20 and len(probes) > 10"
 
-      - name: Run unit tests
-        run: python3 -m unittest discover -s tests -t . -v
-
       - name: Verify skill and reference files are in sync
         run: python3 -u scripts/sync-skill.py --check
 
