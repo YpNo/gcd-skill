@@ -238,11 +238,11 @@ Two workflows run in `.github/workflows/`:
 | Workflow | Runs on | What it does |
 |---|---|---|
 | `ci.yml` | every pull request, pushes to `main` | Python lint and unit tests, skill integrity, workflow lint and security |
-| `update-docs.yml` | daily at 03:23 UTC, manual dispatch | Scrapes both regions, re-syncs the skill, checks it, and commits the result |
+| `update-docs.yml` | Mondays at 06:00 Paris time, manual dispatch | Scrapes both regions, re-syncs the skill, checks it, and opens or updates a pull request with the result |
 
 The `ci.yml` jobs, and the failure each one prevents:
 
-- **Python lint and tests:** `ruff` flags undefined names and syntax errors. Those would otherwise surface only when the daily scrape reaches the broken path. The unit tests cover `check-skill.py`, plus a smoke test of product discovery on the committed data.
+- **Python lint and tests:** `ruff` flags undefined names and syntax errors. Those would otherwise surface only when the scheduled scrape reaches the broken path. The unit tests cover `check-skill.py`, plus a smoke test of product discovery on the committed data.
 - **Skill integrity:** `scripts/check-skill.py` fails on any of these:
   - SKILL.md frontmatter that agents reject.
   - SKILL.md over its 500-line budget. It is loaded in full on every activation.
@@ -253,7 +253,17 @@ The `ci.yml` jobs, and the failure each one prevents:
   `sync-skill.py --check` then confirms the generated blocks match the scraped docs.
 - **Workflow lint and security:** `actionlint` catches workflow syntax and expression errors. `zizmor` catches unpinned actions, injection risks and over-broad permissions.
 
-Pushes made with `GITHUB_TOKEN` do not trigger other workflows. So the daily job runs `check-skill.py` itself before it commits.
+### Scheduled docs update
+
+`update-docs.yml` never pushes to `main`. It commits the scrape to the `automation/docs-update` branch and opens a pull request, so a person reviews scraped web text before it reaches the skill agents load. The branch is rebuilt from `main` on every run, so a single open pull request holds the latest scrape. A week not merged is simply superseded. Do not push to that branch: the next run overwrites it.
+
+The pull request body lists the files agents load that changed. It also flags a run in which one region's scrape failed, so a partial update cannot slip in unnoticed.
+
+To refresh before Monday, run the workflow by hand: **Actions → Update sovereign cloud docs → Run workflow**, on `main`.
+
+Two repository settings matter:
+- **Settings → Actions → General → Workflow permissions:** enable *Allow GitHub Actions to create and approve pull requests*. It is off by default on personal repositories, and without it the job fails when it opens the pull request.
+- A pull request opened with `GITHUB_TOKEN` does not start `ci.yml` by itself: GitHub holds the run until someone approves it on the pull request. The job therefore runs `check-skill.py` and `sync-skill.py --check` before it commits.
 
 Run the same checks locally:
 
