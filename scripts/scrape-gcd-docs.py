@@ -594,6 +594,51 @@ def path_to_filename(path: str) -> str:
     return name + ".md"
 
 
+DOCS_HUB_COLLISION_PREFIX = "docs_"
+
+
+def assign_filenames(paths) -> dict[str, str]:
+    """Map each page path to a filename that no other path in this run shares.
+
+    path_to_filename maps both /docs/<x> (a hub page) and /<x>/docs (a product
+    page) to <x>.md. When two paths claim one name, the product page keeps it,
+    since its filename feeds product detection in sync-skill.py, and the /docs
+    hub page takes the "docs_" prefix. All other names are unchanged, so files
+    referenced by name elsewhere keep their names.
+
+    Raises ValueError when a name is still shared, rather than letting one page
+    silently overwrite another.
+    """
+    claims: dict[str, list[str]] = {}
+    for path in sorted(paths):
+        claims.setdefault(path_to_filename(path), []).append(path)
+
+    assigned: dict[str, str] = {}
+    for name, claimants in claims.items():
+        for path in claimants:
+            if len(claimants) > 1 and path.startswith("/docs"):
+                assigned[path] = DOCS_HUB_COLLISION_PREFIX + name
+            else:
+                assigned[path] = name
+
+    owners: dict[str, list[str]] = {}
+    for path, name in assigned.items():
+        owners.setdefault(name, []).append(path)
+    clashes = {name: ps for name, ps in owners.items() if len(ps) > 1}
+    if clashes:
+        raise ValueError(f"Pages would overwrite each other: {clashes}")
+    return assigned
+
+
+def read_manifest_paths(manifest_path: Path) -> set[str]:
+    """Return the page paths of a saved manifest, or an empty set if it is unreadable."""
+    try:
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return set(data) if isinstance(data, dict) else set()
+
+
 # -- Fetchers (HTTP SSR + Optional Playwright) ---------------------------------
 
 def fetch_http(base_url: str, path: str, extra_headers: dict[str, str]) -> dict | None:
@@ -1000,6 +1045,10 @@ def crawl_and_scrape(
     print("\nPhase 2: Processing and saving pages...")
     manifest = {}
     valid_filenames: set[str] = set()
+    # Pages from the previous run take part in name assignment too, so a page's
+    # filename does not change between runs just because a page it collides with
+    # was missing from this run.
+    filenames = assign_filenames(set(results) | read_manifest_paths(manifest_path))
 
     for path, data in sorted(results.items()):
         page_html = data["html"]
@@ -1012,7 +1061,7 @@ def crawl_and_scrape(
             print(f"  SKIP (too short) {path}")
             continue
 
-        filename = path_to_filename(path)
+        filename = filenames[path]
         filepath = output_dir / filename
         valid_filenames.add(filename)
 
