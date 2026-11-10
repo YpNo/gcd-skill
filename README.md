@@ -110,6 +110,7 @@ gcd-skill/
   scripts/
     scrape-gcd-docs.py                  # Documentation scraper (HTTP SSR + optional Playwright)
     sync-skill.py                       # Synchronizes SKILL.md, references/, and README.md from scraped docs
+    check-skill.py                      # Integrity checks on what agents load (run in CI)
   docs-raw/                             # Scraped Berlin (GCD) docs
     _manifest.json                      # Page inventory with metadata
     _last_updated.json                  # Per-page last-updated dates
@@ -229,6 +230,42 @@ python3 scripts/sync-skill.py
 ```
 
 Each region's docs are scraped into their respective output directory (`docs-raw/` for Berlin, `docs-raw-s3ns/` for S3NS). Running `python3 scripts/sync-skill.py` parses both regions' manifests and `*_tpc-differences.md` pages, automatically updating product inventories, coverage tables, and injecting new product difference sections whenever new services are added to the documentation.
+
+## Continuous integration
+
+Two workflows run in `.github/workflows/`:
+
+| Workflow | Runs on | What it does |
+|---|---|---|
+| `ci.yml` | every pull request, pushes to `main` | Python lint and unit tests, skill integrity, workflow lint and security |
+| `update-docs.yml` | daily at 03:23 UTC, manual dispatch | Scrapes both regions, re-syncs the skill, checks it, and commits the result |
+
+The `ci.yml` jobs, and the failure each one prevents:
+
+- **Python lint and tests:** `ruff` flags undefined names and syntax errors. Those would otherwise surface only when the daily scrape reaches the broken path. The unit tests cover `check-skill.py`, plus a smoke test of product discovery on the committed data.
+- **Skill integrity:** `scripts/check-skill.py` fails on any of these:
+  - SKILL.md frontmatter that agents reject.
+  - SKILL.md over its 500-line budget. It is loaded in full on every activation.
+  - Broken relative links, or reference files SKILL.md never links.
+  - Unbalanced, duplicated or missing `AUTO-SYNC` markers. A missing marker makes `sync-skill.py` silently stop updating that section.
+  - Bidi-control and tag characters, and HTML comments other than the sync markers: text an agent reads but a reviewer does not see. Linter directives such as `<!-- prettier-ignore -->` count too. Zero-width characters are reported as warnings.
+
+  `sync-skill.py --check` then confirms the generated blocks match the scraped docs.
+- **Workflow lint and security:** `actionlint` catches workflow syntax and expression errors. `zizmor` catches unpinned actions, injection risks and over-broad permissions.
+
+Pushes made with `GITHUB_TOKEN` do not trigger other workflows. So the daily job runs `check-skill.py` itself before it commits.
+
+Run the same checks locally:
+
+```bash
+python -m pip install --require-hashes --no-deps -r requirements-ci.txt
+ruff check
+python -m unittest discover -s tests -t .
+python3 scripts/check-skill.py
+python3 scripts/sync-skill.py --check
+```
+
+Dependabot keeps the SHA-pinned actions and the CI tools in `requirements-ci.txt` current, waiting 7 days after each release. The actionlint image is a `docker://` reference that Dependabot does not track, so bump it by hand.
 
 ## Credits & Acknowledgments
 

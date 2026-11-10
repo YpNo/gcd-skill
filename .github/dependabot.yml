@@ -1,0 +1,27 @@
+version: 2
+updates:
+  # Keeps the SHA-pinned actions current; the version comment is updated alongside the SHA.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci
+
+  # CI tools in requirements-ci.txt (ruff, zizmor), hashes included.
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      ci-tools:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci
