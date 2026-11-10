@@ -212,9 +212,9 @@
   "/bigquery/docs/controlling-costs": {
     "title": "Estimate and control costs",
     "filename": "bigquery_controlling-costs.md",
-    "size": 50727,
+    "size": 51260,
     "url": "https://berlin.devsitetest.how/bigquery/docs/controlling-costs",
-    "last_updated": "2026-11-07"
+    "last_updated": "2026-11-09"
   },
   "/bigquery/docs/create-machine-learning-model": {
     "title": "Create an ML model in BigQuery ML by using SQL",
@@ -240,14 +240,14 @@
   "/bigquery/docs/exporting-data": {
     "title": "Export table data to Cloud Storage",
     "filename": "bigquery_exporting-data.md",
-    "size": 71115,
+    "size": 71128,
     "url": "https://berlin.devsitetest.how/bigquery/docs/exporting-data",
     "last_updated": "2026-11-07"
   },
   "/bigquery/docs/loading-data-cloud-storage-csv": {
     "title": "Load CSV data from Cloud Storage",
     "filename": "bigquery_loading-data-cloud-storage-csv.md",
-    "size": 138019,
+    "size": 138032,
     "url": "https://berlin.devsitetest.how/bigquery/docs/loading-data-cloud-storage-csv",
     "last_updated": "2026-11-07"
   },
@@ -268,7 +268,7 @@
   "/bigquery/docs/quickstarts/quickstart-client-libraries": {
     "title": "Query a public dataset with the BigQuery client libraries",
     "filename": "bigquery_quickstarts_quickstart-client-libraries.md",
-    "size": 42170,
+    "size": 42183,
     "url": "https://berlin.devsitetest.how/bigquery/docs/quickstarts/quickstart-client-libraries",
     "last_updated": "2026-11-07"
   },
@@ -289,7 +289,7 @@
   "/bigquery/docs/tables": {
     "title": "Create and use tables",
     "filename": "bigquery_tables.md",
-    "size": 161128,
+    "size": 161154,
     "url": "https://berlin.devsitetest.how/bigquery/docs/tables",
     "last_updated": "2026-11-07"
   },
@@ -814,14 +814,14 @@
   "/docs/authentication/client-libraries": {
     "title": "Authenticate with client libraries",
     "filename": "authentication_client-libraries.md",
-    "size": 19960,
+    "size": 19949,
     "url": "https://berlin.devsitetest.how/docs/authentication/client-libraries",
     "last_updated": "2026-11-07"
   },
   "/docs/authentication/external/externally-sourced-credentials": {
     "title": "Authenticate with client libraries",
     "filename": "authentication_external_externally-sourced-credentials.md",
-    "size": 19983,
+    "size": 19972,
     "url": "https://berlin.devsitetest.how/docs/authentication/external/externally-sourced-credentials",
     "last_updated": "2026-11-07"
   },
@@ -1276,9 +1276,9 @@
   "/docs/quotas/custom-constraints": {
     "title": "Use custom organization policies",
     "filename": "quotas_custom-constraints.md",
-    "size": 25703,
+    "size": 25700,
     "url": "https://berlin.devsitetest.how/docs/quotas/custom-constraints",
-    "last_updated": "2026-11-06"
+    "last_updated": "2026-11-09"
   },
   "/docs/quotas/development-environment": {
     "title": "Set up the Cloud Quotas API",
@@ -1360,7 +1360,7 @@
   "/docs/quotas/reference/libraries": {
     "title": "Cloud Quotas client libraries",
     "filename": "quotas_reference_libraries.md",
-    "size": 132255,
+    "size": 131953,
     "url": "https://berlin.devsitetest.how/docs/quotas/reference/libraries",
     "last_updated": "2026-11-07"
   },
@@ -1997,14 +1997,14 @@
   "/kms/docs/creating-keys": {
     "title": "Create a key",
     "filename": "kms_creating-keys.md",
-    "size": 165091,
+    "size": 165073,
     "url": "https://berlin.devsitetest.how/kms/docs/creating-keys",
     "last_updated": "2026-11-07"
   },
   "/kms/docs/destroy-restore": {
     "title": "Destroy and restore key versions",
     "filename": "kms_destroy-restore.md",
-    "size": 39099,
+    "size": 39093,
     "url": "https://berlin.devsitetest.how/kms/docs/destroy-restore",
     "last_updated": "2026-11-07"
   },
@@ -2032,7 +2032,7 @@
   "/kms/docs/retrieve-public-key": {
     "title": "Retrieve a public key",
     "filename": "kms_retrieve-public-key.md",
-    "size": 22422,
+    "size": 22419,
     "url": "https://berlin.devsitetest.how/kms/docs/retrieve-public-key",
     "last_updated": "2026-11-07"
   },
@@ -2095,7 +2095,7 @@
   "/kubernetes-engine/docs/release-notes": {
     "title": "GKE release notes",
     "filename": "kubernetes-engine_release-notes.md",
-    "size": 1499620,
+    "size": 1500640,
     "url": "https://berlin.devsitetest.how/kubernetes-engine/docs/release-notes",
     "last_updated": "2026-10-30"
   },
@@ -2111,7 +2111,7 @@
     "filename": "load-balancing.md",
     "size": 3568,
     "url": "https://berlin.devsitetest.how/load-balancing/docs",
-    "last_updated": "2026-10-26"
+    "last_updated": "2026-11-09"
   },
   "/load-balancing/docs/release-notes": {
     "title": "Cloud Load Balancing release notes",
@@ -2125,7 +2125,7 @@
     "filename": "load-balancing_tpc-differences.md",
     "size": 7376,
     "url": "https://berlin.devsitetest.how/load-balancing/docs/tpc-differences",
-    "last_updated": "2026-11-02"
+    "last_updated": "2026-11-09"
   },
   "/logging/docs": {
     "title": "Cloud Logging documentation",
@@ -2151,7 +2151,7 @@
   "/logging/docs/reference/libraries": {
     "title": "Logging client libraries",
     "filename": "logging_reference_libraries.md",
-    "size": 27623,
+    "size": 27615,
     "url": "https://berlin.devsitetest.how/logging/docs/reference/libraries",
     "last_updated": "2026-11-07"
   },
@@ -2277,7 +2277,7 @@
   "/monitoring/docs/reference/libraries": {
     "title": "Monitoring client libraries",
     "filename": "monitoring_reference_libraries.md",
-    "size": 39058,
+    "size": 39059,
     "url": "https://berlin.devsitetest.how/monitoring/docs/reference/libraries",
     "last_updated": "2026-11-07"
   },
@@ -2501,9 +2501,9 @@
   "/release-notes": {
     "title": "Google Cloud release notes",
     "filename": "release-notes.md",
-    "size": 221407,
+    "size": 222888,
     "url": "https://berlin.devsitetest.how/release-notes",
-    "last_updated": "2026-11-09"
+    "last_updated": "2026-11-10"
   },
   "/resource-manager/docs": {
     "title": "Resource Manager documentation",
@@ -2587,35 +2587,35 @@
     "filename": "run.md",
     "size": 2202,
     "url": "https://berlin.devsitetest.how/run/docs",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/about-execution-environments": {
     "title": "Select an execution environment for services",
     "filename": "run_about-execution-environments.md",
     "size": 13062,
     "url": "https://berlin.devsitetest.how/run/docs/about-execution-environments",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/configuring": {
     "title": "Configure Cloud Run services",
     "filename": "run_configuring.md",
     "size": 11531,
     "url": "https://berlin.devsitetest.how/run/docs/configuring",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/configuring/static-outbound-ip": {
     "title": "Static outbound IP address",
     "filename": "run_configuring_static-outbound-ip.md",
     "size": 10322,
     "url": "https://berlin.devsitetest.how/run/docs/configuring/static-outbound-ip",
-    "last_updated": "2026-11-07"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/container-contract": {
     "title": "Container runtime contract",
     "filename": "run_container-contract.md",
     "size": 26235,
     "url": "https://berlin.devsitetest.how/run/docs/container-contract",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/deploying": {
     "title": "Deploy container images to Cloud Run services",
@@ -2629,14 +2629,14 @@
     "filename": "run_execute_jobs-on-schedule.md",
     "size": 6369,
     "url": "https://berlin.devsitetest.how/run/docs/execute/jobs-on-schedule",
-    "last_updated": "2026-11-07"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/overview/what-is-cloud-run": {
     "title": "What is Cloud Run",
     "filename": "run_overview_what-is-cloud-run.md",
     "size": 9651,
     "url": "https://berlin.devsitetest.how/run/docs/overview/what-is-cloud-run",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/quickstarts": {
     "title": "Quickstarts",
@@ -2650,14 +2650,14 @@
     "filename": "run_reference_container-contract.md",
     "size": 26245,
     "url": "https://berlin.devsitetest.how/run/docs/reference/container-contract",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/reference/iam/roles": {
     "title": "Cloud Run IAM roles",
     "filename": "run_reference_iam_roles.md",
     "size": 51380,
     "url": "https://berlin.devsitetest.how/run/docs/reference/iam/roles",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/release-notes": {
     "title": "Cloud Run release notes",
@@ -2671,14 +2671,14 @@
     "filename": "run_resource-model.md",
     "size": 7090,
     "url": "https://berlin.devsitetest.how/run/docs/resource-model",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/run/docs/tpc-differences": {
     "title": "Cloud Run in Google Cloud Dedicated versus Google Cloud",
     "filename": "run_tpc-differences.md",
     "size": 7236,
     "url": "https://berlin.devsitetest.how/run/docs/tpc-differences",
-    "last_updated": "2026-10-30"
+    "last_updated": "2026-11-09"
   },
   "/sdk/docs": {
     "title": "Google Cloud SDK documentation",
@@ -2732,9 +2732,9 @@
   "/secret-manager/docs/reference/libraries": {
     "title": "Secret Manager client libraries",
     "filename": "secret-manager_reference_libraries.md",
-    "size": 34137,
+    "size": 34140,
     "url": "https://berlin.devsitetest.how/secret-manager/docs/reference/libraries",
-    "last_updated": "2026-10-29"
+    "last_updated": "2026-11-07"
   },
   "/secret-manager/docs/reference/rest": {
     "title": "Secret Manager API",
@@ -2853,7 +2853,7 @@
     "filename": "sql_release-notes.md",
     "size": 64838,
     "url": "https://berlin.devsitetest.how/sql/docs/release-notes",
-    "last_updated": "2026-11-09"
+    "last_updated": "2026-11-10"
   },
   "/sql/docs/tpc-differences": {
     "title": "Cloud SQL in Google Cloud Dedicated versus Google Cloud",
@@ -2942,7 +2942,7 @@
   "/storage/docs/reference/libraries": {
     "title": "Cloud Storage client libraries",
     "filename": "storage_reference_libraries.md",
-    "size": 21846,
+    "size": 21838,
     "url": "https://berlin.devsitetest.how/storage/docs/reference/libraries",
     "last_updated": "2026-11-07"
   },
@@ -2963,14 +2963,14 @@
   "/storage/docs/troubleshooting": {
     "title": "Troubleshooting",
     "filename": "storage_troubleshooting.md",
-    "size": 36037,
+    "size": 36029,
     "url": "https://berlin.devsitetest.how/storage/docs/troubleshooting",
     "last_updated": "2026-11-07"
   },
   "/storage/docs/uploading-objects": {
     "title": "Upload objects from a file system",
     "filename": "storage_uploading-objects.md",
-    "size": 46506,
+    "size": 46498,
     "url": "https://berlin.devsitetest.how/storage/docs/uploading-objects",
     "last_updated": "2026-11-07"
   },
