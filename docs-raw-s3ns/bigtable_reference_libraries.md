@@ -425,7 +425,7 @@ the following to your dependencies:
 
 
 ```
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.87.0" 
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.88.0" 
 ```
 
 

@@ -1,7 +1,7 @@
 # Google Cloud release notes
 
 Source: https://documentation.s3ns.fr/release-notes
-Last updated: 2026-11-09
+Last updated: 2026-11-10
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/tpc-differences) for more details.
 
@@ -116,6 +116,47 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## November 09, 2026
+
+**Google Kubernetes Engine**
+
+Feature 
+
+
+GKE Gateway now supports Server Name Indication (SNI)-based routing with TLS passthrough. You can use TLS protocol-specific rules to route incoming TLS streams from the Gateway to Kubernetes Services based on SNI without terminating TLS at the GKE Gateway load balancer. Application developers can create TLSRoute resources to expose secure TLS traffic to applications that run in the GKE cluster.
+
+Creating TLSRoute resources requires the Gateway API version 1.5.0 or later CRDs (Standard channel), which are installed in GKE version 1.35.2-gke.1842000 or later.
+
+This feature supports single-cluster and multi-cluster GKE Gateway load balancers by using the following GatewayClass resources:
+
+- `gke-l7-rilb`
+
+- `gke-l7-regional-external-managed`
+
+- `gke-l7-rilb-mc`
+
+- `gke-l7-regional-external-managed-mc`
+
+- `gke-l7-cross-regional-internal-managed-mc`
+
+For more information, see [Deploy a TLS passthrough Gateway](/kubernetes-engine/docs/how-to/deploy-tls-passthrough-gateway).
+
+
+**Virtual Private Cloud**
+
+Feature 
+
+
+**General Availability**: You can create an internal range with the
+`INTERNAL_ADDRESS` purpose to allocate global internal IPv4 addresses for
+[Private Service Connect endpoints that access global Google
+APIs](/vpc/docs/about-accessing-google-apis-endpoints).
+
+For more information, see [Internal ranges for Private Service Connect
+endpoints](/vpc/docs/internal-ranges#reserve-for-endpoints).
 
 
 
