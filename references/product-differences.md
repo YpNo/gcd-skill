@@ -27,14 +27,14 @@ All products share these platform-wide constraints:
 | Cloud DNS | Qualifié SecNumCloud 3.2 | `dns_tpc-differences.md` | 2026-10-26 | `fbb94d9e80` |
 | Cloud Interconnect | Qualifié SecNumCloud 3.2 | `network-connectivity_interconnect_tpc-differences.md` | 2026-10-26 | `e8eefa543b` |
 | Cloud KMS | Qualifié SecNumCloud 3.2 | `kms_tpc-differences.md` | 2026-10-27 | `407d108d82` |
-| Cloud Load Balancing | Qualifié SecNumCloud 3.2 | `load-balancing_tpc-differences.md` | 2026-11-02 | `0b3869431a` |
+| Cloud Load Balancing | Qualifié SecNumCloud 3.2 | `load-balancing_tpc-differences.md` | 2026-11-09 | `0b3869431a` |
 | Cloud Logging | Qualifié SecNumCloud 3.2 | `logging_tpc-differences.md` | 2026-11-06 | `3c7ede3f89` |
 | Cloud Monitoring | Qualifié SecNumCloud 3.2 | `monitoring_tpc-differences.md` | 2026-11-06 | `64c4c68e30` |
 | Cloud NAT | Qualifié SecNumCloud 3.2 | `nat_tpc-differences.md` | 2026-10-26 | `355f0cd2d2` |
 | Cloud NGFW | Qualifié SecNumCloud 3.2 | `firewall_tpc-differences.md` | 2026-10-26 | `b038ad3e50` |
 | Cloud Quotas | Qualification en cours | `quotas_tpc-differences.md` | 2026-10-26 | `8ab8f5aa35` |
 | Cloud Router | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-10-26 | `539f8b73c2` |
-| Cloud Run | Qualification en cours | `run_tpc-differences.md` | 2026-10-30 | `a9f3e4b762` |
+| Cloud Run | Qualification en cours | `run_tpc-differences.md` | 2026-11-09 | `a9f3e4b762` |
 | Cloud SQL | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-09 | `7ceca2ae72` |
 | Cloud Storage | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-09 | `69c6b665f8` |
 | Cloud VPN | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-10-26 | `09d1827aa5` |

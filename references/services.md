@@ -247,7 +247,7 @@ Total scraped pages: **436** (Berlin GCD) / **435** (France S3NS).
 | Agent Platform (Gemini Enterprise Agent Platform) | 7 | 7 | Qualification en cours | `gemini-enterprise-agent-platform_tpc-differences.md` | 2026-11-09 |
 | API Keys | 4 | 4 | — | — | 2026-10-26 |
 | Artifact Registry | 6 | 6 | Qualifié SecNumCloud 3.2 | `artifact-registry_tpc-differences.md` | 2026-10-26 |
-| BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | `bigquery_tpc-differences.md` | 2026-11-07 |
+| BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | `bigquery_tpc-differences.md` | 2026-11-09 |
 | Bigtable | 14 | 14 | Qualification en cours | `bigtable_tpc-differences.md` | 2026-11-07 |
 | Cloud Armor | 3 | 3 | Qualifié SecNumCloud 3.2 | `armor_tpc-differences.md` | 2026-11-04 |
 | Cloud Billing | 7 | 7 | — | `billing_tpc-differences.md` | 2026-11-07 |
@@ -259,10 +259,10 @@ Total scraped pages: **436** (Berlin GCD) / **435** (France S3NS).
 | Cloud Monitoring | 4 | 4 | Qualifié SecNumCloud 3.2 | `monitoring_tpc-differences.md` | 2026-11-07 |
 | Cloud NAT | 3 | 3 | Qualifié SecNumCloud 3.2 | `nat_tpc-differences.md` | 2026-10-26 |
 | Cloud NGFW | 3 | 3 | Qualifié SecNumCloud 3.2 | `firewall_tpc-differences.md` | 2026-10-26 |
-| Cloud Quotas | 29 | 29 | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-07 |
+| Cloud Quotas | 29 | 29 | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-09 |
 | Cloud Router | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-10-26 |
 | Cloud Run | 14 | 14 | Qualification en cours | `run_tpc-differences.md` | 2026-11-09 |
-| Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-09 |
+| Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-10 |
 | Cloud Storage | 10 | 10 | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-09 |
 | Cloud VPN | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-10-26 |
 | Compute Engine | 12 | 12 | Qualifié SecNumCloud 3.2 | `compute_tpc-differences.md` | 2026-11-09 |
@@ -295,6 +295,8 @@ The following table summarizes the most recent sovereign cloud release notes ext
 <!-- AUTO-SYNC:RECENT-RELEASE-NOTES:START -->
 | Date | Product | Type | Summary |
 |---|---|---|---|
+| November 09, 2026 | **Google Kubernetes Engine** | `Feature` | GKE Gateway now supports Server Name Indication (SNI)-based routing with TLS passthrough. You can use TLS protocol-specific rules to route incoming TLS streams from the Gateway to Kubernetes Services based on SNI without terminating TLS at the GKE Gateway load balancer. Application developers can create TLSRoute resources to expose secure TLS traffic to applications that run in the GKE cluster. |
+| November 09, 2026 | **Virtual Private Cloud** | `Feature` | **General Availability**: You can create an internal range with the `INTERNAL_ADDRESS` purpose to allocate global internal IPv4 addresses for Private Service Connect endpoints that access global Google APIs (`/vpc/docs/about-accessing-google-apis-endpoints`). |
 | November 04, 2026 | **Cloud Storage** | `Feature` | You can pause hard deletions for a bucket when you need more time to restore soft-deleted objects before they're permanently deleted. For more information, see Pause permanent (hard) deletions of soft-deleted objects (`/storage/docs/pause-hard-deletions`). |
 | November 03, 2026 | **Virtual Private Cloud** | `Feature` | **General Availability**: VPC Flow Logs supports logging for IPv6 encapsulation flows. For more information, see IpConnection field format (`/vpc/docs/about-flow-logs-records#IpConnection`). |
 | October 29, 2026 | **Identity and Access Management** | `Feature` | The Admin (`roles/admin`), Writer (`roles/writer`), and Reader (`roles/reader`) basic roles are generally available ([GA](https://documentation.s3ns.fr/products#product-launch-stages)). For more information, see Basic roles (`/iam/docs/roles-overview#basic`). |
@@ -305,8 +307,6 @@ The following table summarizes the most recent sovereign cloud release notes ext
 | October 21, 2026 | **Bigtable** | `Feature` | Bigtable is now available in Google Cloud. For more information, see Bigtable in Google Cloud versus Google Cloud (`/bigtable/docs/tpc-differences`). |
 | October 20, 2026 | **Filestore** | `Feature` | Filestore is available in Google Cloud. For more information, see Filestore differences in Google Cloud versus Google Cloud (`/filestore/docs/tpc-differences`). |
 | October 19, 2026 | **Google Cloud Armor** | `Security` | Security fixes and enhancements to Cloud Armor preconfigured WAF `v33-stable` rulesets. For more information, see Tuning Google Cloud Armor WAF rules (`/armor/docs/rule-tuning`). |
-| October 19, 2026 | **Google Cloud Armor** | `Security` | Security fixes and enhancements to Cloud Armor preconfigured WAF `stable` rulesets for v3.0. For more information, see Tuning Google Cloud Armor WAF rules (`/armor/docs/rule-tuning`). |
-| October 19, 2026 | **Virtual Private Cloud** | `Feature` | **General Availability**: VPC Flow Logs adds the following metadata annotations and packet drop reasons for Cloud NAT: |
 <!-- AUTO-SYNC:RECENT-RELEASE-NOTES:END -->
 
 ---
