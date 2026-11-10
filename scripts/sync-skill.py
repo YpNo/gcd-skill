@@ -1299,34 +1299,76 @@ def sync_services_md(
     return False
 
 
+# Listed under "Both regions" without a scraped product of their own.
+BOTH_REGIONS_BASELINE_SERVICES = frozenset({
+    "API Discovery Service",
+    "BigQuery Reservation",
+    "Service Account Credentials",
+    "Shielded VM",
+    "Workforce/Workload Identity Federation",
+})
+REGION_ONLY_LABELS = (
+    ("berlin", "Berlin (`u-germany-northeast1`) only"),
+    ("s3ns", "S3NS (`u-france-east1`) only"),
+)
+
+
+def product_region(p: dict) -> str | None:
+    """Return "both", "berlin" or "s3ns" for where a product has scraped pages, or None."""
+    in_berlin, in_s3ns = p["berlin_pages"] > 0, p["s3ns_pages"] > 0
+    if in_berlin and in_s3ns:
+        return "both"
+    if in_berlin:
+        return "berlin"
+    if in_s3ns:
+        return "s3ns"
+    return None
+
+
+def available_services_by_region(products: dict) -> dict[str, dict[str, set[str]]]:
+    """Group product display names by region ("both", "berlin", "s3ns") and by
+    "general" or "networking". A product only one region documents is never
+    grouped under "both"."""
+    groups = {r: {"general": set(), "networking": set()} for r in ("both", "berlin", "s3ns")}
+    groups["both"]["general"].update(BOTH_REGIONS_BASELINE_SERVICES)
+    for p in products.values():
+        region = product_region(p)
+        if region is None:
+            continue
+        if p["category"] == "networking":
+            groups[region]["networking"].add(p["display"])
+            if p["slug"] == "dns":
+                groups[region]["general"].add(p["display"])
+        elif p["display"] == "Google Kubernetes Engine (GKE)":
+            groups[region]["general"].add("Google Kubernetes Engine (Autopilot only)")
+        else:
+            groups[region]["general"].add(p["display"])
+    return groups
+
+
+def _sorted_names(names: set[str]) -> str:
+    return ", ".join(sorted(names, key=lambda s: s.lower()))
+
+
+def render_region_service_lines(products: dict) -> list[str]:
+    """Render the "Both regions" lines, plus one line per region that documents
+    services the other does not. Those extra lines are omitted when empty."""
+    groups = available_services_by_region(products)
+    lines = [
+        f"**Both regions (Compute, Data, Storage, Security & Ops):** {_sorted_names(groups['both']['general'])}.",
+        "",
+        f"**Both regions (Networking):** {_sorted_names(groups['both']['networking'])}.",
+    ]
+    for region, label in REGION_ONLY_LABELS:
+        names = groups[region]["general"] | groups[region]["networking"]
+        if names:
+            lines.extend(["", f"**{label}:** {_sorted_names(names)}."])
+    return lines
+
+
 def sync_skill_md(secnumcloud_data: dict, products: dict, check_only: bool = False) -> bool:
     content = SKILL_FILE.read_text(encoding="utf-8")
     original = content
-
-    general_services = {
-        "API Discovery Service",
-        "BigQuery Reservation",
-        "Service Account Credentials",
-        "Shielded VM",
-        "Workforce/Workload Identity Federation",
-    }
-    networking_services = set()
-
-    for p in products.values():
-        if p["berlin_pages"] == 0 and p["s3ns_pages"] == 0:
-            continue
-        if p["category"] == "networking":
-            networking_services.add(p["display"])
-            if p["slug"] == "dns":
-                general_services.add(p["display"])
-        else:
-            name = p["display"]
-            if name == "Google Kubernetes Engine (GKE)":
-                name = "Google Kubernetes Engine (Autopilot only)"
-            general_services.add(name)
-
-    gen_str = ", ".join(sorted(general_services, key=lambda s: s.lower()))
-    net_str = ", ".join(sorted(networking_services, key=lambda s: s.lower()))
 
     services_list = secnumcloud_data.get("services", [])
     qualified = sorted(
@@ -1342,11 +1384,7 @@ def sync_skill_md(secnumcloud_data: dict, products: dict, check_only: bool = Fal
         key=lambda s: s.lower(),
     )
 
-    block_lines = [
-        f"**Both regions (Compute, Data, Storage, Security & Ops):** {gen_str}.",
-        "",
-        f"**Both regions (Networking):** {net_str}.",
-    ]
+    block_lines = render_region_service_lines(products)
     if qualified or in_progress or upcoming:
         block_lines.extend(
             [
