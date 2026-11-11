@@ -288,7 +288,7 @@ Fix these by setting the quota project correctly.
 - **Per-user quota usage not displayed**: The sovereign cloud console does not show per-user quota usage.
 
 <!-- AUTO-SYNC:CROSS-CUTTING-DIFFS:quotas:START -->
-> **Auto-synced upstream `quotas_tpc-differences.md` status:** Last updated `2026-10-26` | Digest `8ab8f5aa35`
+> **Auto-synced upstream `quotas_tpc-differences.md` status:** Last updated `2026-11-10` | Digest `8ab8f5aa35`
 
 <details>
 <summary>Upstream <code>quotas_tpc-differences.md</code> key differences (1 items)</summary>

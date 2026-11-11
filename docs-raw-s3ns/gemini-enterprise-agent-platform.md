@@ -1,7 +1,7 @@
 # Gemini Enterprise Agent Platform
 
 Source: https://documentation.s3ns.fr/gemini-enterprise-agent-platform
-Last updated: 2026-11-02
+Last updated: 2026-11-10
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/gemini-enterprise-agent-platform/tpc-differences) for more details.
 

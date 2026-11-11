@@ -1,7 +1,7 @@
 # Google Cloud release notes
 
 Source: https://documentation.s3ns.fr/release-notes
-Last updated: 2026-11-10
+Last updated: 2026-11-11
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/tpc-differences) for more details.
 
@@ -116,6 +116,22 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## November 10, 2026
+
+**Compute Engine**
+
+Feature 
+
+
+For your regional managed instance groups (MIGs), you can view planned instance
+allocations across zones and machine types, check the number of instances
+waiting for capacity, and configure alerts based on this data. Compute Engine
+records these details in instance distribution logs in Cloud Logging when you
+create a regional MIG or increase its target size. For more information, see
+[View instance distribution logs](/compute/docs/instance-groups/view-instance-distribution-logs).
 
 
 

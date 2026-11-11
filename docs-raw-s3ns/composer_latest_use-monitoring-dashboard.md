@@ -1,7 +1,7 @@
 # Use the monitoring dashboard
 
 Source: https://documentation.s3ns.fr/composer/docs/latest/use-monitoring-dashboard
-Last updated: 2026-11-07
+Last updated: 2026-11-10
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/composer/docs/tpc-differences) for more details.
 

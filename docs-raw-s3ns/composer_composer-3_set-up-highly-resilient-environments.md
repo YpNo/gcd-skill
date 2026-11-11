@@ -1,7 +1,7 @@
 # Set up highly resilient environments
 
 Source: https://documentation.s3ns.fr/composer/docs/composer-3/set-up-highly-resilient-environments
-Last updated: 2026-11-07
+Last updated: 2026-11-10
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/composer/docs/tpc-differences) for more details.
 

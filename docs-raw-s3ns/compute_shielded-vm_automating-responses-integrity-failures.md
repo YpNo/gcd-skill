@@ -1,7 +1,7 @@
 # Automating responses to integrity validation failures
 
 Source: https://documentation.s3ns.fr/compute/shielded-vm/docs/automating-responses-integrity-failures
-Last updated: 2026-11-06
+Last updated: 2026-11-10
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/compute/shielded-vm/docs/tpc-differences) for more details.
 

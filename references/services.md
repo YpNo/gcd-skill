@@ -242,46 +242,46 @@ Total scraped pages: **436** (Berlin GCD) / **435** (France S3NS).
 
 | Service / Documentation Hub | Berlin Pages | S3NS Pages | S3NS SecNumCloud 3.2 | Differences Guide | Last Updated |
 |---|---:|---:|---|---|---|
-| Access Context Manager | 8 | 8 | Qualifié SecNumCloud 3.2 | `access-context-manager_tpc-differences.md` | 2026-11-06 |
-| Access Transparency | 7 | 7 | Qualification en cours | — | 2026-10-30 |
-| Agent Platform (Gemini Enterprise Agent Platform) | 7 | 7 | Qualification en cours | `gemini-enterprise-agent-platform_tpc-differences.md` | 2026-11-09 |
-| API Keys | 4 | 4 | — | — | 2026-10-26 |
-| Artifact Registry | 6 | 6 | Qualifié SecNumCloud 3.2 | `artifact-registry_tpc-differences.md` | 2026-10-26 |
-| BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | `bigquery_tpc-differences.md` | 2026-11-09 |
-| Bigtable | 14 | 14 | Qualification en cours | `bigtable_tpc-differences.md` | 2026-11-07 |
-| Cloud Armor | 3 | 3 | Qualifié SecNumCloud 3.2 | `armor_tpc-differences.md` | 2026-11-04 |
-| Cloud Billing | 7 | 7 | — | `billing_tpc-differences.md` | 2026-11-07 |
-| Cloud DNS | 8 | 8 | Qualifié SecNumCloud 3.2 | `dns_tpc-differences.md` | 2026-11-07 |
+| Access Context Manager | 8 | 8 | Qualifié SecNumCloud 3.2 | `access-context-manager_tpc-differences.md` | 2026-11-11 |
+| Access Transparency | 7 | 7 | Qualification en cours | — | 2026-11-10 |
+| Agent Platform (Gemini Enterprise Agent Platform) | 7 | 7 | Qualification en cours | `gemini-enterprise-agent-platform_tpc-differences.md` | 2026-11-11 |
+| API Keys | 4 | 4 | — | — | 2026-11-10 |
+| Artifact Registry | 6 | 6 | Qualifié SecNumCloud 3.2 | `artifact-registry_tpc-differences.md` | 2026-11-10 |
+| BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | `bigquery_tpc-differences.md` | 2026-11-10 |
+| Bigtable | 14 | 14 | Qualification en cours | `bigtable_tpc-differences.md` | 2026-11-10 |
+| Cloud Armor | 3 | 3 | Qualifié SecNumCloud 3.2 | `armor_tpc-differences.md` | 2026-11-10 |
+| Cloud Billing | 7 | 7 | — | `billing_tpc-differences.md` | 2026-11-10 |
+| Cloud DNS | 8 | 8 | Qualifié SecNumCloud 3.2 | `dns_tpc-differences.md` | 2026-11-10 |
 | Cloud Interconnect | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_interconnect_tpc-differences.md` | 2026-11-03 |
 | Cloud KMS | 8 | 8 | Qualifié SecNumCloud 3.2 | `kms_tpc-differences.md` | 2026-11-07 |
 | Cloud Load Balancing | 3 | 3 | Qualifié SecNumCloud 3.2 | `load-balancing_tpc-differences.md` | 2026-11-09 |
-| Cloud Logging | 10 | 10 | Qualifié SecNumCloud 3.2 | `logging_tpc-differences.md` | 2026-11-07 |
+| Cloud Logging | 10 | 10 | Qualifié SecNumCloud 3.2 | `logging_tpc-differences.md` | 2026-11-10 |
 | Cloud Monitoring | 4 | 4 | Qualifié SecNumCloud 3.2 | `monitoring_tpc-differences.md` | 2026-11-07 |
 | Cloud NAT | 3 | 3 | Qualifié SecNumCloud 3.2 | `nat_tpc-differences.md` | 2026-10-26 |
-| Cloud NGFW | 3 | 3 | Qualifié SecNumCloud 3.2 | `firewall_tpc-differences.md` | 2026-10-26 |
-| Cloud Quotas | 29 | 29 | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-09 |
+| Cloud NGFW | 3 | 3 | Qualifié SecNumCloud 3.2 | `firewall_tpc-differences.md` | 2026-11-10 |
+| Cloud Quotas | 29 | 29 | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-10 |
 | Cloud Router | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-10-26 |
-| Cloud Run | 14 | 14 | Qualification en cours | `run_tpc-differences.md` | 2026-11-09 |
-| Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-10 |
+| Cloud Run | 14 | 14 | Qualification en cours | `run_tpc-differences.md` | 2026-11-10 |
+| Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-11 |
 | Cloud Storage | 10 | 10 | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-09 |
 | Cloud VPN | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-10-26 |
-| Compute Engine | 12 | 12 | Qualifié SecNumCloud 3.2 | `compute_tpc-differences.md` | 2026-11-09 |
-| Container-Optimized OS | 3 | 3 | Qualifié SecNumCloud 3.2 | `container-optimized-os_tpc-differences.md` | 2026-11-08 |
-| Filestore | 16 | 16 | Qualification en cours | `filestore_tpc-differences.md` | 2026-10-26 |
-| Google Cloud CLI (gcloud SDK) | 2 | 2 | — | — | 2026-11-03 |
-| Google Kubernetes Engine (GKE) | 9 | 9 | Qualifié SecNumCloud 3.2 | `kubernetes-engine_tpc-differences.md` | 2026-11-07 |
-| IAM | 18 | 18 | Qualifié SecNumCloud 3.2 | `iam_tpc-differences.md` | 2026-11-09 |
-| Managed Airflow (Cloud Composer 3) | 18 | 18 | Qualification en cours | `composer_tpc-differences.md` | 2026-11-09 |
+| Compute Engine | 12 | 12 | Qualifié SecNumCloud 3.2 | `compute_tpc-differences.md` | 2026-11-10 |
+| Container-Optimized OS | 3 | 3 | Qualifié SecNumCloud 3.2 | `container-optimized-os_tpc-differences.md` | 2026-11-10 |
+| Filestore | 16 | 16 | Qualification en cours | `filestore_tpc-differences.md` | 2026-11-10 |
+| Google Cloud CLI (gcloud SDK) | 2 | 2 | — | — | 2026-11-10 |
+| Google Kubernetes Engine (GKE) | 9 | 9 | Qualifié SecNumCloud 3.2 | `kubernetes-engine_tpc-differences.md` | 2026-11-10 |
+| IAM | 18 | 18 | Qualifié SecNumCloud 3.2 | `iam_tpc-differences.md` | 2026-11-10 |
+| Managed Airflow (Cloud Composer 3) | 18 | 18 | Qualification en cours | `composer_tpc-differences.md` | 2026-11-10 |
 | Managed Service for Apache Spark (Dataproc) | 10 | 10 | Qualification en cours | `managed-spark_tpc-differences.md` | 2026-11-09 |
 | Network Service Tiers | 3 | 3 | Qualifié SecNumCloud 3.2 | `network-tiers_tpc-differences.md` | 2026-10-26 |
 | Organization Policy | 3 | 3 | Qualifié SecNumCloud 3.2 | `organization-policy_tpc-differences.md` | 2026-10-26 |
-| Pub/Sub | 11 | 11 | Qualifié SecNumCloud 3.2 | `pubsub_tpc-differences.md` | 2026-11-07 |
+| Pub/Sub | 11 | 11 | Qualifié SecNumCloud 3.2 | `pubsub_tpc-differences.md` | 2026-11-10 |
 | Resource Manager | 11 | 11 | Qualifié SecNumCloud 3.2 | `resource-manager_tpc-differences.md` | 2026-11-07 |
-| Secret Manager | 10 | 10 | Qualification en cours | `secret-manager_tpc-differences.md` | 2026-11-07 |
+| Secret Manager | 10 | 10 | Qualification en cours | `secret-manager_tpc-differences.md` | 2026-11-10 |
 | Service Directory | 2 | 2 | Qualifié SecNumCloud 3.2 | — | 2026-10-26 |
 | Service Usage | 9 | 9 | Qualifié SecNumCloud 3.2 | `service-usage_tpc-differences.md` | 2026-11-02 |
 | Storage Transfer Service | 7 | 7 | Qualification en cours | `storage-transfer_tpc-differences.md` | 2026-11-09 |
-| Terraform | 32 | 32 | — | `terraform_tpc-differences.md` | 2026-11-07 |
+| Terraform | 32 | 32 | — | `terraform_tpc-differences.md` | 2026-11-10 |
 | VPC | 7 | 7 | Qualifié SecNumCloud 3.2 | `vpc_tpc-differences.md` | 2026-11-07 |
 | VPC Service Controls | 3 | 3 | Qualifié SecNumCloud 3.2 | `vpc-service-controls_tpc-differences.md` | 2026-10-26 |
 <!-- AUTO-SYNC:DISCOVERED-PRODUCTS-TABLE:END -->
@@ -295,6 +295,7 @@ The following table summarizes the most recent sovereign cloud release notes ext
 <!-- AUTO-SYNC:RECENT-RELEASE-NOTES:START -->
 | Date | Product | Type | Summary |
 |---|---|---|---|
+| November 10, 2026 | **Compute Engine** | `Feature` | For your regional managed instance groups (MIGs), you can view planned instance allocations across zones and machine types, check the number of instances waiting for capacity, and configure alerts based on this data. Compute Engine records these details in instance distribution logs in Cloud Logging when you create a regional MIG or increase its target size. For more information, see View instance distribution logs (`/compute/docs/instance-groups/view-instance-distribution-logs`). |
 | November 09, 2026 | **Google Kubernetes Engine** | `Feature` | GKE Gateway now supports Server Name Indication (SNI)-based routing with TLS passthrough. You can use TLS protocol-specific rules to route incoming TLS streams from the Gateway to Kubernetes Services based on SNI without terminating TLS at the GKE Gateway load balancer. Application developers can create TLSRoute resources to expose secure TLS traffic to applications that run in the GKE cluster. |
 | November 09, 2026 | **Virtual Private Cloud** | `Feature` | **General Availability**: You can create an internal range with the `INTERNAL_ADDRESS` purpose to allocate global internal IPv4 addresses for Private Service Connect endpoints that access global Google APIs (`/vpc/docs/about-accessing-google-apis-endpoints`). |
 | November 04, 2026 | **Cloud Storage** | `Feature` | You can pause hard deletions for a bucket when you need more time to restore soft-deleted objects before they're permanently deleted. For more information, see Pause permanent (hard) deletions of soft-deleted objects (`/storage/docs/pause-hard-deletions`). |
@@ -306,7 +307,6 @@ The following table summarizes the most recent sovereign cloud release notes ext
 | October 26, 2026 | **Google Kubernetes Engine** | `Change` | **(2026-R45) Version updates:** GKE cluster versions have been updated. |
 | October 21, 2026 | **Bigtable** | `Feature` | Bigtable is now available in Google Cloud. For more information, see Bigtable in Google Cloud versus Google Cloud (`/bigtable/docs/tpc-differences`). |
 | October 20, 2026 | **Filestore** | `Feature` | Filestore is available in Google Cloud. For more information, see Filestore differences in Google Cloud versus Google Cloud (`/filestore/docs/tpc-differences`). |
-| October 19, 2026 | **Google Cloud Armor** | `Security` | Security fixes and enhancements to Cloud Armor preconfigured WAF `v33-stable` rulesets. For more information, see Tuning Google Cloud Armor WAF rules (`/armor/docs/rule-tuning`). |
 <!-- AUTO-SYNC:RECENT-RELEASE-NOTES:END -->
 
 ---

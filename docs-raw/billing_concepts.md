@@ -1,7 +1,7 @@
 # Cloud Billing overview
 
 Source: https://berlin.devsitetest.how/billing/docs/concepts
-Last updated: 2026-11-04
+Last updated: 2026-11-10
 
 - 
 

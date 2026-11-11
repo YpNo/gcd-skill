@@ -1,7 +1,7 @@
 # Privileged access at Google Cloud Dedicated in Germany
 
 Source: https://berlin.devsitetest.how/assured-workloads/access-transparency/docs/privileged-access
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 - 
 

@@ -1,7 +1,7 @@
 # Set up the Google Cloud CLI for Cloud de Confiance
 
 Source: https://documentation.s3ns.fr/docs/get-started-tpc/setup-gcloud
-Last updated: 2026-11-07
+Last updated: 2026-11-10
 
 - 
 
@@ -156,8 +156,8 @@ Linux 64-bit
 (x86_64) 
 | 
 [google-cloud-cli-linux-x86_64.tar.gz](https://storage.s3nsapis.fr/cloud-sdk-release/google-cloud-cli-linux-x86_64.tar.gz) | 
-94.6 MB | 
-16fda6058d66e4ec29e8575e2b6e19b0d03cea7b091e6730f7e8361209e6955f | 
+94.7 MB | 
+181a74765ab1f2d3dd37bc1b7f9b53b6f5b348eef44ea2e194b9ed41310b44bb | 
 |
 
 | 
@@ -166,8 +166,8 @@ Linux 64-bit
 (Arm) 
 | 
 [google-cloud-cli-linux-arm.tar.gz](https://storage.s3nsapis.fr/cloud-sdk-release/google-cloud-cli-linux-arm.tar.gz) | 
-90.6 MB | 
-cc584dabf7b1f7ba79354744027b6de654ff6876c03dffb2174c1b1e3c0c6956 | 
+90.7 MB | 
+13e40f07f44bb6380a8d17275e352964360543af8ea18a7ddfee0445481f9413 | 
 |
 
 | 
@@ -176,8 +176,8 @@ Linux 32-bit
 (x86) 
 | 
 [google-cloud-cli-linux-x86.tar.gz](https://storage.s3nsapis.fr/cloud-sdk-release/google-cloud-cli-linux-x86.tar.gz) | 
-54.6 MB | 
-b093baa9d87f894812aaefea8041289474de279c2c783cf7e9b7be8eb38bc675 | 
+54.8 MB | 
+476eef9d8f890795c246b6c567e7623e3c404c0c824d2e3be6f6be81d08bfe74 | 
 |
 
 

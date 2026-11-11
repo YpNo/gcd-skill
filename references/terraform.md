@@ -375,7 +375,7 @@ While Terraform is the primary recommendation, sovereign cloud deployments also 
 - **Ansible** — automate provisioning and configuration management
 
 <!-- AUTO-SYNC:CROSS-CUTTING-DIFFS:terraform:START -->
-> **Auto-synced upstream `terraform_tpc-differences.md` status:** Last updated `2026-10-26` | Digest `bcb0fd2998`
+> **Auto-synced upstream `terraform_tpc-differences.md` status:** Last updated `2026-11-10` | Digest `bcb0fd2998`
 
 <details>
 <summary>Upstream <code>terraform_tpc-differences.md</code> key differences (4 items)</summary>

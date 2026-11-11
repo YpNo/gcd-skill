@@ -1,7 +1,7 @@
 # Understanding and using Access Transparency logs
 
 Source: https://berlin.devsitetest.how/assured-workloads/access-transparency/docs/reading-logs
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 - 
 

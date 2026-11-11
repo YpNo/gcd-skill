@@ -1,7 +1,7 @@
 # Enabling Access Transparency
 
 Source: https://documentation.s3ns.fr/assured-workloads/access-transparency/docs/enable
-Last updated: 2026-10-26
+Last updated: 2026-11-10
 
 - 
 

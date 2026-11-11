@@ -1,7 +1,7 @@
 # Cloud Billing overview
 
 Source: https://documentation.s3ns.fr/billing/docs/concepts
-Last updated: 2026-11-04
+Last updated: 2026-11-10
 
 - 
 

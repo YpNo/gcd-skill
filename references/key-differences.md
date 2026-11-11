@@ -193,7 +193,7 @@ Note: user-created service account emails do **NOT** include the `eu0:` or `s3ns
 | Cloud Shell | **No** | Not available | Not available |
 
 <!-- AUTO-SYNC:CROSS-CUTTING-DIFFS:tpc-differences:START -->
-> **Auto-synced upstream `tpc-differences.md` status:** Last updated `2026-10-26` | Digest `93b4b2359d`
+> **Auto-synced upstream `tpc-differences.md` status:** Last updated `2026-11-10` | Digest `93b4b2359d`
 
 <details>
 <summary>Upstream <code>tpc-differences.md</code> key differences (5 items)</summary>
