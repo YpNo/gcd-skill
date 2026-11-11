@@ -76,35 +76,46 @@ made-up control method on `storage.s3nsapis.fr`. No S3NS page mentions Anywhere 
 ⇒ Treat Anywhere Cache as unavailable on S3NS, even though the `storage` discovery document
 lists its methods.
 
-## The offered-services list is scoped per organization
+## The offered-services list grows over time
 
-**2026-11-08, hypothesis.** One organization's `gcloud services list --available` returned
-31 APIs. Every one maps to a **Qualifié SecNumCloud 3.2** service on PREMI3NS, or to platform
-plumbing such as `cloudbilling`, `apikeys` or `essentialcontacts`. None of the 10 services
-then marked **Qualification en cours** appeared: `run`, `bigtableadmin`, `file`,
-`secretmanager`, `composer`, `dataproc`, `storagetransfer`, `aiplatform`, `cloudquotas`,
-`accessapproval`. Yet the docs describe all 10 as available, and their hosts resolve.
+**2026-11-11, correction.** An earlier version of this entry (2026-11-08, hypothesis) said
+the offered-services list was scoped per organization to the SecNumCloud-qualified services.
+That is refuted. The 31-API list it relied on was an old capture, and every capture came
+from the same project.
 
-The effective `gcp.restrictServiceUsage` org policy on that project is `allowAll: true`. So
-an org policy is not what removes them. The scope is set outside the customer's org-policy
-plane, possibly by the PREMI3NS contract or an opt-in for services still in qualification.
-This is not confirmed.
+**2026-08-17 to 2026-11-11.** Repeated captures of `gcloud services list --available` on one
+project show S3NS adding services progressively. None was removed:
 
-Consistent with this, authenticated calls to `run` returned `401 token rejected` with a
-token that other APIs accepted.
+| Date first offered | APIs |
+|--------------------|------|
+| 2026-08-17 | `aiplatform`, `secretmanager` |
+| 2026-09-08 | `run` |
+| 2026-10-19 | `bigtable`, `bigtableadmin`, `cloudasset`, `cloudquotas`, `composer`, `dataproc`, `dataproc-control`, `file`, `networkservices`, `storagetransfer` |
+| 2026-10-26 | `cloudbuild` |
 
-⇒ A service missing from one organization's `services list --available` is **not**
-unavailable on S3NS. Check the docs and the PREMI3NS status, then ask the organization
-administrator or S3NS whether the service is enabled for that organization.
+On 2026-11-11 the list had 48 APIs. Mapped to PREMI3NS, 20 back **Qualifié SecNumCloud 3.2**
+services, 9 back services in **Qualification en cours**, and 4 back **À venir** (upcoming)
+services: `spanner`, `cloudbuild`, `cloudasset` and `networkconnectivity`. So the list is not
+limited to the qualified perimeter, and an upcoming service can be offered before PREMI3NS
+marks it available.
 
-## Signed URLs: HMAC works, V4 via `signBlob` is untested
+The effective `gcp.restrictServiceUsage` org policy on that project is `allowAll: true`, so
+no org policy narrows the list.
+
+⇒ A service missing from `services list --available` is **not** unavailable on S3NS. The
+list changes: re-capture it before concluding anything, and check the docs and the PREMI3NS
+status.
+
+## Signed URLs: HMAC and V4 via `signBlob` both work
 
 **2026-07, functional.** `gcloud storage sign-url` with an HMAC key worked on an S3NS
 machine. `storage.projects.hmacKeys.create` is served.
 
 **2026-11-08.** The V4 path needs `iamcredentials.projects.serviceAccounts.signBlob`.
 `iamcredentials` now resolves and PREMI3NS lists *Service Account Credentials* as qualified.
-No functional test of V4 signing has been run yet.
+
+**2026-11-11, functional.** `gcloud storage sign-url --impersonate-service-account=SA`
+produced a V4 signed URL through `signBlob`, and a request to that URL returned HTTP 200.
 
 ## How to reproduce
 
@@ -116,7 +127,7 @@ getent hosts run.s3nsapis.fr; getent hosts "zz$(date +%s).s3nsapis.fr" || echo N
 curl -s 'https://storage.s3nsapis.fr/$discovery/rest?version=v1' | python3 -c \
   'import json,sys; d=json.load(sys.stdin); print(d["rootUrl"], len(json.dumps(d["resources"])))'
 
-# Offered services for your organization, and the org policy that could restrict them
+# Offered services for a project (re-capture: the list changes), and the org policy that could restrict them
 gcloud services list --available --project=PROJECT --format='value(config.name)'
 gcloud org-policies describe gcp.restrictServiceUsage --project=PROJECT --effective
 ```
