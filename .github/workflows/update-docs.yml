@@ -2,7 +2,10 @@ name: Update sovereign cloud docs
 
 on:
   schedule:
-    - cron: "23 3 * * *"  # 03:23 UTC daily
+    # Mondays at 06:00 Paris time (CET in winter, CEST in summer).
+    - cron: "0 6 * * 1"
+      timezone: "Europe/Paris"
+  # Run it by hand from the Actions tab to refresh the docs before Monday.
   workflow_dispatch: {}
 
 permissions:
@@ -35,12 +38,16 @@ jobs:
 
   scrape:
     needs: validate
+    # The pull request targets main, so only build it from main. A scheduled run
+    # always does; a manual run started on another branch skips this job.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
       contents: write
+      pull-requests: write
     steps:
-      # Credentials stay persisted here: the last step pushes the refreshed docs.
+      # Credentials stay persisted here: the last step pushes the update branch.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: true  # zizmor: ignore[artipacked]
@@ -79,8 +86,8 @@ jobs:
           python3 -u scripts/sync-skill.py
           python3 -u scripts/sync-skill.py --check
 
-      # Pushes made with GITHUB_TOKEN do not trigger the CI workflow, so the scraped
-      # content is checked here, before it is committed.
+      # CI runs on a pull request opened with GITHUB_TOKEN wait for approval, so the
+      # scraped content is checked here, before it is committed.
       - name: Check skill integrity before committing
         run: python3 scripts/check-skill.py
 
@@ -113,12 +120,54 @@ jobs:
           fi
           echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
 
-      - name: Commit updated docs and skill references
+      # The update goes through a pull request so that a person reviews scraped web
+      # text before it reaches the skill agents load. The branch is rebuilt from main
+      # on every run, so one open pull request always holds the latest scrape.
+      - name: Open or update the docs update pull request
         if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          UPDATE_BRANCH: automation/docs-update
+          BASE_BRANCH: ${{ github.ref_name }}
+          TRIGGER: ${{ github.event_name }}
+          S3NS_OUTCOME: ${{ steps.scrape_s3ns.outcome }}
+          BERLIN_OUTCOME: ${{ steps.scrape_berlin.outcome }}
         run: |
+          today="$(date -u +%Y-%m-%d)"
+          title="chore: update scraped GCD/S3NS docs and sync skill ($today)"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch -C "$UPDATE_BRANCH"
           git add docs-raw/ docs-raw-s3ns/ references/ SKILL.md README.md
-          git commit -m "chore: update scraped GCD/S3NS docs and sync skill ($(date -u +%Y-%m-%d))"
-          git pull --rebase --autostash
-          git push
+          git commit -m "$title"
+          git push --force origin "$UPDATE_BRANCH"
+
+          {
+            echo "Scraped on $today (trigger: \`$TRIGGER\`)."
+            echo
+            echo "| Region | Scrape |"
+            echo "|---|---|"
+            echo "| S3NS | \`$S3NS_OUTCOME\` |"
+            echo "| Berlin | \`$BERLIN_OUTCOME\` |"
+            if [ "$S3NS_OUTCOME" != "success" ] || [ "$BERLIN_OUTCOME" != "success" ]; then
+              echo
+              echo "**Warning:** one region's scrape failed, so this update contains only the other region's changes."
+            fi
+            echo
+            echo "Files agents load:"
+            echo '```'
+            git diff --stat HEAD~1 -- SKILL.md references/
+            echo '```'
+            echo
+            pages="$(git diff --shortstat HEAD~1 -- docs-raw/ docs-raw-s3ns/ | sed 's/^ *//')"
+            echo "Scraped pages: ${pages:-no changes}."
+            echo
+            echo "This branch is rebuilt from \`$BASE_BRANCH\` on every run. Commits pushed to it are overwritten."
+          } > "$RUNNER_TEMP/pr-body.md"
+
+          existing="$(gh pr list --head "$UPDATE_BRANCH" --base "$BASE_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --title "$title" --body-file "$RUNNER_TEMP/pr-body.md"
+          else
+            gh pr create --head "$UPDATE_BRANCH" --base "$BASE_BRANCH" --title "$title" --body-file "$RUNNER_TEMP/pr-body.md"
+          fi
