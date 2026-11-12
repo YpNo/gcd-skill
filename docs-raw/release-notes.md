@@ -1,7 +1,7 @@
 # Google Cloud release notes
 
 Source: https://berlin.devsitetest.how/release-notes
-Last updated: 2026-11-11
+Last updated: 2026-11-12
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/tpc-differences) for more details.
 
@@ -132,6 +132,566 @@ waiting for capacity, and configure alerts based on this data. Compute Engine
 records these details in instance distribution logs in Cloud Logging when you
 create a regional MIG or increase its target size. For more information, see
 [View instance distribution logs](/compute/docs/instance-groups/view-instance-distribution-logs).
+
+
+**Google Kubernetes Engine**
+
+Change 
+
+#### (2026-R47) Version updates
+
+GKE cluster versions have been updated.
+
+**New versions available for upgrades and new clusters.**
+
+The following versions are now available for new GKE clusters, and for
+manual control plane upgrades and node upgrades for existing clusters. For more
+information about versioning and upgrades, see [GKE versioning and
+support](https://berlin.devsitetest.how/kubernetes-engine/versioning) and [About GKE
+cluster upgrades](https://berlin.devsitetest.how/kubernetes-engine/upgrades).
+
+
+
+
+
+### Rapid channel
+
+
+
+
+- Version [1.37.1-gke.2097000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-1-gke-2097000) is now the default version for cluster creation in the Rapid channel.
+
+- The following versions are now available in the Rapid channel:
+
+- [1.34.12-gke.1698000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1698000)
+
+- [1.35.9-gke.1673000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1673000)
+
+- [1.36.5-gke.2262000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-2262000)
+
+- [1.37.2-gke.1042000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-2-gke-1042000)
+
+- [Alpha version](https://berlin.devsitetest.how/kubernetes-engine/versioning#alpha-versions) 1.38.0-gke.4814000+preview is now available for GKE alpha clusters in the Rapid channel.
+
+- The following versions are no longer available in the Rapid channel:
+
+- 1.34.12-gke.1209000
+
+- 1.34.12-gke.1363000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.1975000
+
+- 1.35.8-gke.2308000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2377000
+
+- 1.36.5-gke.1259000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.37.1-gke.1697000
+
+- 1.37.1-gke.3020000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Alpha version 1.38.0-gke.2884000+preview is no longer available in the Rapid channel.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1539000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1539000)
+
+- 1.34 to [1.35.9-gke.1505000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1505000)
+
+- 1.35 to [1.36.5-gke.1982000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-1982000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1539000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1539000)
+
+- 1.35 to [1.35.9-gke.1505000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1505000)
+
+- 1.36 to [1.36.5-gke.1982000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-1982000)
+
+- 1.37 to [1.37.1-gke.2097000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-1-gke-2097000)
+
+
+
+
+### Regular channel
+
+
+
+
+- Version [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000) is now the default version for cluster creation in the Regular channel.
+
+- The following versions are no longer available in the Regular channel:
+
+- 1.34.12-gke.1011000
+
+- 1.34.12-gke.1153000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Regular channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046003
+
+- 1.36.4-gke.2326000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Regular channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.36 to [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000)
+
+
+
+
+### Stable channel
+
+
+
+
+- Version [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000) is now the default version for cluster creation in the Stable channel.
+
+- The following versions are no longer available in the Stable channel:
+
+- 1.34.11-gke.1102000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.11-gke.1209000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.1439001
+
+- 1.35.8-gke.1626001 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1391002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495003 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1011000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1011000)
+
+- 1.34 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1011000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1011000)
+
+- 1.35 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- 1.36 to [1.36.4-gke.2046003](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2046003)
+
+
+
+
+### Extended channel
+
+
+
+
+- Version [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000) is now the default version for cluster creation in the Extended channel.
+
+- The following versions are now available in the Extended channel:
+
+- [1.32.13-gke.2788000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-2788000)
+
+- [1.32.13-gke.3004000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-3004000)
+
+- [1.33.13-gke.2074000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-2074000)
+
+- [1.33.13-gke.2339000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-2339000)
+
+- The following versions are no longer available in the Extended channel:
+
+- 1.32.13-gke.2662000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.32.13-gke.2906000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.33.13-gke.1915000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.33.13-gke.2207000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.12-gke.1011000
+
+- 1.34.12-gke.1153000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046003
+
+- 1.36.4-gke.2326000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.31 to [1.32.13-gke.2701000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-2701000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.32 to [1.32.13-gke.2701000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-2701000)
+
+- 1.33 to [1.33.13-gke.1952000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-1952000)
+
+- 1.34 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.36 to [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000)
+
+
+
+
+### No channel (deprecated)
+
+
+
+
+- Version [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000) is now the default version for cluster creation.
+
+- The following versions are now available:
+
+- [1.34.12-gke.1698000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1698000)
+
+- [1.35.9-gke.1673000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1673000)
+
+- [1.36.5-gke.2262000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-2262000)
+
+- [1.37.2-gke.1042000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-2-gke-1042000)
+
+- The following node versions are now available:
+
+- [1.32.13-gke.3004000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-3004000)
+
+- [1.33.13-gke.2339000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-2339000)
+
+- [1.34.12-gke.1698000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1698000)
+
+- [1.35.9-gke.1673000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1673000)
+
+- [1.36.5-gke.2262000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-2262000)
+
+- [1.37.2-gke.1042000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-2-gke-1042000)
+
+- The following versions are no longer available:
+
+- 1.34.11-gke.1102000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.11-gke.1209000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.12-gke.1153000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.12-gke.1363000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.6-gke.1250001 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.1626001 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.2308000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1391002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495003 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2326000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.5-gke.1259000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.37.1-gke.3020000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.34 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.35 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- 1.36 to [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000)
+
+
+
+
+
+
+Change 
+
+#### (2026-R47) Version updates
+
+- Version [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000) is now the default version for cluster creation in the Stable channel.
+
+- The following versions are no longer available in the Stable channel:
+
+- 1.34.11-gke.1102000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.11-gke.1209000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.1439001
+
+- 1.35.8-gke.1626001 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1391002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495003 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Stable channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1011000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1011000)
+
+- 1.34 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1011000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1011000)
+
+- 1.35 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- 1.36 to [1.36.4-gke.2046003](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2046003)
+
+
+
+
+Change 
+
+#### (2026-R47) Version updates
+
+- Version [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000) is now the default version for cluster creation in the Regular channel.
+
+- The following versions are no longer available in the Regular channel:
+
+- 1.34.12-gke.1011000
+
+- 1.34.12-gke.1153000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Regular channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046003
+
+- 1.36.4-gke.2326000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Regular channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.36 to [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000)
+
+
+
+
+Change 
+
+#### (2026-R47) Version updates
+
+- Version [1.37.1-gke.2097000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-1-gke-2097000) is now the default version for cluster creation in the Rapid channel.
+
+- The following versions are now available in the Rapid channel:
+
+- [1.34.12-gke.1698000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1698000)
+
+- [1.35.9-gke.1673000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1673000)
+
+- [1.36.5-gke.2262000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-2262000)
+
+- [1.37.2-gke.1042000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-2-gke-1042000)
+
+- [Alpha version](https://berlin.devsitetest.how/kubernetes-engine/versioning#alpha-versions) 1.38.0-gke.4814000+preview is now available for GKE alpha clusters in the Rapid channel.
+
+- The following versions are no longer available in the Rapid channel:
+
+- 1.34.12-gke.1209000
+
+- 1.34.12-gke.1363000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.1975000
+
+- 1.35.8-gke.2308000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2377000
+
+- 1.36.5-gke.1259000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.37.1-gke.1697000
+
+- 1.37.1-gke.3020000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Rapid channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Alpha version 1.38.0-gke.2884000+preview is no longer available in the Rapid channel.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1539000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1539000)
+
+- 1.34 to [1.35.9-gke.1505000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1505000)
+
+- 1.35 to [1.36.5-gke.1982000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-1982000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1539000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1539000)
+
+- 1.35 to [1.35.9-gke.1505000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1505000)
+
+- 1.36 to [1.36.5-gke.1982000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-1982000)
+
+- 1.37 to [1.37.1-gke.2097000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-1-gke-2097000)
+
+
+
+
+Change 
+
+#### (2026-R47) Version updates
+
+- Version [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000) is now the default version for cluster creation.
+
+- The following versions are now available:
+
+- [1.34.12-gke.1698000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1698000)
+
+- [1.35.9-gke.1673000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1673000)
+
+- [1.36.5-gke.2262000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-2262000)
+
+- [1.37.2-gke.1042000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-2-gke-1042000)
+
+- The following node versions are now available:
+
+- [1.32.13-gke.3004000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-3004000)
+
+- [1.33.13-gke.2339000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-2339000)
+
+- [1.34.12-gke.1698000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1698000)
+
+- [1.35.9-gke.1673000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-9-gke-1673000)
+
+- [1.36.5-gke.2262000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-5-gke-2262000)
+
+- [1.37.2-gke.1042000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.37#1-37-2-gke-1042000)
+
+- The following versions are no longer available:
+
+- 1.34.11-gke.1102000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.11-gke.1209000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.12-gke.1153000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.12-gke.1363000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.6-gke.1250001 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.1626001 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.35.8-gke.2308000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1391002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.1495003 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046002 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2326000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.5-gke.1259000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.37.1-gke.3020000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support). This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.33 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.34 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.34 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.35 to [1.35.8-gke.1796000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1796000)
+
+- 1.36 to [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000)
+
+
+
+
+Change 
+
+#### (2026-R47) Version updates
+
+- Version [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000) is now the default version for cluster creation in the Extended channel.
+
+- The following versions are now available in the Extended channel:
+
+- [1.32.13-gke.2788000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-2788000)
+
+- [1.32.13-gke.3004000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-3004000)
+
+- [1.33.13-gke.2074000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-2074000)
+
+- [1.33.13-gke.2339000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-2339000)
+
+- The following versions are no longer available in the Extended channel:
+
+- 1.32.13-gke.2662000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.32.13-gke.2906000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.33.13-gke.1915000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.33.13-gke.2207000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.34.12-gke.1011000
+
+- 1.34.12-gke.1153000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- 1.36.4-gke.2046003
+
+- 1.36.4-gke.2326000 is [deprecated](https://berlin.devsitetest.how/kubernetes-engine/versioning#patch-version-support) in the Extended channel. This version will be removed in 90 days, or at the end of support, if sooner.
+
+- Clusters in this channel running the listed minor version have new general auto-upgrade targets. GKE can upgrade control planes and nodes to the following new versions with this release:
+
+- GKE upgrades clusters to the following new minor versions if there are no factors, such as [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or deprecated APIs, preventing upgrades:
+
+- 1.31 to [1.32.13-gke.2701000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-2701000)
+
+- GKE upgrades clusters to the following new patch versions if no minor version upgrade is available, or if the cluster has [maintenance exclusions](https://berlin.devsitetest.how/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#exclusions) or other factors preventing minor version upgrades:
+
+- 1.32 to [1.32.13-gke.2701000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.32#1-32-13-gke-2701000)
+
+- 1.33 to [1.33.13-gke.1952000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.33#1-33-13-gke-1952000)
+
+- 1.34 to [1.34.12-gke.1209000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.34#1-34-12-gke-1209000)
+
+- 1.36 to [1.36.4-gke.2377000](https://berlin.devsitetest.how/kubernetes-engine/docs/changelogs/1.36#1-36-4-gke-2377000)
+
 
 
 

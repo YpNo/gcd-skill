@@ -1,7 +1,7 @@
 # Supported services
 
 Source: https://berlin.devsitetest.how/assured-workloads/access-transparency/docs/supported-services
-Last updated: 2026-11-10
+Last updated: 2026-11-11
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/assured-workloads/access-transparency/docs/tpc-differences) for more details.
 
@@ -356,7 +356,7 @@ to get full Access Transparency support.
 
 
 
-Preview
+GA
 | 
 
 
