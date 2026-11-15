@@ -2494,9 +2494,9 @@
   "/release-notes": {
     "title": "Google Cloud release notes",
     "filename": "release-notes.md",
-    "size": 260589,
+    "size": 266422,
     "url": "https://documentation.s3ns.fr/release-notes",
-    "last_updated": "2026-11-14"
+    "last_updated": "2026-11-15"
   },
   "/resource-manager/docs": {
     "title": "Resource Manager documentation",
@@ -2846,7 +2846,7 @@
     "filename": "sql_release-notes.md",
     "size": 64772,
     "url": "https://documentation.s3ns.fr/sql/docs/release-notes",
-    "last_updated": "2026-11-14"
+    "last_updated": "2026-11-15"
   },
   "/sql/docs/tpc-differences": {
     "title": "Cloud SQL in Cloud de Confiance versus Google Cloud",

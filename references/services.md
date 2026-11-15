@@ -262,7 +262,7 @@ Total scraped pages: **436** (Berlin GCD) / **435** (France S3NS).
 | Cloud Quotas | 29 | 29 | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-13 |
 | Cloud Router | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-11-13 |
 | Cloud Run | 14 | 14 | Qualification en cours | `run_tpc-differences.md` | 2026-11-13 |
-| Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-14 |
+| Cloud SQL | 3 | 3 | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-15 |
 | Cloud Storage | 10 | 10 | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-13 |
 | Cloud VPN | 2 | 2 | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-11-13 |
 | Compute Engine | 12 | 12 | Qualifié SecNumCloud 3.2 | `compute_tpc-differences.md` | 2026-11-13 |
@@ -295,6 +295,7 @@ The following table summarizes the most recent sovereign cloud release notes ext
 <!-- AUTO-SYNC:RECENT-RELEASE-NOTES:START -->
 | Date | Product | Type | Summary |
 |---|---|---|---|
+| November 13, 2026 | **Google Kubernetes Engine** | `Change` | **(2026-R48) Version updates:** GKE cluster versions have been updated. |
 | November 12, 2026 | **Compute Engine** | `Feature` | **Generally available**: In a managed instance group (MIG) with instance flexibility, you can override the instance template's disk and minimum CPU platform properties per instance selection. Overriding these properties lets you combine machine types that require different disk types, boot images, or CPU platforms in a single MIG. For more information, see About instance flexibility in MIGs (`/compute/docs/instance-groups/about-instance-flexibility`). |
 | November 12, 2026 | **Google Kubernetes Engine** | `Change` | In GKE version 1.35.1-gke.1516000 or later, GKE Dataplane V2 clusters use a unified `cilium-cni` configuration instead of a chained CNI setup. With this change, Cilium configures the Pod default gateway by using its node-local virtual router interface (`cilium_host`), which has the statically assigned link-local IP address `169.254.4.6`. |
 | November 10, 2026 | **Compute Engine** | `Feature` | For your regional managed instance groups (MIGs), you can view planned instance allocations across zones and machine types, check the number of instances waiting for capacity, and configure alerts based on this data. Compute Engine records these details in instance distribution logs in Cloud Logging when you create a regional MIG or increase its target size. For more information, see View instance distribution logs (`/compute/docs/instance-groups/view-instance-distribution-logs`). |
@@ -306,7 +307,6 @@ The following table summarizes the most recent sovereign cloud release notes ext
 | October 29, 2026 | **Identity and Access Management** | `Feature` | The Admin (`roles/admin`), Writer (`roles/writer`), and Reader (`roles/reader`) basic roles are generally available ([GA](https://documentation.s3ns.fr/products#product-launch-stages)). For more information, see Basic roles (`/iam/docs/roles-overview#basic`). |
 | October 27, 2026 | **Google Cloud Armor** | `Feature` | Cloud Armor supports advanced match conditions to include attributes for inspecting request body content and parameters. This lets you write custom CEL rules to filter traffic based on raw body content, structured data (JSON, Form Data, GraphQL), and query parameters. For more information, see Attributes (`/armor/docs/create-security-policy-rules#attributes`) in "Create and view Cloud Armor security policy rules." This feature is [generally available (GA)](https://documentation.s3ns.fr/products#product-launch-stages). |
 | October 27, 2026 | **Google Kubernetes Engine** | `Change` | **(2026-R46) Version updates:** GKE cluster versions have been updated. |
-| October 26, 2026 | **Compute Engine** | `Security` | A vulnerability (CVE-2026-85299) about incorrect authorization in Compute Engine was discovered and has been addressed. For more information, see the GCP-2026-073 security bulletin (`/compute/docs/security-bulletins#gcp-2026-073`). |
 <!-- AUTO-SYNC:RECENT-RELEASE-NOTES:END -->
 
 ---
