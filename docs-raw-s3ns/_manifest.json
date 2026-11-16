@@ -95,7 +95,7 @@
     "filename": "armor_release-notes.md",
     "size": 8660,
     "url": "https://documentation.s3ns.fr/armor/docs/release-notes",
-    "last_updated": "2026-11-10"
+    "last_updated": "2026-11-13"
   },
   "/armor/docs/tpc-differences": {
     "title": "Cloud Armor in Cloud de Confiance versus Google Cloud",
@@ -191,9 +191,9 @@
   "/assured-workloads/access-transparency/docs/supported-services": {
     "title": "Supported services",
     "filename": "assured-workloads_access-transparency_supported-services.md",
-    "size": 18177,
+    "size": 18172,
     "url": "https://documentation.s3ns.fr/assured-workloads/access-transparency/docs/supported-services",
-    "last_updated": "2026-11-13"
+    "last_updated": "2026-11-16"
   },
   "/bigquery/docs": {
     "title": "BigQuery documentation",
@@ -2494,9 +2494,9 @@
   "/release-notes": {
     "title": "Google Cloud release notes",
     "filename": "release-notes.md",
-    "size": 266422,
+    "size": 265390,
     "url": "https://documentation.s3ns.fr/release-notes",
-    "last_updated": "2026-11-15"
+    "last_updated": "2026-11-16"
   },
   "/resource-manager/docs": {
     "title": "Resource Manager documentation",
@@ -2846,7 +2846,7 @@
     "filename": "sql_release-notes.md",
     "size": 64772,
     "url": "https://documentation.s3ns.fr/sql/docs/release-notes",
-    "last_updated": "2026-11-15"
+    "last_updated": "2026-11-16"
   },
   "/sql/docs/tpc-differences": {
     "title": "Cloud SQL in Cloud de Confiance versus Google Cloud",

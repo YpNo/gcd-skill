@@ -1,7 +1,7 @@
 # Google Cloud release notes
 
 Source: https://documentation.s3ns.fr/release-notes
-Last updated: 2026-11-15
+Last updated: 2026-11-16
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/docs/tpc-differences) for more details.
 
@@ -4926,48 +4926,3 @@ Change
 - 1.35 to [1.35.8-gke.1036000](https://documentation.s3ns.fr/kubernetes-engine/docs/changelogs/1.35#1-35-8-gke-1036000)
 
 - 1.36 to [1.36.3-gke.1767000](https://documentation.s3ns.fr/kubernetes-engine/docs/changelogs/1.36#1-36-3-gke-1767000)
-
-
-
-
-## September 16, 2026
-
-**Virtual Private Cloud**
-
-Feature 
-
-
-**General Availability**: You can add Dynamic NICs to the same VPC network used
-by other network interfaces of a Compute Engine instance. For more information,
-see [Multiple network interfaces](/vpc/docs/multiple-interfaces-concepts#specifications).
-
-
-
-Feature 
-
-
-**General Availability**: VPC Flow Logs supports logging for
-App Engine resources that are configured with
-[Direct VPC egress](/appengine/docs/standard/vpc-direct-vpc).
-For more information, see
-[Serverless flows](/vpc/docs/about-traffic-flows#serverless-flows) and
-[ServerlessDetails field format](/vpc/docs/about-flow-logs-records#serverless-details).
-
-
-
-Feature 
-
-
-**General Availability**: VPC Flow Logs adds the following metadata annotations
-for Private Service Connect:
-
-- `src_psc_interface` and `dest_psc_interface`
-
-- `psc.consumer_connection`
-
-- `psc.psc_endpoint.name`
-
-- `psc.psc_attachment.name`
-
-For more information, see
-[Record format](/vpc/docs/about-flow-logs-records#record_format).
