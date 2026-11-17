@@ -130,7 +130,7 @@ The skill's reference files are synthesized and automatically synchronized from 
 
 | Reference file | Content |
 |---|---|
-| `product-differences.md` | Per-product sovereign cloud vs GCP differences across all 38 product `tpc-differences` pages (Compute, BigQuery, Bigtable, Cloud Run, GKE, IAM, Secret Manager, Composer, Managed Spark, Filestore, Storage Transfer, Networking, etc.) |
+| `product-differences.md` | Per-product sovereign cloud vs GCP differences across all 40 product `tpc-differences` pages (Compute, BigQuery, Bigtable, Cloud Run, GKE, IAM, Secret Manager, Composer, Managed Spark, Filestore, Storage Transfer, Networking, etc.) |
 | `services.md` | Complete catalog of available and unavailable services by Technology Area, plus auto-synced documentation inventory |
 | `terraform.md` | Provider config, state storage, resources, best practices |
 | `quotas.md` | Quota management, monitoring, gcloud CLI examples |
@@ -165,7 +165,7 @@ Every item in the sovereign cloud docs "Technology Areas" menu is covered:
 Each available service has its `tpc-differences` page plus region-specific sub-pages scraped and synchronized into `references/product-differences.md`:
 
 <!-- AUTO-SYNC:COVERAGE-TABLE:START -->
-Total scraped pages: **436** in `docs-raw/` (Berlin GCD) and **435** in `docs-raw-s3ns/` (S3NS Cloud de Confiance).
+Total scraped pages: **467** in `docs-raw/` (Berlin GCD) and **466** in `docs-raw-s3ns/` (S3NS Cloud de Confiance).
 
 | Product | Berlin Pages | S3NS Pages | S3NS SecNumCloud 3.2 | Includes |
 |---|---:|---:|---|---|
@@ -177,7 +177,9 @@ Total scraped pages: **436** in `docs-raw/` (Berlin GCD) and **435** in `docs-ra
 | BigQuery | 16 | 16 | Qualifié SecNumCloud 3.2 | Landing, differences, bq CLI, quotas, quickstarts, data loading, reservations |
 | Bigtable | 14 | 14 | Qualification en cours | Landing, differences, instances, replication, backups, CMEK, change streams |
 | Cloud Armor | 3 | 3 | Qualifié SecNumCloud 3.2 | Landing, differences, security policies, WAF rules, rate limiting |
+| Cloud Asset Inventory | 17 | 17 | — | Landing, differences, guides, release notes |
 | Cloud Billing | 7 | 7 | — | Landing, differences, BigQuery billing export, access control |
+| Cloud Build | 14 | 14 | — | Landing, differences, guides, release notes |
 | Cloud DNS | 8 | 8 | Qualifié SecNumCloud 3.2 | Landing, differences, private zones, records, forwarding, peering |
 | Cloud Interconnect | 2 | 2 | Qualifié SecNumCloud 3.2 | Landing, differences, Dedicated & Partner Interconnect, MACsec |
 | Cloud KMS | 8 | 8 | Qualifié SecNumCloud 3.2 | Landing, differences, software keys, EKM, CMEK, key import |
