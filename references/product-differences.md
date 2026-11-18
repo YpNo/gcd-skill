@@ -10,7 +10,7 @@ All products share these platform-wide constraints:
 - **No Cloud Shell:** Install `gcloud` and CLI tools locally or on a sovereign cloud VM.
 
 <!-- AUTO-SYNC:TPC-DIFFERENCES-INDEX:START -->
-> **Auto-synced coverage:** 40 product-specific `tpc-differences` guides tracked across Berlin (`docs-raw/`) and S3NS (`docs-raw-s3ns/`), latest upstream update `2026-11-17`.
+> **Auto-synced coverage:** 40 product-specific `tpc-differences` guides tracked across Berlin (`docs-raw/`) and S3NS (`docs-raw-s3ns/`), latest upstream update `2026-11-18`.
 
 <details>
 <summary>Tracked <code>tpc-differences</code> inventory (40 guides)</summary>
@@ -28,7 +28,7 @@ All products share these platform-wide constraints:
 | Cloud Build | — | `build_tpc-differences.md` | 2026-11-10 | `e394f41ba4` |
 | Cloud DNS | Qualifié SecNumCloud 3.2 | `dns_tpc-differences.md` | 2026-11-10 | `fbb94d9e80` |
 | Cloud Interconnect | Qualifié SecNumCloud 3.2 | `network-connectivity_interconnect_tpc-differences.md` | 2026-11-10 | `e8eefa543b` |
-| Cloud KMS | Qualifié SecNumCloud 3.2 | `kms_tpc-differences.md` | 2026-11-10 | `407d108d82` |
+| Cloud KMS | Qualifié SecNumCloud 3.2 | `kms_tpc-differences.md` | 2026-11-18 | `407d108d82` |
 | Cloud Load Balancing | Qualifié SecNumCloud 3.2 | `load-balancing_tpc-differences.md` | 2026-11-10 | `0b3869431a` |
 | Cloud Logging | Qualifié SecNumCloud 3.2 | `logging_tpc-differences.md` | 2026-11-10 | `3c7ede3f89` |
 | Cloud Monitoring | Qualifié SecNumCloud 3.2 | `monitoring_tpc-differences.md` | 2026-11-10 | `64c4c68e30` |
@@ -38,7 +38,7 @@ All products share these platform-wide constraints:
 | Cloud Router | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-11-10 | `539f8b73c2` |
 | Cloud Run | Qualification en cours | `run_tpc-differences.md` | 2026-11-10 | `a9f3e4b762` |
 | Cloud SQL | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-12 | `7ceca2ae72` |
-| Cloud Storage | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-11 | `f5a3d260b4` |
+| Cloud Storage | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-17 | `f5a3d260b4` |
 | Cloud VPN | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-11-10 | `09d1827aa5` |
 | Compute Engine | Qualifié SecNumCloud 3.2 | `compute_tpc-differences.md` | 2026-11-10 | `3c440f16c6` |
 | Container-Optimized OS | Qualifié SecNumCloud 3.2 | `container-optimized-os_tpc-differences.md` | 2026-11-10 | `e4ae3ed663` |

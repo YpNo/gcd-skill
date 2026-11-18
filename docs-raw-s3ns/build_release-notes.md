@@ -1,7 +1,7 @@
 # Cloud Build release notes
 
 Source: https://documentation.s3ns.fr/build/docs/release-notes
-Last updated: 2026-11-10
+Last updated: 2026-11-13
 
 Some or all of the information on this page might not apply to Cloud de Confiance by S3NS. See [Differences from Google Cloud](/build/docs/tpc-differences) for more details.
 
@@ -179,6 +179,18 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## November 16, 2026
+
+
+Announcement 
+
+
+Cloud Build is now available in Cloud de Confiance. For more information,
+see
+[Cloud Build differences in Cloud de Confiance versus Google Cloud](/build/docs/tpc-differences).
 
 
 

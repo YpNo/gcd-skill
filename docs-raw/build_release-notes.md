@@ -1,7 +1,7 @@
 # Cloud Build release notes
 
 Source: https://berlin.devsitetest.how/build/docs/release-notes
-Last updated: 2026-11-10
+Last updated: 2026-11-13
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/build/docs/tpc-differences) for more details.
 
@@ -179,6 +179,18 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## November 16, 2026
+
+
+Announcement 
+
+
+Cloud Build is now available in Google Cloud Dedicated. For more information,
+see
+[Cloud Build differences in Google Cloud Dedicated versus Google Cloud](/build/docs/tpc-differences).
 
 
 
