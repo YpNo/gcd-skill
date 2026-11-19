@@ -1,7 +1,7 @@
 # Google Cloud release notes
 
 Source: https://berlin.devsitetest.how/release-notes
-Last updated: 2026-11-18
+Last updated: 2026-11-19
 
 Some or all of the information on this page might not apply to Google Cloud Dedicated. See [Differences from Google Cloud](/docs/tpc-differences) for more details.
 
@@ -116,6 +116,53 @@ reader](https://wikipedia.org/wiki/Comparison_of_feed_aggregators), or add the
 
 
 
+
+
+
+## November 18, 2026
+
+**Google Kubernetes Engine**
+
+Issue 
+
+
+In GKE versions 1.35, 1.36, and 1.37, enabling
+[application-layer secrets encryption](/kubernetes-engine/docs/how-to/encrypting-secrets)
+on a new or existing cluster whose control plane stores cluster state in Spanner
+encrypts only Kubernetes Secrets (`ENCRYPTED`) instead of all Kubernetes API
+objects (`ALL_OBJECTS_ENCRYPTION_ENABLED`).
+
+- Clusters that already have encryption of all Kubernetes API objects enabled
+(`ALL_OBJECTS_ENCRYPTION_ENABLED`) continue to encrypt all objects.
+
+- Clusters where application-layer secrets encryption is in the `ENCRYPTED`
+state encrypt only Secrets and require manual Secret re-encryption after a
+Cloud KMS key rotation. To check which objects are encrypted in your cluster,
+see
+[Verify that application-layer secrets encryption is enabled](/kubernetes-engine/docs/how-to/encrypting-secrets#verifying_secrets_encryption).
+
+A fix to restore encryption of all Kubernetes API objects for newly configured clusters is in progress.
+
+
+
+## November 17, 2026
+
+**Cloud SQL for MySQL**
+
+Feature 
+
+
+Blue-green deployments for Cloud SQL for MySQL are
+[generally available](https://berlin.devsitetest.how/products#product-launch-stages).
+
+Blue-green deployments let you update databases—such as performing major
+version upgrades from MySQL 8.0 to 8.4 and staging hardware or configuration
+modifications in a green staging environment—while minimizing downtime.
+You can create and manage blue-green deployments using the Google Cloud console,
+the gcloud CLI, the Cloud SQL Admin API, or Terraform.
+
+For more information, see [About blue-green deployments in
+Cloud SQL](/sql/docs/mysql/about-blue-green-deployments).
 
 
 

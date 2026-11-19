@@ -165,7 +165,7 @@ Every item in the sovereign cloud docs "Technology Areas" menu is covered:
 Each available service has its `tpc-differences` page plus region-specific sub-pages scraped and synchronized into `references/product-differences.md`:
 
 <!-- AUTO-SYNC:COVERAGE-TABLE:START -->
-Total scraped pages: **467** in `docs-raw/` (Berlin GCD) and **466** in `docs-raw-s3ns/` (S3NS Cloud de Confiance).
+Total scraped pages: **468** in `docs-raw/` (Berlin GCD) and **467** in `docs-raw-s3ns/` (S3NS Cloud de Confiance).
 
 | Product | Berlin Pages | S3NS Pages | S3NS SecNumCloud 3.2 | Includes |
 |---|---:|---:|---|---|
@@ -207,7 +207,7 @@ Total scraped pages: **467** in `docs-raw/` (Berlin GCD) and **466** in `docs-ra
 | Resource Manager | 11 | 11 | Qualifié SecNumCloud 3.2 | Landing, differences, organizations, folders, projects, tags |
 | Secret Manager | 10 | 10 | Qualification en cours | Landing, differences, global & regional secrets, v1 API, CMEK |
 | Service Usage | 9 | 9 | Qualifié SecNumCloud 3.2 | Landing, differences, enabling/disabling services, REST reference |
-| Storage Transfer Service | 7 | 7 | Qualification en cours | Landing, differences, GCS transfers, agent-based S3 transfers |
+| Storage Transfer Service | 8 | 8 | Qualification en cours | Landing, differences, GCS transfers, agent-based S3 transfers |
 | Terraform | 32 | 32 | — | Landing, differences, provider universe_domain, GCS state backend |
 | VPC | 7 | 7 | Qualifié SecNumCloud 3.2 | Landing, differences, subnets, Private Google Access, Private Service Connect |
 | VPC Service Controls | 3 | 3 | Qualifié SecNumCloud 3.2 | Landing, differences, service perimeters, ingress/egress rules |

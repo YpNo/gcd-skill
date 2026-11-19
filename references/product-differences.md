@@ -10,7 +10,7 @@ All products share these platform-wide constraints:
 - **No Cloud Shell:** Install `gcloud` and CLI tools locally or on a sovereign cloud VM.
 
 <!-- AUTO-SYNC:TPC-DIFFERENCES-INDEX:START -->
-> **Auto-synced coverage:** 40 product-specific `tpc-differences` guides tracked across Berlin (`docs-raw/`) and S3NS (`docs-raw-s3ns/`), latest upstream update `2026-11-18`.
+> **Auto-synced coverage:** 40 product-specific `tpc-differences` guides tracked across Berlin (`docs-raw/`) and S3NS (`docs-raw-s3ns/`), latest upstream update `2026-11-19`.
 
 <details>
 <summary>Tracked <code>tpc-differences</code> inventory (40 guides)</summary>
@@ -30,13 +30,13 @@ All products share these platform-wide constraints:
 | Cloud Interconnect | Qualifié SecNumCloud 3.2 | `network-connectivity_interconnect_tpc-differences.md` | 2026-11-10 | `e8eefa543b` |
 | Cloud KMS | Qualifié SecNumCloud 3.2 | `kms_tpc-differences.md` | 2026-11-18 | `407d108d82` |
 | Cloud Load Balancing | Qualifié SecNumCloud 3.2 | `load-balancing_tpc-differences.md` | 2026-11-10 | `0b3869431a` |
-| Cloud Logging | Qualifié SecNumCloud 3.2 | `logging_tpc-differences.md` | 2026-11-10 | `3c7ede3f89` |
-| Cloud Monitoring | Qualifié SecNumCloud 3.2 | `monitoring_tpc-differences.md` | 2026-11-10 | `64c4c68e30` |
+| Cloud Logging | Qualifié SecNumCloud 3.2 | `logging_tpc-differences.md` | 2026-11-18 | `3c7ede3f89` |
+| Cloud Monitoring | Qualifié SecNumCloud 3.2 | `monitoring_tpc-differences.md` | 2026-11-18 | `64c4c68e30` |
 | Cloud NAT | Qualifié SecNumCloud 3.2 | `nat_tpc-differences.md` | 2026-11-10 | `355f0cd2d2` |
 | Cloud NGFW | Qualifié SecNumCloud 3.2 | `firewall_tpc-differences.md` | 2026-11-10 | `b038ad3e50` |
 | Cloud Quotas | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-10 | `8ab8f5aa35` |
 | Cloud Router | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-11-10 | `539f8b73c2` |
-| Cloud Run | Qualification en cours | `run_tpc-differences.md` | 2026-11-10 | `a9f3e4b762` |
+| Cloud Run | Qualification en cours | `run_tpc-differences.md` | 2026-11-18 | `a9f3e4b762` |
 | Cloud SQL | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-12 | `7ceca2ae72` |
 | Cloud Storage | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-17 | `f5a3d260b4` |
 | Cloud VPN | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-11-10 | `09d1827aa5` |
@@ -53,7 +53,7 @@ All products share these platform-wide constraints:
 | Resource Manager | Qualifié SecNumCloud 3.2 | `resource-manager_tpc-differences.md` | 2026-11-10 | `4ae45cb244` |
 | Secret Manager | Qualification en cours | `secret-manager_tpc-differences.md` | 2026-11-10 | `40aa632c10` |
 | Service Usage | Qualifié SecNumCloud 3.2 | `service-usage_tpc-differences.md` | 2026-11-10 | `c466abb91d` |
-| Storage Transfer Service | Qualification en cours | `storage-transfer_tpc-differences.md` | 2026-11-10 | `847b76ecde` |
+| Storage Transfer Service | Qualification en cours | `storage-transfer_tpc-differences.md` | 2026-11-19 | `70383282c9` |
 | Terraform | — | `terraform_tpc-differences.md` | 2026-11-10 | `bcb0fd2998` |
 | VPC | Qualifié SecNumCloud 3.2 | `vpc_tpc-differences.md` | 2026-11-10 | `06a8de4766` |
 | VPC Service Controls | Qualifié SecNumCloud 3.2 | `vpc-service-controls_tpc-differences.md` | 2026-11-10 | `1f38179c73` |
@@ -785,6 +785,19 @@ Features in preview are not available.
   - Microsoft Azure Blob Storage transfers
   - Transfers from URL lists
   - Event-driven transfers
+
+<!-- AUTO-SYNC:UPSTREAM-DIFFS:storage-transfer:START -->
+**Latest upstream documentation updates (`2026-11-19`):**
+- Event-driven transfers and cross-bucket replication are unavailable.
+- Agentless transfers from Amazon S3 are unavailable. Agents are required for transfers from S3-compatible sources.
+- Transfers from Azure Blob Storage, HDFS, and URL lists are unavailable.
+- **Integrations — Data sources:** The following sources are unavailable: - Azure Blob Storage - Hadoop Distributed File System (HDFS) - URL lists Transfers from Amazon S3 and other S3-compatible storage must use transfer agents. Agentless transfers from Amazon S3 are unavailable.
+- **Workflows and tools — Event-driven transfers:** Event-driven transfers are unavailable.
+- **Workflows and tools — Cross-bucket replication:** Cross-bucket replication is unavailable. Use scheduled or one-time transfers between Cloud Storage buckets instead.
+- **Workflows and tools — Object filtering:** Filtering source objects by wildcard (glob pattern) or by Amazon S3 storage class is unavailable.
+- **Workflows and tools — Agents:** Transfer agents must be started with the `--universe-domain=s3nsapis.fr` flag so that they contact Cloud de Confiance by S3NS endpoints. `gcloud transfer agents install` sets this flag and pulls the agent image from the Cloud de Confiance by S3NS registry automatically. If you start the agent container with `docker run` or `podman run`, pass this flag explicitly.
+- **Workflows and tools — Cloud Shell:** Cloud Shell is not available in Cloud de Confiance by S3NS. You must install and configure the gcloud CLI on a local machine to access Cloud de Confiance by S3NS.
+<!-- AUTO-SYNC:UPSTREAM-DIFFS:storage-transfer:END -->
 
 ---
 
