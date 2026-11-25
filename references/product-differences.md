@@ -37,7 +37,7 @@ All products share these platform-wide constraints:
 | Cloud Quotas | Qualification en cours | `quotas_tpc-differences.md` | 2026-11-10 | `8ab8f5aa35` |
 | Cloud Router | Qualifié SecNumCloud 3.2 | `network-connectivity_router_tpc-differences.md` | 2026-11-10 | `539f8b73c2` |
 | Cloud Run | Qualification en cours | `run_tpc-differences.md` | 2026-11-18 | `a9f3e4b762` |
-| Cloud SQL | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-12 | `7ceca2ae72` |
+| Cloud SQL | Qualifié SecNumCloud 3.2 | `sql_tpc-differences.md` | 2026-11-24 | `7ceca2ae72` |
 | Cloud Storage | Qualifié SecNumCloud 3.2 | `storage_tpc-differences.md` | 2026-11-17 | `f5a3d260b4` |
 | Cloud VPN | Qualifié SecNumCloud 3.2 | `network-connectivity_vpn_concepts_tpc-differences.md` | 2026-11-10 | `09d1827aa5` |
 | Compute Engine | Qualifié SecNumCloud 3.2 | `compute_tpc-differences.md` | 2026-11-20 | `ce63190ccb` |
